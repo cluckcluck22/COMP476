@@ -1,0 +1,2158 @@
+fileFormatVersion: 2
+guid: eebd685cd31a1d94db70aa7f471d37b9
+timeCreated: 1510149981
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_pig
+    100002: ear.L
+    100004: ear.L_end
+    100006: ear.R
+    100008: ear.R_end
+    100010: head
+    100012: Hip1_1.L
+    100014: Hip1_1.R
+    100016: Hip1_2.L
+    100018: Hip1_2.R
+    100020: Hip2_1.L
+    100022: Hip2_1.R
+    100024: Hip2_2.L
+    100026: Hip2_2.R
+    100028: Hoof_1.L
+    100030: Hoof_1.L_end
+    100032: Hoof_1.R
+    100034: Hoof_1.R_end
+    100036: Hoof_2.L
+    100038: Hoof_2.L_end
+    100040: Hoof_2.R
+    100042: Hoof_2.R_end
+    100044: leg_1.L
+    100046: leg_1.L_end
+    100048: leg_1.R
+    100050: leg_1.R_end
+    100052: leg_2.L
+    100054: leg_2.L_end
+    100056: leg_2.R
+    100058: leg_2.R_end
+    100060: //RootNode
+    100062: mouth
+    100064: mouth_end
+    100066: neck_1
+    100068: neck_2
+    100070: nose
+    100072: nose_end
+    100074: Pig_low
+    100076: spine_1
+    100078: spine_2
+    100080: spine_3
+    100082: spine_4
+    100084: spine_5
+    100086: tail_1
+    100088: tail_2
+    100090: tail_3
+    100092: tail_3_end
+    100094: tail_4
+    100096: tail_4_end
+    400000: Arm_pig
+    400002: ear.L
+    400004: ear.L_end
+    400006: ear.R
+    400008: ear.R_end
+    400010: head
+    400012: Hip1_1.L
+    400014: Hip1_1.R
+    400016: Hip1_2.L
+    400018: Hip1_2.R
+    400020: Hip2_1.L
+    400022: Hip2_1.R
+    400024: Hip2_2.L
+    400026: Hip2_2.R
+    400028: Hoof_1.L
+    400030: Hoof_1.L_end
+    400032: Hoof_1.R
+    400034: Hoof_1.R_end
+    400036: Hoof_2.L
+    400038: Hoof_2.L_end
+    400040: Hoof_2.R
+    400042: Hoof_2.R_end
+    400044: leg_1.L
+    400046: leg_1.L_end
+    400048: leg_1.R
+    400050: leg_1.R_end
+    400052: leg_2.L
+    400054: leg_2.L_end
+    400056: leg_2.R
+    400058: leg_2.R_end
+    400060: //RootNode
+    400062: mouth
+    400064: mouth_end
+    400066: neck_1
+    400068: neck_2
+    400070: nose
+    400072: nose_end
+    400074: Pig_low
+    400076: spine_1
+    400078: spine_2
+    400080: spine_3
+    400082: spine_4
+    400084: spine_5
+    400086: tail_1
+    400088: tail_2
+    400090: tail_3
+    400092: tail_3_end
+    400094: tail_4
+    400096: tail_4_end
+    4300000: Pig_low
+    7400000: Arm_pig|Arm_pigAction
+    7400002: Arm_pig|attack
+    7400004: Arm_pig|chrom_chrom
+    7400006: Arm_pig|die
+    7400008: Arm_pig|die_2
+    7400010: Arm_pig|down
+    7400012: Arm_pig|eat
+    7400014: Arm_pig|eat_2
+    7400016: Arm_pig|hit_front
+    7400018: Arm_pig|hit_left
+    7400020: Arm_pig|hit_right
+    7400022: Arm_pig|hit_top
+    7400024: Arm_pig|idle_1
+    7400026: Arm_pig|idle_2
+    7400028: Arm_pig|idle_3
+    7400030: Arm_pig|run
+    7400032: Arm_pig|search
+    7400034: Arm_pig|up
+    7400036: Arm_pig|walk
+    7400038: Arm_pig|walk._search
+    7400040: Arm_pig|walk_back
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Pig_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Arm_pig|attack
+      takeName: Arm_pig|attack
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|chrom_chrom
+      takeName: Arm_pig|chrom_chrom
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|die
+      takeName: Arm_pig|die
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|die_2
+      takeName: Arm_pig|die_2
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|down
+      takeName: Arm_pig|down
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|eat
+      takeName: Arm_pig|eat
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|eat_2
+      takeName: Arm_pig|eat_2
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|hit_front
+      takeName: Arm_pig|hit_front
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|hit_left
+      takeName: Arm_pig|hit_left
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|hit_right
+      takeName: Arm_pig|hit_right
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|hit_top
+      takeName: Arm_pig|hit_top
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|idle_1
+      takeName: Arm_pig|idle_1
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|idle_2
+      takeName: Arm_pig|idle_2
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|idle_3
+      takeName: Arm_pig|idle_3
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|run
+      takeName: Arm_pig|run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|search
+      takeName: Arm_pig|search
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|up
+      takeName: Arm_pig|up
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|walk
+      takeName: Arm_pig|walk
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|walk._search
+      takeName: Arm_pig|walk._search
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_pig|walk_back
+      takeName: Arm_pig|walk_back
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_pig
+        weight: 1
+      - path: Arm_pig/Hoof_1.L
+        weight: 1
+      - path: Arm_pig/Hoof_1.R
+        weight: 1
+      - path: Arm_pig/Hoof_2.L
+        weight: 1
+      - path: Arm_pig/Hoof_2.R
+        weight: 1
+      - path: Arm_pig/spine_1
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.L/Hip2_1.L/leg_1.L
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/Hip1_1.R/Hip2_1.R/leg_1.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.L
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/ear.R
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/mouth
+        weight: 1
+      - path: Arm_pig/spine_1/neck_1/neck_2/head/nose
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.L/Hip2_2.L/leg_2.L
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/Hip1_2.R/Hip2_2.R/leg_2.R
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_1/tail_2/tail_3
+        weight: 1
+      - path: Arm_pig/spine_1/spine_2/spine_3/spine_4/spine_5/tail_4
+        weight: 1
+      - path: Pig_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
