@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class AnimatorDriverDebug : System.Object
 {
-    [TextArea(18, 18)]
+    [TextArea(19, 19)]
     public string Usage;
 
     [TextArea(2, 2)]
@@ -15,7 +15,7 @@ public class AnimatorDriverDebug : System.Object
     [TextArea(5, 5)]
     public string BlendTreeValues;
 }
-
+[RequireComponent(typeof(Animator))]
 public class AnimatorDriver : MonoBehaviour {
 
     public Animator m_animController;
@@ -29,6 +29,7 @@ public class AnimatorDriver : MonoBehaviour {
     public int IdleVariations = 2;
     [Tooltip("This should always be 2, one for Walk and another for Run")]
     public int MoveVariations = 2;
+    public int WalkVariations = 3;
     public float BlendSpeed = 1.0f;
 
     private int m_blendAttack { get; set; }
@@ -36,6 +37,7 @@ public class AnimatorDriver : MonoBehaviour {
     private int m_blendHitReaction { get; set; }
     private int m_BlendIdle { get; set; }
     private int m_blendMove { get; set; }
+    private int m_blendWalk { get; set; }
 
     public States.FullBody m_currentFullBodyState { get; private set; }
     public States.Layered m_currentLayeredState { get; private set; }
@@ -113,6 +115,11 @@ public class AnimatorDriver : MonoBehaviour {
         m_blendMove = CycleBlendTreeValue(m_blendMove, MoveVariations);
     }
 
+    private void CycleWalk()
+    {
+        m_blendWalk = CycleBlendTreeValue(m_blendWalk, WalkVariations);
+    } 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -142,7 +149,8 @@ public class AnimatorDriver : MonoBehaviour {
             + "W : Eat\n"
             + "E : Hit Reaction\n"
             + "R : Idle\n"
-            + "T : Move";
+            + "T : Move"
+            + "Y : Walk";
     }
 
     private void LateUpdate()
@@ -267,6 +275,10 @@ public class AnimatorDriver : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.T))
         {
             CycleMove();
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            CycleWalk();
         }
     }
 }
