@@ -20,7 +20,10 @@ public class AnimatorDriver : MonoBehaviour {
 
     public Animator m_animController;
 
+    [Header("Debug Tools")]
+    public bool m_useDebugKeyboardBindings = false;
     public AnimatorDriverDebug m_driverDebug;
+
 
     [Header("Blend Properties")]
     public int AttackVariations = 2;
@@ -177,7 +180,8 @@ public class AnimatorDriver : MonoBehaviour {
             + "Move : " + m_blendMove;
 
         // This call won't be necessary once the rest of the game is wired up
-        HandleUserInput();
+        if (m_useDebugKeyboardBindings)
+            HandleUserInput();
 
         // This updates the blend values in the Blend Trees in order to smoothly transition from one to the other
         BlendInterpolation("BlendAttack", m_blendAttack);
