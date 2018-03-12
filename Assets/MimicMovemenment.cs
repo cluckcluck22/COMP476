@@ -30,10 +30,12 @@ public class MimicMovemenment : MonoBehaviour {
 
     void Update()
     {
-        MoveObject();
+       if(!Moving()) 
+            m_AnimatorDriverAnimal.PlayFullBodyState(States.AnimalFullBody.Idle);
        
+
     }
-    private void MoveObject()
+    private bool Moving()
     {
         // Obtain input information (See "Horizontal" and "Vertical" in the Input Manager)
         float horizontal = Input.GetAxis("Horizontal");
@@ -54,12 +56,14 @@ public class MimicMovemenment : MonoBehaviour {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), mAngularSpeed * Time.deltaTime);
 
             m_AnimatorDriverAnimal.PlayWalk();
-            
 
             // Reset idle timer to zero
             mTimer = 0.0f;
             transform.localScale = mDefaultScale;
+
+            return true;
         }
+        return false;
     }
 
 }
