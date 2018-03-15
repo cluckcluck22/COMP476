@@ -39,4 +39,6 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
+  - ChangeScene
+  - SendMessage
   DisableAutoOpenWizard: 1
