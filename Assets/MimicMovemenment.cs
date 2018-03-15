@@ -46,8 +46,11 @@ public class MimicMovemenment : MonoBehaviour
        
         Vector3 input = new Vector3(horizontal, vertical, 0.0f);
         Vector3 inputDirection = input.normalized;
-        
-        if(inputDirection != Vector3.zero)
+
+        //Found this code on youtube:
+        //https://www.youtube.com/watch?v=ZwD1UHNCzOc
+
+        if (inputDirection != Vector3.zero)
         {
             float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
@@ -68,7 +71,7 @@ public class MimicMovemenment : MonoBehaviour
 
         transform.Translate(transform.forward*m_speed*Time.deltaTime, Space.World);
         
-        /*
+        /** OLD MOVEMENT!
         Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
         // Cap the magnitude of direction vector
         direction = Vector3.ClampMagnitude(direction, 1.0f);
@@ -85,7 +88,6 @@ public class MimicMovemenment : MonoBehaviour
         }
         if (isRunning)
         { 
-            //Right now not switching to the run aniamtion..(Dog Testing)
             m_AnimatorDriverAnimal.PlayRun();
         }
     }
@@ -125,7 +127,7 @@ public class MimicMovemenment : MonoBehaviour
         /**NOTE: There is a delay in the eating...you have to press E twice after Moving for it to eat.
         * Possibly a problem with animation blending
         */
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             Eating();
         }
@@ -137,7 +139,7 @@ public class MimicMovemenment : MonoBehaviour
         }
 
         //Sleep
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.F))
         {
             Rest();
         }
