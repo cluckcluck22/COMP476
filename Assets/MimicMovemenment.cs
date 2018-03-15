@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class MimicMovemenment : MonoBehaviour
 {
+    //Camera
+
 
     // Movement Attributes
     private float horizontal;
     private float vertical;
     public float m_speed;
-    public float m_WalkSpeed = 5.0f;
+    public float m_WalkSpeed = 3.0f;
     public float m_RunSpeed = 8.0f;
-    public float mAngularSpeed = 180.0f;
+        //public float mAngularSpeed = 180.0f;
+    float speedSmoothVelocity;
+    public float turnSmoothTime = 0.2f;
 
     //Animations
     private AnimatorDriverAnimal m_AnimatorDriverAnimal;
@@ -39,19 +43,32 @@ public class MimicMovemenment : MonoBehaviour
 
     private void Movement()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+       
+        Vector3 input = new Vector3(horizontal, vertical, 0.0f);
+        Vector3 inputDirection = input.normalized;
+        
+        if(inputDirection != Vector3.zero)
         {
-            m_speed = m_RunSpeed;   //Running
+            float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            m_speed = m_RunSpeed *inputDirection.magnitude;   //Running
             isRunning = true;
             isWalking = false;
         }
         else
         {
-            m_speed = m_WalkSpeed;  //Walking
+            m_speed = m_WalkSpeed * inputDirection.magnitude;  //Walking
             isWalking = true;
             isRunning = false;
         }
 
+        transform.Translate(transform.forward*m_speed*Time.deltaTime, Space.World);
+        
+        /*
         Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
         // Cap the magnitude of direction vector
         direction = Vector3.ClampMagnitude(direction, 1.0f);
@@ -59,6 +76,7 @@ public class MimicMovemenment : MonoBehaviour
         transform.Translate(direction * m_speed * Time.deltaTime, Space.World);
         // Rotate the game object
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), mAngularSpeed * Time.deltaTime);
+        */
 
         //Animate
         if (isWalking)
@@ -67,6 +85,7 @@ public class MimicMovemenment : MonoBehaviour
         }
         if (isRunning)
         { 
+            //Right now not switching to the run aniamtion..(Dog Testing)
             m_AnimatorDriverAnimal.PlayRun();
         }
     }
