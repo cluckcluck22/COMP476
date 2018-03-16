@@ -5,7 +5,7 @@ using UnityEngine;
 public class MimicMovemenment : MonoBehaviour
 {
     //Camera
-
+    public Transform Camera_Mimic;
 
     // Movement Attributes
     private float horizontal;
@@ -13,7 +13,7 @@ public class MimicMovemenment : MonoBehaviour
     public float m_speed;
     public float m_WalkSpeed = 3.0f;
     public float m_RunSpeed = 8.0f;
-        //public float mAngularSpeed = 180.0f;
+    //public float mAngularSpeed = 180.0f;
     float speedSmoothVelocity;
     public float turnSmoothTime = 0.2f;
 
@@ -24,7 +24,6 @@ public class MimicMovemenment : MonoBehaviour
 
     void Start()
     {
-        // Keep a backup of the original scale
         m_AnimatorDriverAnimal = GetComponent<AnimatorDriverAnimal>();
     }
 
@@ -34,6 +33,25 @@ public class MimicMovemenment : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         InputHandler();
+    }
+
+    private void SetPlayerRelativeToCameraForward() 
+    {
+        Vector3 forward = GetCameraDirection();
+        forward.y = 0.0f;
+        forward = forward.normalized;
+        // Calculate target direction based on Camera_Mimic forward and direction key.
+        Vector3 right = new Vector3(forward.z, 0, -forward.x);
+        Vector3 targetDirection;
+        targetDirection = forward * vertical + right * horizontal;
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSmoothTime);
+    }
+
+    private Vector3 GetCameraDirection() 
+    {
+        Vector3 CameraDirection = Camera_Mimic.TransformDirection(Vector3.forward);
+        return CameraDirection;
     }
 
     private bool isMoving()
@@ -47,13 +65,9 @@ public class MimicMovemenment : MonoBehaviour
         Vector3 input = new Vector3(horizontal, vertical, 0.0f);
         Vector3 inputDirection = input.normalized;
 
-        //Found this code on youtube:
-        //https://www.youtube.com/watch?v=ZwD1UHNCzOc
-
         if (inputDirection != Vector3.zero)
         {
-            float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
+            SetPlayerRelativeToCameraForward();
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -69,7 +83,7 @@ public class MimicMovemenment : MonoBehaviour
             isRunning = false;
         }
 
-        transform.Translate(transform.forward*m_speed*Time.deltaTime, Space.World);
+        transform.Translate(transform.forward * m_speed * Time.deltaTime, Space.World);
         
         /** OLD MOVEMENT!
         Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
@@ -111,6 +125,7 @@ public class MimicMovemenment : MonoBehaviour
     {
         m_AnimatorDriverAnimal.PlayLayeredState(States.AnimalLayered.Talk);
     }
+
     private void InputHandler()
     {
         if (isMoving())
@@ -124,9 +139,6 @@ public class MimicMovemenment : MonoBehaviour
         }
 
         //Eating
-        /**NOTE: There is a delay in the eating...you have to press E twice after Moving for it to eat.
-        * Possibly a problem with animation blending
-        */
         if (Input.GetKey(KeyCode.E))
         {
             Eating();
@@ -152,11 +164,10 @@ public class MimicMovemenment : MonoBehaviour
 
     }
 
-    //SPEEED conditions, keeping track of the speed of the mimic, once it reaches a certain speed we do either playWalk(), playRun(), Idle
-
+    //TO DO:
     //Transforming the mimic: mimic management. DestoryObject(),
-    //Camera,destory anything below the camera
-    //onAwake the character and attach to the camera, and when destoried detach the camera
+    //Camera: destory anything below the Camera (children)
+    //onAwake the character and attach to the Camera_Mimic, and when destoried detach the Camera_Mimic
     //Empty gameObject.
     //swapping transform - copy Bessie & real Bessie (storing the states  information)
 }
