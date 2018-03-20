@@ -41,4 +41,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - ChangeScene
   - SendMessage
+  - receiveMessage
   DisableAutoOpenWizard: 1
