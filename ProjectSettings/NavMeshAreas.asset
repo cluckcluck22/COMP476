@@ -13,8 +13,8 @@ NavMeshProjectSettings:
     cost: 2
   - name: Mud
     cost: 2
-  - name: 
-    cost: 1
+  - name: Lava
+    cost: 4
   - name: 
     cost: 1
   - name: 
