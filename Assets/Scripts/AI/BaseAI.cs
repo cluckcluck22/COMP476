@@ -11,13 +11,17 @@ abstract public class BaseAI : MonoBehaviour {
 	
 	public float interactThreshold = 0.02f;
 	public float velocityThreshold = 2.00f;
-		
-	//Upon collision with interactable object, do thing (eat, rest, or sleep)
-	void OnCollisionEnter(Collision collision)
+
+    public GameObject target;
+    public UnityEngine.AI.NavMeshAgent agent;
+
+
+    //Upon collision with interactable object, do thing (eat, rest, or sleep)
+    void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == "eat"){Eat(collision.gameObject);}
-		else if (collision.gameObject.tag == "rest"){Rest(collision.gameObject);}
-		else if (collision.gameObject.tag == "play"){Play(collision.gameObject);}
+		if (collision.gameObject.tag == "Eat"){Eat(collision.gameObject);}
+		else if (collision.gameObject.tag == "Rest"){Rest(collision.gameObject);}
+		else if (collision.gameObject.tag == "Play"){Play(collision.gameObject);}
 	}
 			
 	///Abstract methods to be implemented in child classes 
@@ -32,13 +36,13 @@ abstract public class BaseAI : MonoBehaviour {
 	
 	public void GoTo(Vector3 target) //something will have to call GoTo 
 	{
-		Arrive(target);
-		//Do we make calls to the animators here?
-	}
+        agent.destination = target;
+        //Do we make calls to the animators here?
+    }
 	
 	
 	///Movement-specific methods
-	public void Arrive(Vector3 target)
+	/*public void Arrive(Vector3 target)
 	{
 		if(target == null) { return; }//in case we eventually use a gameObject as a target
 		
@@ -56,9 +60,9 @@ abstract public class BaseAI : MonoBehaviour {
 		
 		//else keep seeking
 		else{ Seek(target); }
-	}
+	}*/
 	
-	public void Seek(Vector3 target)
+	/*public void Seek(Vector3 target)
 	{
 		//look towards target
 		transform.rotation = Quaternion.LookRotation(target - transform.position);
@@ -72,5 +76,5 @@ abstract public class BaseAI : MonoBehaviour {
 		{
 			GetComponent<Rigidbody>().velocity = ((target - transform.position).normalized * maxSpeed);
 		}
-	}
+	}*/
 }
