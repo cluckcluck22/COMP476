@@ -4,25 +4,40 @@ using UnityEngine;
 
 abstract public class BaseAI : MonoBehaviour {
 
-	public float speed = 2.0f;
-	public float acceleration = 2.0f;
-	public float deceleration = 0.5f;
-    public float maxSpeed = 2.0f;
+	//public float speed = 2.0f;
+	//public float acceleration = 2.0f;
+	//public float deceleration = 0.5f;
+    //public float maxSpeed = 2.0f;
 	
 	public float interactThreshold = 0.02f;
-	public float velocityThreshold = 2.00f;
+	//public float velocityThreshold = 2.00f;
 
     public GameObject target;
     public UnityEngine.AI.NavMeshAgent agent;
 
+    public int restStat;
+    public int eatStat;
+    public int playStat;
 
-    //Upon collision with interactable object, do thing (eat, rest, or sleep)
-    void OnCollisionEnter(Collision collision)
-	{
-		if (collision.gameObject.tag == "Eat"){Eat(collision.gameObject);}
-		else if (collision.gameObject.tag == "Rest"){Rest(collision.gameObject);}
-		else if (collision.gameObject.tag == "Play"){Play(collision.gameObject);}
-	}
+    // Use this for initialization
+    void Start()
+    {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (target != null)
+        {
+            if ((target.transform.position - transform.position).magnitude > interactThreshold)
+            {
+                GoTo(target.transform.position);
+            }
+
+        }
+    }
+    
 			
 	///Abstract methods to be implemented in child classes 
 	public abstract void Eat(GameObject eatTarget);

@@ -6,30 +6,21 @@ using UnityEngine;
 
 public class Cattle : BaseAI {
 
-    // Use this for initialization
-    void Start ()
+    //Upon triggerEnter with interactable object, do thing (eat, rest, or sleep)
+    void OnTriggerEnter(Collider col)
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (target != null)
-        {
-            if ((target.transform.position - transform.position).magnitude > interactThreshold)
-            {
-                GoTo(target.transform.position);
-            }
+        Debug.Log("Collided with " + col.gameObject.tag);
 
-        }
+        if (col.gameObject.tag == "Eat") { Eat(col.gameObject); }
+        else if (col.gameObject.tag == "Rest") { Rest(col.gameObject); }
+        else if (col.gameObject.tag == "Play") { Play(col.gameObject); }
     }
 
-    public override void Eat(GameObject eatTarget) { }
+    public override void Eat(GameObject eatTarget) { Debug.Log("I can eat."); }
 
-    public override void Rest(GameObject restTarget) { }
+    public override void Rest(GameObject restTarget) { Debug.Log("I can rest."); }
 
-    public override void Play(GameObject playMate) { }
+    public override void Play(GameObject playTarget) { Debug.Log("I can play."); }
 
     public override void Speak() { }
 }
