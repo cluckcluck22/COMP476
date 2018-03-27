@@ -1,0 +1,18 @@
+<behavior-tree>
+  <sequence>
+    <parallel_all>
+      <leaf name="inc-first-run" />
+      <leaf name="inc-first-run" />
+      <leaf name="inc-second-run" />
+      <repeat_success>
+        <condition name ="is-first-reached" />
+      </repeat_success>
+      <repeat_success>
+        <condition name ="is-second-reached" />
+      </repeat_success>
+    </parallel_all>
+    <leaf name="reset-first" />
+    <leaf name="reset-second" />
+  </sequence>
+</behavior-tree>
+
