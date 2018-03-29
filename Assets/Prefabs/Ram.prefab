@@ -368,6 +368,8 @@ GameObject:
   - component: {fileID: 65356237148728194}
   - component: {fileID: 54031991533178502}
   - component: {fileID: 114903705783952240}
+  - component: {fileID: 114431912772498114}
+  - component: {fileID: 195980763596764932}
   m_Layer: 0
   m_Name: Ram
   m_TagString: Untagged
@@ -1051,8 +1053,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484188134819868}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.929508, y: -0.15709925, z: 11.204316}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4147685254742978}
@@ -1567,6 +1569,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114431912772498114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484188134819868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0da9afe934f5cc40bb8c3646251c9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactThreshold: 0.02
+  target: {fileID: 0}
+  agent: {fileID: 195980763596764932}
+  restStat: 0
+  eatStat: 0
+  playStat: 0
 --- !u!114 &114903705783952240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1675,3 +1694,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0041243136, y: 0.43154866, z: 0.10639244}
     m_Extent: {x: 0.25844702, y: 0.462236, z: 0.80880016}
   m_DirtyAABB: 0
+--- !u!195 &195980763596764932
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484188134819868}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.8
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
