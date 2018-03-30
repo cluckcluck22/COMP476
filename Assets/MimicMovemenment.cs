@@ -5,7 +5,11 @@ using UnityEngine;
 public class MimicMovemenment : MonoBehaviour
 {
     //Camera
+<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
     public Transform Camera_Mimic;
+=======
+
+>>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
 
     // Movement Attributes
     private float horizontal;
@@ -13,7 +17,11 @@ public class MimicMovemenment : MonoBehaviour
     public float m_speed;
     public float m_WalkSpeed = 3.0f;
     public float m_RunSpeed = 8.0f;
+<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
     //public float mAngularSpeed = 180.0f;
+=======
+        //public float mAngularSpeed = 180.0f;
+>>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
     float speedSmoothVelocity;
     public float turnSmoothTime = 0.2f;
 
@@ -64,10 +72,18 @@ public class MimicMovemenment : MonoBehaviour
        
         Vector3 input = new Vector3(horizontal, vertical, 0.0f);
         Vector3 inputDirection = input.normalized;
+<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
 
         if (inputDirection != Vector3.zero)
         {
             SetPlayerRelativeToCameraForward();
+=======
+        
+        if(inputDirection != Vector3.zero)
+        {
+            float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
+>>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -83,9 +99,15 @@ public class MimicMovemenment : MonoBehaviour
             isRunning = false;
         }
 
+<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
         transform.Translate(transform.forward * m_speed * Time.deltaTime, Space.World);
         
         /** OLD MOVEMENT!
+=======
+        transform.Translate(transform.forward*m_speed*Time.deltaTime, Space.World);
+        
+        /*
+>>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
         Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
         // Cap the magnitude of direction vector
         direction = Vector3.ClampMagnitude(direction, 1.0f);
@@ -102,6 +124,7 @@ public class MimicMovemenment : MonoBehaviour
         }
         if (isRunning)
         { 
+            //Right now not switching to the run aniamtion..(Dog Testing)
             m_AnimatorDriverAnimal.PlayRun();
         }
     }
