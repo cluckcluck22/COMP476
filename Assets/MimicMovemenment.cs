@@ -72,6 +72,7 @@ public class MimicMovemenment : MonoBehaviour
        
         Vector3 input = new Vector3(horizontal, vertical, 0.0f);
         Vector3 inputDirection = input.normalized;
+<<<<<<< efb58ee750eea1e5c8511d1bddc2ac889592c252
 <<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
 
         if (inputDirection != Vector3.zero)
@@ -80,6 +81,13 @@ public class MimicMovemenment : MonoBehaviour
 =======
         
         if(inputDirection != Vector3.zero)
+=======
+
+        //Found this code on youtube:
+        //https://www.youtube.com/watch?v=ZwD1UHNCzOc
+
+        if (inputDirection != Vector3.zero)
+>>>>>>> stuff
         {
             float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
@@ -106,8 +114,12 @@ public class MimicMovemenment : MonoBehaviour
 =======
         transform.Translate(transform.forward*m_speed*Time.deltaTime, Space.World);
         
+<<<<<<< efb58ee750eea1e5c8511d1bddc2ac889592c252
         /*
 >>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
+=======
+        /** OLD MOVEMENT!
+>>>>>>> stuff
         Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
         // Cap the magnitude of direction vector
         direction = Vector3.ClampMagnitude(direction, 1.0f);
@@ -124,7 +136,6 @@ public class MimicMovemenment : MonoBehaviour
         }
         if (isRunning)
         { 
-            //Right now not switching to the run aniamtion..(Dog Testing)
             m_AnimatorDriverAnimal.PlayRun();
         }
     }
@@ -162,6 +173,12 @@ public class MimicMovemenment : MonoBehaviour
         }
 
         //Eating
+<<<<<<< efb58ee750eea1e5c8511d1bddc2ac889592c252
+=======
+        /**NOTE: There is a delay in the eating...you have to press E twice after Moving for it to eat.
+        * Possibly a problem with animation blending
+        */
+>>>>>>> stuff
         if (Input.GetKey(KeyCode.E))
         {
             Eating();
