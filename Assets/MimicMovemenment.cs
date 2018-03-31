@@ -5,23 +5,15 @@ using UnityEngine;
 public class MimicMovemenment : MonoBehaviour
 {
     //Camera
-<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
     public Transform Camera_Mimic;
-=======
-
->>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
-
     // Movement Attributes
     private float horizontal;
     private float vertical;
     public float m_speed;
     public float m_WalkSpeed = 3.0f;
     public float m_RunSpeed = 8.0f;
-<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
     //public float mAngularSpeed = 180.0f;
-=======
-        //public float mAngularSpeed = 180.0f;
->>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
+    //public float mAngularSpeed = 180.0f;
     float speedSmoothVelocity;
     public float turnSmoothTime = 0.2f;
 
@@ -72,28 +64,11 @@ public class MimicMovemenment : MonoBehaviour
        
         Vector3 input = new Vector3(horizontal, vertical, 0.0f);
         Vector3 inputDirection = input.normalized;
-<<<<<<< efb58ee750eea1e5c8511d1bddc2ac889592c252
-<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
-
         if (inputDirection != Vector3.zero)
-        {
-            SetPlayerRelativeToCameraForward();
-=======
-        
-        if(inputDirection != Vector3.zero)
-=======
-
-        //Found this code on youtube:
-        //https://www.youtube.com/watch?v=ZwD1UHNCzOc
-
-        if (inputDirection != Vector3.zero)
->>>>>>> stuff
         {
             float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
->>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
         }
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
             m_speed = m_RunSpeed *inputDirection.magnitude;   //Running
@@ -106,8 +81,6 @@ public class MimicMovemenment : MonoBehaviour
             isWalking = true;
             isRunning = false;
         }
-
-<<<<<<< 11c92135123b1608a3d8d04326be8a9939faf757
         transform.Translate(transform.forward * m_speed * Time.deltaTime, Space.World);
         
         /** OLD MOVEMENT!
@@ -173,12 +146,9 @@ public class MimicMovemenment : MonoBehaviour
         }
 
         //Eating
-<<<<<<< efb58ee750eea1e5c8511d1bddc2ac889592c252
-=======
         /**NOTE: There is a delay in the eating...you have to press E twice after Moving for it to eat.
         * Possibly a problem with animation blending
         */
->>>>>>> stuff
         if (Input.GetKey(KeyCode.E))
         {
             Eating();

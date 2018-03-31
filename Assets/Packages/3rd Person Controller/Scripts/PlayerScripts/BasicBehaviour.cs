@@ -44,7 +44,7 @@ public class BasicBehaviour : MonoBehaviour
 	// Get current default behaviour.
 	public int GetDefaultBehaviour {  get { return defaultBehaviour; } }
 
-	void Awake ()
+	void Start ()
 	{
 		// Set up the references.
 		behaviours = new List<GenericBehaviour> ();

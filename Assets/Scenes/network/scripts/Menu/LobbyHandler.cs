@@ -9,6 +9,8 @@ public class LobbyHandler : MonoBehaviour {
     public GameObject LobbyName;
     public GameObject PlayerList;
     public GameObject chatBox;
+    public GameObject startButton;
+
     private Text mChatText;
     private Text mPlayerText;
     private PhotonView mPhotonView;
@@ -23,7 +25,10 @@ public class LobbyHandler : MonoBehaviour {
         mPlayerText = PlayerList.GetComponent<Text>();
         mChatText = chatBox.GetComponent<Text>();
         mPhotonView = GetComponent<PhotonView>();
-
+        if(!PhotonNetwork.isMasterClient)
+        {
+            startButton.SetActive(false);
+        }
 		
 	}
 	
@@ -31,6 +36,17 @@ public class LobbyHandler : MonoBehaviour {
 	void Update () {
         mPlayerText.text = generatePlayerList();
         mChatText.text = generateChatList();
+        if(PhotonNetwork.isMasterClient)
+        {
+            if(PhotonNetwork.playerList.Length == 2)
+            {
+                startButton.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                startButton.GetComponent<Button>().interactable = false;
+            }
+        }
     }
 
     private string generateChatList()
