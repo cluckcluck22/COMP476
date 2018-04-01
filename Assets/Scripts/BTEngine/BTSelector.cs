@@ -31,17 +31,25 @@ public class BTSelector : BTNode
             {
                 BTNodeResult result = routine.Current;
 
+                if (result == BTNodeResult.Stopped)
+                {
+                    yield return BTNodeResult.Stopped;
+                    GetStopper().shouldStop = false;
+                    yield break;
+                }
+
                 if (result == BTNodeResult.Success)
                 {
                     yield return BTNodeResult.Success;
                     yield break;
                 }
-                else
+                else if (result == BTNodeResult.Failure)
                 {
-                    yield return BTNodeResult.Running; 
-                    
-                    if (result == BTNodeResult.Failure)
-                        break;
+                    break;
+                }
+                else /*if (result == BTNodeResult.Running)*/
+                {
+                    yield return BTNodeResult.Running;
                 }
             }
         }

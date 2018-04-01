@@ -28,7 +28,14 @@ public class BTRepeat : BTNode
             {
                 BTNodeResult result = routine.Current;
 
-                if (result == BTNodeResult.Success)
+                if (result == BTNodeResult.Stopped)
+                {
+                    yield return BTNodeResult.Stopped;
+                    GetStopper().shouldStop = false;
+                    yield break;
+                }
+
+                else if (result == BTNodeResult.Success)
                 {
                     if (type == BTRepeatTypes.UntilSuccess)
                     {
@@ -44,9 +51,14 @@ public class BTRepeat : BTNode
                         yield break;
                     }
                 }
+                yield return BTNodeResult.Running;
             }
-
-            yield return BTNodeResult.Running;
         }
+    }
+
+    public override void Stop()
+    {
+        base.Stop();
+        childNode.GetStopper().shouldStop = true;
     }
 }

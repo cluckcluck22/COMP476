@@ -7,17 +7,17 @@ using Random = UnityEngine.Random;
 using Coroutine = System.Collections.IEnumerator;
 using BTCoroutine = System.Collections.Generic.IEnumerator<BTNodeResult>;
 
-public class BTLeafNode : BTNode
+public class BTSimpleLeaf : BTNode
 {
-    private Func<BTCoroutine> actionFunc;
+    private Func<bool> simpleLeafCallback;
 
-    public BTLeafNode(Func<BTCoroutine> actionFunc)
+    public BTSimpleLeaf(Func<bool> simpleLeafCallback)
     {
-        this.actionFunc = actionFunc;
+        this.simpleLeafCallback = simpleLeafCallback;
     }
 
     public override BTCoroutine Procedure()
     {
-        return actionFunc();
+        yield return simpleLeafCallback() ? BTNodeResult.Success : BTNodeResult.Failure;
     }
 }

@@ -36,58 +36,36 @@ public class Tester : MonoBehaviour {
 		
 	}
 
-    [BTLeaf("is-first-reached")]
-    public bool isFirstReached()
+    [BTLeaf("first-reached")]
+    public bool isFirstReached(Scorer scorer)
     {
-        print("Enter isFirstReached");
+        print("Enter firstReached");
+        scorer.score = 10;
         return first >= reach;
     }
 
-    [BTLeaf("is-second-reached")]
-    public bool isSecondReached()
+    [BTLeaf("second-reached")]
+    public bool isSecondReached(Scorer scorer)
     {
-        print("Enter isSecondReached");
+        print("Enter secondReached");
+        scorer.score = 20;
         return second >= reach;
     }
 
+
     [BTLeaf("inc-first")]
-    public BTCoroutine incFirst()
-    {
-        if (first < max)
-        {
-            first++;
-            yield return BTNodeResult.Success;
-            yield break;
-        }
-        else
-        {
-            yield return BTNodeResult.Failure;
-            yield break; 
-        }
-    }
-
-    [BTLeaf("inc-second")]
-    public BTCoroutine incSecond()
-    {
-        if (second < max)
-        {
-            second++;
-            yield return BTNodeResult.Success;
-            yield break;
-        }
-        else
-        {
-            yield return BTNodeResult.Failure;
-            yield break;
-        }
-    }
-
-    [BTLeaf("inc-first-run")]
-    public BTCoroutine incFirstRun()
+    public BTCoroutine incFirstRun(Stopper stopper)
     {
         while(true)
         {
-            print("Enter incFirstRun");
+            print("Enter incFirst");
+            if (stopper.shouldStop)
+            {
+                print("incFirst Stopped!");
+                stopper.shouldStop = false;
+                yield return BTNodeResult.Stopped;
+                yield break;
+            }
             if (first < max)
             {
                 first++;
@@ -105,12 +83,19 @@ public class Tester : MonoBehaviour {
         }
     }
 
-    [BTLeaf("inc-second-run")]
-    public BTCoroutine incSecondRun()
+    [BTLeaf("inc-second")]
+    public BTCoroutine incSecondRun(Stopper stopper)
     {
         while(true)
         {
-            print("Enter incSecondRun");
+            print("Enter incSecond");
+            if (stopper.shouldStop)
+            {
+                print("incSecond Stopped!");
+                stopper.shouldStop = false;
+                yield return BTNodeResult.Stopped;
+                yield break;
+            }
             if (second < max)
             {
                 second++;
@@ -128,30 +113,29 @@ public class Tester : MonoBehaviour {
         }
     }
 
-    [BTLeaf("ping")]
-    public BTCoroutine ping()
-    {
-        print("PING");
-        yield return BTNodeResult.Success;
-        yield break;
-    }
 
     [BTLeaf("reset-first")]
-    public BTCoroutine resetFirst()
+    public bool resetFirst()
     {
         print("Enter resetFirst");
         first = 0;
-        yield return BTNodeResult.Success;
-        yield break;
+        return true;
     }
 
     [BTLeaf("reset-second")]
-    public BTCoroutine resetSecond()
+    public bool resetSecond()
     {
         print("Enter resetSecond");
         second = 0;
-        yield return BTNodeResult.Success;
-        yield break;
+        return true;
+    }
+
+    [BTLeaf("true")]
+    public bool alwaysTrue(Scorer scorer)
+    {
+        print("Always true entered");
+        scorer.score = 1;
+        return true;
     }
 
 }

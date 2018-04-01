@@ -31,17 +31,25 @@ public class BTSequence : BTNode
             {
                 BTNodeResult result = routine.Current;
 
+                if (result == BTNodeResult.Stopped)
+                {
+                    yield return BTNodeResult.Stopped;
+                    GetStopper().shouldStop = false;
+                    yield break;
+                }
+
                 if (result == BTNodeResult.Failure)
                 {
                     yield return BTNodeResult.Failure;
                     yield break;
                 }
-                else //success
+                else if (result == BTNodeResult.Success)
+                {
+                    break;
+                }
+                else /*if (result == BTNodeResult.Running)*/
                 {
                     yield return BTNodeResult.Running;
-
-                    if (result == BTNodeResult.Success)
-                        break;
                 }
             }
         }

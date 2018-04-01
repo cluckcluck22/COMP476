@@ -7,17 +7,21 @@ using Random = UnityEngine.Random;
 using Coroutine = System.Collections.IEnumerator;
 using BTCoroutine = System.Collections.Generic.IEnumerator<BTNodeResult>;
 
-public class BTConditionNode : BTNode 
+public class BTComplexLeaf : BTNode
 {
-    private Func<bool> condition;
+    private Func<Stopper, BTCoroutine> complexLeafCallback;
 
-    public BTConditionNode(Func<bool> condition)
+    public BTComplexLeaf()
     {
-        this.condition = condition;
+    }
+
+    public void AttachHandler(Func<Stopper, BTCoroutine> complexLeafCallback)
+    {
+        this.complexLeafCallback = complexLeafCallback;
     }
 
     public override BTCoroutine Procedure()
     {
-        yield return condition() ? BTNodeResult.Success : BTNodeResult.Failure;
+        return complexLeafCallback(GetStopper());
     }
 }

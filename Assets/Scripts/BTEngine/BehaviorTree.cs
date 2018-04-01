@@ -44,11 +44,11 @@ public sealed class BehaviorTree
             if (doc.Root.Elements().Count() > 1)
                 throw new XmlException("The behavior tree must have only one node at the top level");
 
-            Dictionary<string, MethodInfo> leaves, conditions;
+            Dictionary<string, MethodInfo> complex, simple, condition;
 
-            LoadParentLeafFunctions(out leaves, out conditions);
+            LoadParentLeafFunctions(out complex, out simple, out condition);
 
-            this.rootNode = ParseXmlElement(doc.Root.Elements().First(), leaves, conditions);
+            this.rootNode = ParseXmlElement(doc.Root.Elements().First(), complex, simple, condition);
         }
     }
 
@@ -75,11 +75,13 @@ public sealed class BehaviorTree
     }
 
     private void LoadParentLeafFunctions(
-        out Dictionary<string, MethodInfo> leaves,
-        out Dictionary<string, MethodInfo> conditions)
+        out Dictionary<string, MethodInfo> complex,
+        out Dictionary<string, MethodInfo> simple,
+        out Dictionary<string, MethodInfo> condition)
     {
-        leaves = new Dictionary<string, MethodInfo>();
-        conditions = new Dictionary<string, MethodInfo>();
+        complex = new Dictionary<string, MethodInfo>();
+        simple = new Dictionary<string, MethodInfo>();
+        condition = new Dictionary<string, MethodInfo>();
 
         Type parentType = parent.GetType();
 
@@ -93,25 +95,39 @@ public sealed class BehaviorTree
 
             BTLeafAttribute leafAttr = (BTLeafAttribute)custAttrs[0];
 
-            if(method.GetParameters().Length > 0)
-                throw new ArgumentException("Method '" + method.Name + "' cannot have parameters if it is marked as a leaf function");
-
             string key = leafAttr.LeafName.Trim().ToLowerInvariant();
 
-            if (method.ReturnType == typeof(bool)) //condition
+            if (method.ReturnType == typeof(bool) &&
+                method.GetParameters().Count() != 0 &&
+                method.GetParameters()[0].ParameterType == typeof(Scorer)) // condition
             {
-                if (conditions.ContainsKey(key))
-                    throw new ArgumentException("Duplicate condition name: '" + key + "'");
+                if (complex.ContainsKey(key))
+                    throw new ArgumentException("Duplicate condition node name: '" + key + "'");
 
-                conditions[key] = method;
+                condition[key] = method;
             }
-            else if (method.ReturnType == typeof(BTCoroutine)) //leaf
+
+            else if (method.ReturnType == typeof(bool)) // simple
             {
-                if (leaves.ContainsKey(key))
-                    throw new ArgumentException("Duplicate leaf name: '" + key + "'");
+                if (simple.ContainsKey(key))
+                    throw new ArgumentException("Duplicate simple node name: '" + key + "'");
 
-                leaves[key] = method;
+                if (method.GetParameters().Length > 0)
+                    throw new ArgumentException("Method '" + method.Name + "' cannot have parameters if it is marked as a simple node function");
+
+                simple[key] = method;
             }
+            else if (method.ReturnType == typeof(BTCoroutine)) // complex
+            {
+                if (complex.ContainsKey(key))
+                    throw new ArgumentException("Duplicate complex node name: '" + key + "'");
+
+                if (method.GetParameters().Length != 1)
+                    throw new ArgumentException("Method '" + method.Name + "' must have a single Stopper parameter if it is a complex node function");
+
+                complex[key] = method;
+            }
+
             else
             {
                 throw new ArgumentException("Method '" + method.Name + "' must return either bool or BTCoroutine");
@@ -120,7 +136,8 @@ public sealed class BehaviorTree
     }
 
     private BTNode ParseXmlElement(XElement element, 
-        Dictionary<string, MethodInfo> leafFunctions,
+        Dictionary<string, MethodInfo> complexFunctions,
+        Dictionary<string, MethodInfo> simpleFunctions,
         Dictionary<string, MethodInfo> conditionFunctions)
     {
         XElement[] children = (element.Elements() ?? new XElement[0]).ToArray();
@@ -128,6 +145,12 @@ public sealed class BehaviorTree
         string nodeType = element.Name.ToString().ToLowerInvariant();
         XAttribute nameAttr = null;
         string name = null;
+
+        XAttribute frequencyAttr = null;
+        string frequency = null;
+
+        XAttribute cooldownAttr = null;
+        string cooldown = null;
 
         switch (nodeType)
         {
@@ -137,7 +160,7 @@ public sealed class BehaviorTree
                 if (children.Length > 1)
                     throw new XmlException("The 'not' element must only have one child");
 
-                return new BTNotNode(ParseXmlElement(children[0], leafFunctions, conditionFunctions));
+                return new BTNotNode(ParseXmlElement(children[0], complexFunctions, simpleFunctions, conditionFunctions));
 
             case "repeat_forever":
                 if (children.Length == 0)
@@ -145,7 +168,7 @@ public sealed class BehaviorTree
                 if (children.Length > 1)
                     throw new XmlException("The 'not' element must only have one child");
 
-                return new BTRepeat(BTRepeatTypes.Forever, ParseXmlElement(children[0], leafFunctions, conditionFunctions));
+                return new BTRepeat(BTRepeatTypes.Forever, ParseXmlElement(children[0], complexFunctions, simpleFunctions, conditionFunctions));
 
             case "repeat_success":
                 if (children.Length == 0)
@@ -153,7 +176,7 @@ public sealed class BehaviorTree
                 if (children.Length > 1)
                     throw new XmlException("The 'not' element must only have one child");
 
-                return new BTRepeat(BTRepeatTypes.UntilSuccess, ParseXmlElement(children[0], leafFunctions, conditionFunctions));
+                return new BTRepeat(BTRepeatTypes.UntilSuccess, ParseXmlElement(children[0], complexFunctions, simpleFunctions, conditionFunctions));
 
             case "repeat_failure":
                 if (children.Length == 0)
@@ -161,19 +184,76 @@ public sealed class BehaviorTree
                 if (children.Length > 1)
                     throw new XmlException("The 'not' element must only have one child");
 
-                return new BTRepeat(BTRepeatTypes.UntilFailure, ParseXmlElement(children[0], leafFunctions, conditionFunctions));
+                return new BTRepeat(BTRepeatTypes.UntilFailure, ParseXmlElement(children[0], complexFunctions, simpleFunctions, conditionFunctions));
 
             case "sequence":
                 if (children.Length == 0)
                     throw new XmlException("The 'sequence' element must have children");
 
-                return new BTSequence(children.Select(elem => ParseXmlElement(elem, leafFunctions, conditionFunctions)));
+                return new BTSequence(children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
 
             case "selector":
                 if (children.Length == 0)
                     throw new XmlException("The 'selector' element must have children");
 
-                return new BTSelector(children.Select(elem => ParseXmlElement(elem, leafFunctions, conditionFunctions)));
+                return new BTSelector(children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
+
+            case "decision":
+                if (children.Length == 0 || children.Length % 2 != 0)
+                    throw new XmlException("The 'decision' element must have {condition, action} pairs of children");
+
+                frequencyAttr = element.Attribute("frequency");
+
+                if (frequencyAttr != null)
+                    frequency = (frequencyAttr.Value ?? "").Trim().ToLowerInvariant();
+                else if (frequencyAttr == null || frequencyAttr.Value == null)
+                    frequency = "";
+
+                return new BTDecision(frequency, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
+
+
+            case "simple":
+                if (children.Length > 0)
+                    throw new XmlException("The 'simple leaf' element cannot have children");
+
+                nameAttr = element.Attribute("name");
+
+                if (nameAttr == null)
+                    throw new XmlException("Missing 'name' attribute for 'simple leaf' element");
+
+                name = (nameAttr.Value ?? "").Trim().ToLowerInvariant();
+
+                if (string.IsNullOrEmpty(name))
+                    throw new XmlException("The'name' attribute for the 'simple leaf' element was not given a value");
+
+                if (!simpleFunctions.ContainsKey(name))
+                    throw new XmlException("Simple Leaf not found: '" + name + "'");
+
+                return new BTSimpleLeaf(() => (bool)simpleFunctions[name].Invoke(parent, null));
+
+            case "parallel_first":
+                if (children.Length <= 1)
+                    throw new XmlException("The 'parallel' element should have at least 2 children");
+
+                return new BTParallel(BTParallelTypes.FirstReturn, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
+
+            case "parallel_success":
+                if (children.Length <= 1)
+                    throw new XmlException("The 'parallel' element should have at least 2 children");
+
+                return new BTParallel(BTParallelTypes.FirstSuccess, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
+
+            case "parallel_failure":
+                if (children.Length <= 1)
+                    throw new XmlException("The 'parallel' element should have at least 2 children");
+
+                return new BTParallel(BTParallelTypes.FirstFailure, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
+
+            case "parallel_all":
+                if (children.Length <= 1)
+                    throw new XmlException("The 'parallel' element should have at least 2 children");
+
+                return new BTParallel(BTParallelTypes.AllReturn, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
 
             case "condition":
                 if (children.Length > 0)
@@ -181,66 +261,53 @@ public sealed class BehaviorTree
 
                 nameAttr = element.Attribute("name");
 
-                if (nameAttr == null)
-                    throw new XmlException("Missing 'name' attribute for 'condition' element");
+                if (nameAttr == null || nameAttr.Value == null)
+                    throw new XmlException("Missing 'name' attribute for 'condition leaf' element");
 
                 name = (nameAttr.Value ?? "").Trim().ToLowerInvariant();
 
                 if (string.IsNullOrEmpty(name))
-                    throw new XmlException("The'name' attribute for the 'condition' element was not given a value");
+                    throw new XmlException("The'name' attribute for the 'condition leaf' element was not given a value");
 
                 if (!conditionFunctions.ContainsKey(name))
-                    throw new XmlException("Condition not found: '" + name + "'");
+                    throw new XmlException("Condition Leaf not found: '" + name + "'");
 
-                return new BTConditionNode(() => (bool)conditionFunctions[name].Invoke(parent, null));
+                cooldownAttr = element.Attribute("cooldown");
 
-            case "parallel_first":
-                if (children.Length <= 1)
-                    throw new XmlException("The 'parallel' element should have at least 2 children");
+                if (cooldownAttr != null)
+                    cooldown = (cooldownAttr.Value ?? "").Trim().ToLowerInvariant();
+                else if (cooldownAttr == null || cooldownAttr.Value == null)
+                    cooldown = "";
 
-                return new BTParallel(BTParallelTypes.FirstReturn, children.Select(elem => ParseXmlElement(elem, leafFunctions, conditionFunctions)));
+                BTConditionLeaf conditionLeaf = new BTConditionLeaf(cooldown);
+                conditionLeaf.AttachHandler((Scorer) => (bool)conditionFunctions[name].Invoke(parent, new object[] { conditionLeaf.GetScorer() }));
+                return conditionLeaf;
 
-            case "parallel_success":
-                if (children.Length <= 1)
-                    throw new XmlException("The 'parallel' element should have at least 2 children");
 
-                return new BTParallel(BTParallelTypes.FirstSuccess, children.Select(elem => ParseXmlElement(elem, leafFunctions, conditionFunctions)));
-
-            case "parallel_failure":
-                if (children.Length <= 1)
-                    throw new XmlException("The 'parallel' element should have at least 2 children");
-
-                return new BTParallel(BTParallelTypes.FirstFailure, children.Select(elem => ParseXmlElement(elem, leafFunctions, conditionFunctions)));
-
-            case "parallel_all":
-                if (children.Length <= 1)
-                    throw new XmlException("The 'parallel' element should have at least 2 children");
-
-                return new BTParallel(BTParallelTypes.AllReturn, children.Select(elem => ParseXmlElement(elem, leafFunctions, conditionFunctions)));
-
-            case "leaf":
+            case "complex":
                 if (children.Length > 0)
-                    throw new XmlException("The 'leaf' element cannot have children");
+                    throw new XmlException("The 'complex leaf' element cannot have children");
 
                 nameAttr = element.Attribute("name");
 
                 if (nameAttr == null || nameAttr.Value == null)
-                    throw new XmlException("Missing 'name' attribute for 'leaf' element");
+                    throw new XmlException("Missing 'name' attribute for 'complex leaf' element");
 
                 name = (nameAttr.Value ?? "").Trim().ToLowerInvariant();
 
                 if (string.IsNullOrEmpty(name))
-                    throw new XmlException("The'name' attribute for the 'leaf' element was not given a value");
+                    throw new XmlException("The'name' attribute for the 'complex leaf' element was not given a value");
 
-                if (!leafFunctions.ContainsKey(name))
-                    throw new XmlException("Leaf not found: '" + name + "'");
+                if (!complexFunctions.ContainsKey(name))
+                    throw new XmlException("Complex Leaf not found: '" + name + "'");
 
-                return new BTLeafNode(() => (BTCoroutine)leafFunctions[name].Invoke(parent, null));
+                BTComplexLeaf complexLeaf = new BTComplexLeaf();
+                complexLeaf.AttachHandler((Stopper) => (BTCoroutine)complexFunctions[name].Invoke(parent, new object[] { complexLeaf.GetStopper() }));
+                return complexLeaf;
 
             default:
                 throw new XmlException("Unknown behavior tree node type: '" + nodeType);
 
         }
     }
-	
 }
