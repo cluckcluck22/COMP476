@@ -5,10 +5,10 @@ using System.Text;
 
 public class Scorer
 {
-    public int score;
+    public float score;
 
     public Scorer()
     {
-        score = 0;
+        score = 0.0f;
     }
 }
