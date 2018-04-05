@@ -66,8 +66,7 @@ public class MimicMovemenment : MonoBehaviour
         Vector3 inputDirection = input.normalized;
         if (inputDirection != Vector3.zero)
         {
-            float targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.y) * Mathf.Rad2Deg;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref speedSmoothVelocity, turnSmoothTime);
+            SetPlayerRelativeToCameraForward();
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -83,25 +82,7 @@ public class MimicMovemenment : MonoBehaviour
         }
         transform.Translate(transform.forward * m_speed * Time.deltaTime, Space.World);
         
-        /** OLD MOVEMENT!
-=======
-        transform.Translate(transform.forward*m_speed*Time.deltaTime, Space.World);
         
-<<<<<<< efb58ee750eea1e5c8511d1bddc2ac889592c252
-        /*
->>>>>>> Looped the dogs run animation, changed the movement code to something a bit more smoother
-=======
-        /** OLD MOVEMENT!
->>>>>>> stuff
-        Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
-        // Cap the magnitude of direction vector
-        direction = Vector3.ClampMagnitude(direction, 1.0f);
-        // Translate the game object in world space
-        transform.Translate(direction * m_speed * Time.deltaTime, Space.World);
-        // Rotate the game object
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), mAngularSpeed * Time.deltaTime);
-        */
-
         //Animate
         if (isWalking)
         {
@@ -141,14 +122,11 @@ public class MimicMovemenment : MonoBehaviour
         }
         else if (!isMoving())
         {
-            //Not moving idle
+            //If Not moving then idle
             m_AnimatorDriverAnimal.PlayFullBodyState(States.AnimalFullBody.Idle);
         }
 
         //Eating
-        /**NOTE: There is a delay in the eating...you have to press E twice after Moving for it to eat.
-        * Possibly a problem with animation blending
-        */
         if (Input.GetKey(KeyCode.E))
         {
             Eating();
