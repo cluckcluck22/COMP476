@@ -1,17 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviour {
     public GameObject Dog;
     public GameObject Farmer;
     public GameObject Camera;
+    public GameObject canvas;
+
+    private bool endGame = false;
 
     public bool useDogOffline;
 
     private int ReadyClients = 0;
 
     PhotonView mPhotonView;
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas.active = !canvas.active;
+        }
+        if(PhotonNetwork.isMasterClient)
+        {
+            if(PhotonNetwork.playerList.Length != 2 && !endGame)
+            {
+                endGame = true;
+                endGameLocal();
+            }
+        }
+    }
 
 	// Use this for initialization
 	void Awake () {
@@ -69,7 +89,6 @@ public class NetworkManager : MonoBehaviour {
                 Farmer.GetComponent<BasicBehaviour>().playerCamera = Camera.transform;
             }
             Destroy(mPhotonView);
-            Destroy(this);
         }
 
     }
@@ -83,6 +102,25 @@ public class NetworkManager : MonoBehaviour {
             mPhotonView.RPC("startGame", PhotonTargets.All);
         }
     }
+
+    public void endGameLocal()
+    {
+        if (PhotonNetwork.connected)
+        {
+            mPhotonView.RPC("endGameNetwork", PhotonTargets.All);
+        }
+        else
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
+    [PunRPC]
+    void endGameNetwork()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 
     [PunRPC]
     void startGame()
