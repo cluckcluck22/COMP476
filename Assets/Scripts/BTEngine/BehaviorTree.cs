@@ -152,6 +152,9 @@ public sealed class BehaviorTree
         XAttribute cooldownAttr = null;
         string cooldown = null;
 
+        XAttribute switchThresholdAttr = null;
+        string switchThreshold = null;
+
         switch (nodeType)
         {
             case "not":
@@ -209,7 +212,14 @@ public sealed class BehaviorTree
                 else if (frequencyAttr == null || frequencyAttr.Value == null)
                     frequency = "";
 
-                return new BTDecision(frequency, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
+                switchThresholdAttr = element.Attribute("switch");
+
+                if (switchThresholdAttr != null)
+                    switchThreshold = (switchThresholdAttr.Value ?? "").Trim().ToLowerInvariant();
+                else if (switchThresholdAttr == null || switchThresholdAttr.Value == null)
+                    switchThreshold = "";
+
+                return new BTDecision(frequency, switchThreshold, children.Select(elem => ParseXmlElement(elem, complexFunctions, simpleFunctions, conditionFunctions)));
 
 
             case "simple":

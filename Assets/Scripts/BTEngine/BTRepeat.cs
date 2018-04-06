@@ -22,6 +22,13 @@ public class BTRepeat : BTNode
     {
         while (true)
         {
+            if (GetStopper().shouldStop)
+            {
+                GetStopper().shouldStop = false;
+                yield return BTNodeResult.Stopped;
+                yield break;
+            }
+
             BTCoroutine routine = childNode.Procedure();
 
             while(routine.MoveNext())

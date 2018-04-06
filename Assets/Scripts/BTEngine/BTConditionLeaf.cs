@@ -27,7 +27,7 @@ public class BTConditionLeaf : BTNode
     {
         if (!float.TryParse(cooldown, out evalCooldown))
         {
-            evalCooldown = 2.0f;
+            evalCooldown = 0.0f;
         }
 
         lastFailedEvaluation = float.MinValue;

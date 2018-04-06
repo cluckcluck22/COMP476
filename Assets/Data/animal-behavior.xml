@@ -1,0 +1,33 @@
+<behavior-tree>
+  <decision frequency="5">
+    <!-- IsDead -->
+    <condition name="isDead" />
+    <simple name="do-nothing" />
+    <!-- IsHungry -->
+    <condition name="isHungry" />
+    <sequence>
+      <parallel_first>
+        <complex name="goto-food-area" />
+        <repeat_success>
+          <simple name="food-found" />
+        </repeat_success>
+      </parallel_first>
+      <selector>
+        <sequence>
+          <parallel_first>
+            <complex name="idle-wander" />
+            <repeat_success>
+              <simple name="food-found" />
+            </repeat_success>
+          </parallel_first>
+          <complex name="goto-food-item" />
+          <complex name="eat" />
+        </sequence>
+      </selector>
+    </sequence>
+    <!-- Idle -->
+    <condition name="should-idle" />
+    <complex name="idle-wander" />
+  </decision>
+</behavior-tree>
+
