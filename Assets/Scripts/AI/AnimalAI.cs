@@ -154,7 +154,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-food-item";
 
-        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this);
+        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
 
         BTCoroutine routine = gotoImplementation(stopper, destination);
         return routine;
@@ -220,7 +220,8 @@ public class AnimalAI : MonoBehaviour {
                 break;
         }
 
-        Vector3 targetDir = target.GetComponent<BoxCollider>().ClosestPointOnBounds(transform.position) - transform.position;
+        Vector3 targetDir = target.getInteractionPos(this).rotation.eulerAngles;
+
         targetDir = Vector3.Normalize(targetDir);
         float step = navAgent.angularSpeed * Time.deltaTime;
         step = step / 180.0f * Mathf.PI;
