@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour {
     public float maxCount;
     public Type type;
 
-    public Vector3[] interactionSpots;
+    public Transform[] interactionSpots;
 
     private float count;
     private List<AnimalAI> clients;
@@ -105,8 +105,9 @@ public class Interactable : MonoBehaviour {
     {
         int spot = reserved.IndexOf(animal);
         Matrix4x4 toWorld = transform.localToWorldMatrix;
-        Vector3 offset = interactionSpots[spot];
-        Vector4 spotPoint = new Vector4(offset.x, offset.y, offset.z, 1.0f);
-        return toWorld * spotPoint;
+        //Vector3 offset = interactionSpots[spot].position;
+        //Vector4 spotPoint = new Vector4(offset.x, offset.y, offset.z, 1.0f);
+        //return toWorld * spotPoint;
+        return interactionSpots[spot].position;
     }
 }
