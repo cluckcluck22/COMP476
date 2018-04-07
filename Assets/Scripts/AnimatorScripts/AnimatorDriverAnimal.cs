@@ -18,6 +18,7 @@ public class AnimatorDriverAnimalDebug : System.Object
 public class AnimatorDriverAnimal : MonoBehaviour {
 
     private Animator m_animController;
+    private PhotonView m_photonView;
 
     [Header("Debug Tools")]
     public bool m_useDebugKeyboardBindings = false;
@@ -56,6 +57,12 @@ public class AnimatorDriverAnimal : MonoBehaviour {
     // on their walking animations eventually (cyclebreakers).
     public void PlayFullBodyState(States.AnimalFullBody state)
     {
+
+        if (PhotonNetwork.connected)
+        {
+            //Send RPC call to others
+            m_photonView.RPC("PlayFullBodyStateNetwork", PhotonTargets.Others, (int)state);
+        }
         // So C# can't convert implicitly from 1 to True...
         // There is no "flag" to set for Idle, since it is the default state
         m_animController.SetBool("IsDead", 1 == (1 & ((int)state >> 1)));
@@ -100,6 +107,7 @@ public class AnimatorDriverAnimal : MonoBehaviour {
 
         currentLayeredState = state;
         m_layeredUpdateTimeout = Time.time + 0.50f;
+        m_photonView.RPC("SyncLayeredState", PhotonTargets.Others, (int)state, m_layeredUpdateTimeout);
     }
 
     public void SetMoveSpeed(States.MoveSpeed speed)
@@ -186,6 +194,7 @@ public class AnimatorDriverAnimal : MonoBehaviour {
     private void Awake()
     {
         m_animController = GetComponent<Animator>();
+        m_photonView = GetComponent<PhotonView>();
     }
 
     private void LateUpdate()
@@ -328,5 +337,27 @@ public class AnimatorDriverAnimal : MonoBehaviour {
         {
             CycleSit();
         }
+    }
+
+    [PunRPC]
+    public void SyncLayeredState(int state, float time)
+    {
+        currentLayeredState = (States.AnimalLayered)state;
+        m_layeredUpdateTimeout = time;
+    }
+
+    [PunRPC]
+    public void PlayFullBodyStateNetwork(int state)
+    {
+        // So C# can't convert implicitly from 1 to True...
+        // There is no "flag" to set for Idle, since it is the default state
+        m_animController.SetBool("IsDead", 1 == (1 & (state >> 1)));
+        m_animController.SetBool("IsEating", 1 == (1 & (state >> 2)));
+        m_animController.SetBool("IsHating", 1 == (1 & (state >> 3)));
+        m_animController.SetBool("IsMoving", 1 == (1 & (state >> 4)));
+        m_animController.SetBool("IsResting", 1 == (1 & (state >> 5)));
+        m_animController.SetBool("IsSitting", 1 == (1 & (state >> 6)));
+
+        currentFullBodyState = (States.AnimalFullBody)(state); ;
     }
 }
