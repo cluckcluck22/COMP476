@@ -41,9 +41,17 @@ public class AnimalAI : MonoBehaviour {
 
     void Start ()
     {
-        hunger = animalConfig.maxHunger;
-        fatigue = animalConfig.maxFatigue;
-        boredom = animalConfig.maxBoredom;
+        float randomRatio;
+
+        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+        hunger = animalConfig.maxHunger * randomRatio;
+
+        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+        fatigue = animalConfig.maxFatigue * randomRatio;
+
+        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+        boredom = animalConfig.maxBoredom * randomRatio;
+
         health = animalConfig.maxHealth;
         perception = new PerceptionModule(this);
         animatorDriver = GetComponent<AnimatorDriverAnimal>();
@@ -149,6 +157,25 @@ public class AnimalAI : MonoBehaviour {
         BTCoroutine routine = gotoImplementation(stopper, areaConfig.eatArea);
         return routine;
     }
+
+    [BTLeaf("goto-rest-area")]
+    public BTCoroutine gotoRestArea(Stopper stopper)
+    {
+        runningBT = "goto-rest-area";
+
+        BTCoroutine routine = gotoImplementation(stopper, areaConfig.restArea);
+        return routine;
+    }
+
+    [BTLeaf("goto-play-area")]
+    public BTCoroutine gotoPlayArea(Stopper stopper)
+    {
+        runningBT = "goto-play-area";
+
+        BTCoroutine routine = gotoImplementation(stopper, areaConfig.playArea);
+        return routine;
+    }
+
     [BTLeaf("goto-food-item")]
     public BTCoroutine gotoFoodItem(Stopper stopper)
     {
@@ -159,16 +186,75 @@ public class AnimalAI : MonoBehaviour {
         BTCoroutine routine = gotoImplementation(stopper, destination);
         return routine;
     }
+
+    [BTLeaf("goto-rest-item")]
+    public BTCoroutine gotoRestItem(Stopper stopper)
+    {
+        runningBT = "goto-rest-item";
+
+        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
+
+        BTCoroutine routine = gotoImplementation(stopper, destination);
+        return routine;
+    }
+
+    [BTLeaf("goto-play-item")]
+    public BTCoroutine gotoPlayItem(Stopper stopper)
+    {
+        runningBT = "goto-play-item";
+
+        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
+
+        BTCoroutine routine = gotoImplementation(stopper, destination);
+        return routine;
+    }
+
     [BTLeaf("food-found")]
     public bool isFoodAvailable()
     {
         return itemFoundImplementation(Interactable.Type.Food);
     }
-    
+
+    [BTLeaf("rest-found")]
+    public bool isRestAvailable()
+    {
+        return itemFoundImplementation(Interactable.Type.Rest);
+    }
+
+    [BTLeaf("play-found")]
+    public bool isPlayAvailable()
+    {
+        return itemFoundImplementation(Interactable.Type.Play);
+    }
+
     [BTLeaf("eat")]
     public BTCoroutine eat(Stopper stopper)
     {
         runningBT = "eat";
+
+        Interactable target = (Interactable)blackboard["InteractableTarget"];
+        blackboard.Remove("InteractableTarget");
+
+        BTCoroutine routine = consumeImplementation(stopper, target);
+        return routine;
+    }
+
+    [BTLeaf("rest")]
+    public BTCoroutine rest(Stopper stopper)
+    {
+        runningBT = "rest";
+
+        Interactable target = (Interactable)blackboard["InteractableTarget"];
+        blackboard.Remove("InteractableTarget");
+
+        BTCoroutine routine = consumeImplementation(stopper, target);
+        return routine;
+    }
+
+    [BTLeaf("play")]
+    public BTCoroutine play(Stopper stopper)
+    {
+        runningBT = "play";
 
         Interactable target = (Interactable)blackboard["InteractableTarget"];
         blackboard.Remove("InteractableTarget");
