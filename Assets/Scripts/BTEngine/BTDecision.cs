@@ -11,7 +11,6 @@ public class BTDecision : BTNode
     private BTNode[] actions;
 
     private int currentRunningNode;
-    private float currentRunningScore;
     private int childCount;
 
     private int frameTicker;
@@ -49,7 +48,6 @@ public class BTDecision : BTNode
 
         frameTicker = 0;
         currentRunningNode = -1;
-        currentRunningScore = float.MinValue;
     }
 
     public override BTCoroutine Procedure()
@@ -88,7 +86,7 @@ public class BTDecision : BTNode
             {
                 if (currentRunningNode != -1)
                 {
-                    actions[currentRunningNode].GetStopper().shouldStop = true;
+                    actions[currentRunningNode].Stop();
                     routine.MoveNext();
                     if (routine.Current != BTNodeResult.Stopped)
                     {
@@ -128,8 +126,25 @@ public class BTDecision : BTNode
         float bestScore = float.MinValue;
         int bestScoreIndex = -1;
         float currentScore = 0;
+        float tempCurrentNodeScore = 0;
+
+        if (currentRunningNode != -1)
+        {
+            BTCoroutine routine = conditions[currentRunningNode].Procedure();
+            routine.MoveNext();
+            BTNodeResult result = routine.Current;
+
+            if (result == BTNodeResult.Success)
+            {
+                tempCurrentNodeScore = conditions[currentRunningNode].GetScorer().score;
+            }
+        }
+
         for (int i = 0; i < conditions.Length; i++)
         {
+            if (i == currentRunningNode)
+                continue;
+
             BTCoroutine routine = conditions[i].Procedure();
             routine.MoveNext();
             BTNodeResult result = routine.Current;
@@ -145,9 +160,8 @@ public class BTDecision : BTNode
             }
         }
 
-        if (bestScore >= currentRunningScore + switchThreshold)
+        if (bestScore >= tempCurrentNodeScore + switchThreshold)
         {
-            currentRunningScore = bestScore;
             return bestScoreIndex;
         }
         else

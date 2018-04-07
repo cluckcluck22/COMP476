@@ -33,8 +33,8 @@ public class BTSequence : BTNode
 
                 if (result == BTNodeResult.Stopped)
                 {
-                    yield return BTNodeResult.Stopped;
                     GetStopper().shouldStop = false;
+                    yield return BTNodeResult.Stopped;
                     yield break;
                 }
 
@@ -50,10 +50,15 @@ public class BTSequence : BTNode
                 else /*if (result == BTNodeResult.Running)*/
                 {
                     yield return BTNodeResult.Running;
+                    if (GetStopper().shouldStop)
+                    {
+                        node.Stop();
+                    }
                 }
             }
         }
 
         yield return BTNodeResult.Success;
+        yield break;
     }
 }

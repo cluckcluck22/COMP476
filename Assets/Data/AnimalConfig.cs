@@ -6,6 +6,9 @@ public class AnimalConfig : ScriptableObject
 
     public Species species;
 
+    public float randomMinRatio;
+    public float randomMaxRatio;
+
     public int maxHunger;
     [Tooltip("Amount recovered per second while eating")]
     public int hungerRecuperation;
