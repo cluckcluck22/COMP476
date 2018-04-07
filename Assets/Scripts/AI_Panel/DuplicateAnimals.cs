@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DuplicateAnimals : MonoBehaviour {
 
-    public GameObject[] AI;
+    GameObject[] AI;
     public GameObject[] duplicateAI;
     public Transform cloneSpawn;
 	// Use this for initialization
@@ -14,9 +14,46 @@ public class DuplicateAnimals : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+        TransformToSelectedOption();
+    }
+
+    void DetachCurrentChild()
+    {
+        if(transform.childCount == 1)
+        {
+            Transform child = transform.GetChild(0);
+            transform.DetachChildren();
+            child.position = cloneSpawn.position;
+        }
+    }
+
+    void TransformToSelectedOption()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            DetachCurrentChild();
+            duplicateAI[0].transform.position = transform.position;
+            duplicateAI[0].transform.parent = this.transform;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DetachCurrentChild();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            DetachCurrentChild();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            DetachCurrentChild();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            DetachCurrentChild();
+        }
+    }
 
     GameObject[] GetAnimals()
     {
