@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4578985509112914}
   - component: {fileID: 65713650034588132}
+  - component: {fileID: 114277987179427500}
   m_Layer: 0
   m_Name: Chill
   m_TagString: Untagged
@@ -81,3 +82,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 5, z: 0}
+--- !u!114 &114277987179427500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544564679735694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e1283d9ae34fe4aa7fb60cf4c2e844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 0
+  type: 3
+  interactionSpots:
+  - {fileID: 4572896645414944}
