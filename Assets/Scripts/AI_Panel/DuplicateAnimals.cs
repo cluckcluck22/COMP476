@@ -75,6 +75,7 @@ public class DuplicateAnimals : MonoBehaviour {
             clones[i].GetComponent<AnimatorDriverAnimal>().enabled = false;
             clones[i].GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             clones[i].GetComponent<Rigidbody>().isKinematic = true;
+            clones[i].tag = "AI_Clones";
             AnimalAI animalAiScript = clones[i].GetComponent<AnimalAI>();
             animalAiScript.enabled = false;
             animalAiScript.debugBT = false;
