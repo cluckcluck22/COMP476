@@ -5,9 +5,15 @@ public class AnimalConfig : ScriptableObject
 {
 
     public Species species;
+    public AnimalConfig baseAnimalConfig; // placehodler type
 
-    public float randomMinRatio;
-    public float randomMaxRatio;
+    public float randomMinRatio;    // move this
+    public float randomMaxRatio;    // move this
+
+    public AnimationCurve hungerNeedCurve
+    {
+        get { return baseAnimalConfig.m_hungerNeedCurve; }
+    }
 
     public int maxHunger;
     [Tooltip("Amount recovered per second while eating")]
@@ -15,7 +21,7 @@ public class AnimalConfig : ScriptableObject
     [Tooltip("Amount loss per second")]
     public int hungerLossRate;
     [Tooltip("Normalized need score wrt current value")]
-    public AnimationCurve hungerNeedCurve;
+    public AnimationCurve m_hungerNeedCurve;    // move this
 
     public int maxFatigue;
     [Tooltip("Amount recovered per second while resting")]
@@ -23,7 +29,7 @@ public class AnimalConfig : ScriptableObject
     [Tooltip("Amount loss per second")]
     public int fatigueLossRate;
     [Tooltip("Normalized need score wrt current value")]
-    public AnimationCurve fatigueNeedCurve;
+    public AnimationCurve fatigueNeedCurve;     // move this
 
     public int maxBoredom;
     [Tooltip("Amount recovered per second while playing")]
@@ -31,18 +37,18 @@ public class AnimalConfig : ScriptableObject
     [Tooltip("Amount loss per second")]
     public int boredomLossRate;
     [Tooltip("Normalized need score wrt current value")]
-    public AnimationCurve boredomNeedCurve;
+    public AnimationCurve boredomNeedCurve;     // move this
 
     [Tooltip("Normalized need score wrt avg distance from friends")]
-    public AnimationCurve affinityProximityNeedCurve;
+    public AnimationCurve affinityProximityNeedCurve;   // move this
 
     public int maxHealth;
 
-    public float idleScore;
+    public float idleScore;             // move this
 
-    public float fov;
-    public float sightDistance;
-    public float lkpSightDistance;
-    public Vector3 headOffset;
-    public float lkpExpire;
+    public float fov;                   // move this
+    public float sightDistance;         // move this
+    public float lkpSightDistance;      // move this
+    public Vector3 headOffset;          // move this
+    public float lkpExpire;             // move this
 }
