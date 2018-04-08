@@ -8,7 +8,7 @@ using BTCoroutine = System.Collections.Generic.IEnumerator<BTNodeResult>;
 public class AnimalAI : MonoBehaviour {
 
     public AnimalConfig animalConfig;
-
+    public string animalName;
     public bool debugNav;
     public bool debugPerception;
     public bool debugBT;

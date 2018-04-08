@@ -2548,6 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &423906539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,6 +3580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &547451259
 GameObject:
   m_ObjectHideFlags: 0
@@ -7841,6 +7843,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2,
         type: 2}
+    - target: {fileID: 114009433209117706, guid: be2d67a0f5ef48a44b17cc4be5065ab9,
+        type: 2}
+      propertyPath: animalName
+      value: Isao
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be2d67a0f5ef48a44b17cc4be5065ab9, type: 2}
   m_IsPrefabParent: 0
@@ -9334,6 +9341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!65 &1645861359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11418,6 +11426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!65 &2015403232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11537,7 +11546,6 @@ MonoBehaviour:
   - {fileID: 1645861358}
   - {fileID: 423036351}
   - {fileID: 2015403231}
-  rallyZones: []
 --- !u!4 &2062691290
 Transform:
   m_ObjectHideFlags: 0
