@@ -2,59 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableZone : MonoBehaviour {
+public class InteractableZone : AbstractZone {
 
-    List<AnimalAI> animals;
     List<Interactable> iObjects;
 
     private void Start()
     {
-        animals = new List<AnimalAI>();
         iObjects = new List<Interactable>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void handleOnTriggerEnter(Collider other)
     {
+        base.handleOnTriggerEnter(other);
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable != null)
         {
             iObjects.Add(interactable);
         }
-
-        AnimalAI animal = other.GetComponent<AnimalAI>();
-        if (animal != null)
-        {
-            animals.Add(animal);
-        }
     }
 
-    public void handlerOntriggerEnter(Collider other)
+    protected override void handleOnTriggerExit(Collider other)
     {
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        AnimalAI animal = other.GetComponent<AnimalAI>();
-        if (animal != null)
-        {
-            animals.Remove(animal);
-        }
-    }
-
-    public int getAnimalCount(Species type)
-    {
-        int count=0;
-
-        foreach (AnimalAI a in animals)
-        {
-            if (a.getSpecies() == type)
-            {
-                count++;
-            }
-        }
-
-        return count;
+        base.handleOnTriggerExit(other);
+        // Interactables should never "exit" the trigger collider
     }
 
     public bool hasInteractable(Interactable.Type t)
@@ -67,7 +37,6 @@ public class InteractableZone : MonoBehaviour {
                 return true;
             }
         }
-
         return false;
     }
 }

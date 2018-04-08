@@ -1,34 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[System.Serializable]
-public struct RallyZone
-{
-    public Species species;
-    public Transform position;
-}
 
 public class ZoneManager : MonoBehaviour {
 
 	public InteractableZone[] interactableZones;
     public RallyZone[] rallyZones;
-
-    private Dictionary<Species, List<Transform>> rallyDictionay;
-
-    private void Awake()
-    {
-        rallyDictionay = new Dictionary<Species, List<Transform>>();
-        foreach (RallyZone zone in rallyZones)
-        {
-            if (!rallyDictionay.ContainsKey(zone.species))
-            {
-                rallyDictionay[zone.species] = new List<Transform>();
-            }
-            rallyDictionay[zone.species].Add(zone.position);
-        }
-    }
 
     public Transform FindInteractableZone(AnimalAI animal, Interactable.Type type)
     {
@@ -56,13 +33,31 @@ public class ZoneManager : MonoBehaviour {
 
     public Transform FindRallyZone(AnimalAI animal)
     {
-        if (!rallyDictionay.ContainsKey(animal.getSpecies()))
+        // This should only be called once, when the animal has all its needs fulfilled
+
+        RallyZone candidate = null;
+        int bestCount = 0;
+        int currentCount = 0;
+        foreach (RallyZone zone in rallyZones)
         {
-            throw new Exception("Zone manager has no rally zone for species : " + animal.getSpecies().ToString());
+            currentCount = zone.getAnimalCount(animal.getSpecies());
+            if (zone.isAnimalInZone(animal))
+                currentCount--;
+
+            if (currentCount > bestCount)
+            {
+                bestCount = currentCount;
+                candidate = zone;
+            }
         }
 
-        return null;
-        // Find closest rally zone
+        if (candidate == null)
+        {
+            // Pick a random one
+            int random = Random.Range(0, rallyZones.Length - 1);
+            candidate = rallyZones[random];
+        }
+        return candidate.transform;
 
     }
 }
