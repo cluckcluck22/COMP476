@@ -9,7 +9,7 @@ public class AnimalAI : MonoBehaviour {
 
     public AnimalConfig animalConfig;
 
-    public AreaConfig areaConfig;
+    public ZoneConfig zoneConfig;
 
     public bool debugNav;
     public bool debugPerception;
@@ -154,7 +154,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-food-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, areaConfig.eatArea);
+        BTCoroutine routine = gotoImplementation(stopper, zoneConfig.eatZone);
         return routine;
     }
 
@@ -163,7 +163,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-rest-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, areaConfig.restArea);
+        BTCoroutine routine = gotoImplementation(stopper, zoneConfig.restZone);
         return routine;
     }
 
@@ -172,7 +172,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-play-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, areaConfig.playArea);
+        BTCoroutine routine = gotoImplementation(stopper, zoneConfig.playZone);
         return routine;
     }
 

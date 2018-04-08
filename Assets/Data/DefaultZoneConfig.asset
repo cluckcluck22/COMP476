@@ -9,8 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c61ae4d2aa6820468a44f1712a551c8, type: 3}
-  m_Name: DefaultAreaConfig
+  m_Name: DefaultZoneConfig
   m_EditorClassIdentifier: 
-  playArea: {x: -50, y: 1, z: -38}
-  restArea: {x: -31, y: 1, z: 50}
-  eatArea: {x: 68, y: 1, z: 28}
+  playZone: {x: -49.8, y: 1, z: -38}
+  restZone: {x: -30.35, y: 1, z: 46.9}
+  eatZone: {x: 54.9, y: 1, z: 28.5}
+  rallyZone: {x: 6.59, y: 1, z: 13.93956}
