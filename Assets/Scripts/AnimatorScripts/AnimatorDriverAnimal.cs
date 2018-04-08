@@ -107,7 +107,10 @@ public class AnimatorDriverAnimal : MonoBehaviour {
 
         currentLayeredState = state;
         m_layeredUpdateTimeout = Time.time + 0.50f;
-        m_photonView.RPC("SyncLayeredState", PhotonTargets.Others, (int)state, m_layeredUpdateTimeout);
+        if (PhotonNetwork.connected)
+        {
+            m_photonView.RPC("SyncLayeredState", PhotonTargets.Others, (int)state, m_layeredUpdateTimeout);
+        }
     }
 
     public void SetMoveSpeed(States.MoveSpeed speed)
