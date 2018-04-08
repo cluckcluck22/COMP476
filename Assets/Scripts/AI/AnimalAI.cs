@@ -9,8 +9,6 @@ public class AnimalAI : MonoBehaviour {
 
     public AnimalConfig animalConfig;
 
-    public ZoneConfig zoneConfig;
-
     public bool debugNav;
     public bool debugPerception;
     public bool debugBT;
@@ -28,15 +26,18 @@ public class AnimalAI : MonoBehaviour {
 
     public float hunger { get; private set; }
     public float fatigue { get; private set; }
-    public float boredom { get; private set; }
     public float health { get; private set; }
 
     private IEnumerator perceptionRoutine;
+
+    private ZoneManager zoneManager;
 
     private void Awake()
     {
         bt = new BehaviorTree(Application.dataPath + "/Data/animal-behavior.xml", this);
         debugBT = debugNav = debugPerception = true;
+
+        zoneManager = FindObjectOfType<ZoneManager>();
     }
 
     void Start ()
@@ -48,9 +49,6 @@ public class AnimalAI : MonoBehaviour {
 
         randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
         fatigue = animalConfig.maxFatigue * randomRatio;
-
-        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
-        boredom = animalConfig.maxBoredom * randomRatio;
 
         health = animalConfig.maxHealth;
         perception = new PerceptionModule(this);
@@ -70,8 +68,6 @@ public class AnimalAI : MonoBehaviour {
             hunger = Mathf.Max(hunger, 0.0f);
             fatigue -= animalConfig.fatigueLossRate * Time.deltaTime;
             fatigue = Mathf.Max(fatigue, 0.0f);
-            boredom -= animalConfig.boredomLossRate * Time.deltaTime;
-            boredom = Mathf.Max(boredom, 0.0f);
         }
 	}
 
@@ -116,12 +112,6 @@ public class AnimalAI : MonoBehaviour {
         scorer.score = animalConfig.fatigueNeedCurve.Evaluate(fatigue / animalConfig.maxFatigue);
         return true;
     }
-    [BTLeaf("isBored")]
-    public bool isBored(Scorer scorer)
-    {
-        scorer.score = animalConfig.boredomNeedCurve.Evaluate(boredom / animalConfig.maxBoredom);
-        return true;
-    }
     [BTLeaf("isDead")]
     public bool isDead(Scorer scorer)
     {
@@ -154,7 +144,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-food-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, zoneConfig.eatZone);
+        BTCoroutine routine = gotoImplementation(stopper, zoneManager.FindInteractableZone(this, Interactable.Type.Food).position);
         return routine;
     }
 
@@ -163,16 +153,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-rest-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, zoneConfig.restZone);
-        return routine;
-    }
-
-    [BTLeaf("goto-play-area")]
-    public BTCoroutine gotoPlayArea(Stopper stopper)
-    {
-        runningBT = "goto-play-area";
-
-        BTCoroutine routine = gotoImplementation(stopper, zoneConfig.playZone);
+        BTCoroutine routine = gotoImplementation(stopper, zoneManager.FindInteractableZone(this, Interactable.Type.Rest).position);
         return routine;
     }
 
@@ -198,17 +179,6 @@ public class AnimalAI : MonoBehaviour {
         return routine;
     }
 
-    [BTLeaf("goto-play-item")]
-    public BTCoroutine gotoPlayItem(Stopper stopper)
-    {
-        runningBT = "goto-play-item";
-
-        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
-
-        BTCoroutine routine = gotoImplementation(stopper, destination);
-        return routine;
-    }
-
     [BTLeaf("food-found")]
     public bool isFoodAvailable()
     {
@@ -219,12 +189,6 @@ public class AnimalAI : MonoBehaviour {
     public bool isRestAvailable()
     {
         return itemFoundImplementation(Interactable.Type.Rest);
-    }
-
-    [BTLeaf("play-found")]
-    public bool isPlayAvailable()
-    {
-        return itemFoundImplementation(Interactable.Type.Play);
     }
 
     [BTLeaf("eat")]
@@ -243,18 +207,6 @@ public class AnimalAI : MonoBehaviour {
     public BTCoroutine rest(Stopper stopper)
     {
         runningBT = "rest";
-
-        Interactable target = (Interactable)blackboard["InteractableTarget"];
-        blackboard.Remove("InteractableTarget");
-
-        BTCoroutine routine = consumeImplementation(stopper, target);
-        return routine;
-    }
-
-    [BTLeaf("play")]
-    public BTCoroutine play(Stopper stopper)
-    {
-        runningBT = "play";
 
         Interactable target = (Interactable)blackboard["InteractableTarget"];
         blackboard.Remove("InteractableTarget");
@@ -451,8 +403,6 @@ public class AnimalAI : MonoBehaviour {
         {
             case Interactable.Type.Food:
                 return animalConfig.hungerRecuperation * Time.deltaTime;
-            case Interactable.Type.Play:
-                return animalConfig.boredomRecuperation * Time.deltaTime;
             case Interactable.Type.Rest:
                 return animalConfig.fatigueRecuperation * Time.deltaTime;
             default:
@@ -471,13 +421,4 @@ public class AnimalAI : MonoBehaviour {
         fatigue += amount;
         fatigue = Mathf.Min(fatigue, animalConfig.maxFatigue);
     }
-
-    public void giveEntertainement(float amount)
-    {
-        boredom += amount;
-        boredom = Mathf.Min(boredom, animalConfig.maxBoredom);
-    }
-    
-
-
 }

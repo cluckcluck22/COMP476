@@ -38,9 +38,6 @@ public class Interactable : MonoBehaviour {
                 case Type.Food:
                     animal.giveFood(consume(animal.getConsumption(Type.Food)));
                     break;
-                case Type.Play:
-                    animal.giveEntertainement(consume(animal.getConsumption(Type.Play)));
-                    break;
                 case Type.Rest:
                     animal.giveRest(consume(animal.getConsumption(Type.Rest)));
                     break;
