@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Name: DefaultAnimalConfig
   m_EditorClassIdentifier: 
   species: 0
+  baseAnimalConfig: {fileID: 11400000}
   randomMinRatio: 0
   randomMaxRatio: 0
   maxHunger: 100
   hungerRecuperation: 20
   hungerLossRate: 5
-  hungerNeedCurve:
+  m_hungerNeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2

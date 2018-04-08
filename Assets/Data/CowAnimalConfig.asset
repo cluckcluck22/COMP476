@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Name: CowAnimalConfig
   m_EditorClassIdentifier: 
   species: 4
+  baseAnimalConfig: {fileID: 11400000, guid: 610e213a1a1294741a8bb8fd6fc8d1b1, type: 2}
   randomMinRatio: 0
   randomMaxRatio: 0
   maxHunger: 100
   hungerRecuperation: 20
   hungerLossRate: 5
-  hungerNeedCurve:
+  m_hungerNeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2

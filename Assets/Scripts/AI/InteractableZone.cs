@@ -7,6 +7,12 @@ public class InteractableZone : MonoBehaviour {
     List<AnimalAI> animals;
     List<Interactable> iObjects;
 
+    private void Start()
+    {
+        animals = new List<AnimalAI>();
+        iObjects = new List<Interactable>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Interactable interactable = other.GetComponent<Interactable>();
