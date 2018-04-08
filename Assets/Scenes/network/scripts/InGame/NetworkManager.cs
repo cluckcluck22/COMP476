@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviour {
-    public GameObject Dog;
+    public GameObject Mimic;
     public GameObject Farmer;
     public GameObject Camera;
     public GameObject canvas;
@@ -42,7 +42,7 @@ public class NetworkManager : MonoBehaviour {
             if(PhotonNetwork.isMasterClient)
             {
                 //basic setup to assign ownership of farmer to player and make the dog kinematic
-                Dog.SetActive(true);
+                Mimic.SetActive(true);
                 Farmer.SetActive(true);
                 Camera.GetComponent<ThirdPersonOrbitCamBasic>().player = Farmer.transform;
                 Farmer.GetComponent<BasicBehaviour>().playerCamera = Camera.transform;
@@ -50,23 +50,23 @@ public class NetworkManager : MonoBehaviour {
                 //Take over the farmer
                 Farmer.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
                 //Stop simulation of Dog
-                Destroy(Dog.GetComponent<Rigidbody>());
+                Destroy(Mimic.GetComponent<Rigidbody>());
             }
             else
             {
                 //basic setup to assign ownership of dog to player and make the farmer kinematic
-                Dog.SetActive(true);
+                Mimic.SetActive(true);
                 Farmer.SetActive(true);
-                Camera.GetComponent<ThirdPersonOrbitCamBasic>().player = Dog.transform;
-                Dog.GetComponent<MimicMovemenment>().Camera_Mimic = Camera.transform;
+                Camera.GetComponent<ThirdPersonOrbitCamBasic>().player = Mimic.transform;
+                Mimic.GetComponent<MimicMovemenment>().Camera_Mimic = Camera.transform;
 
                 //Take over the Dog
-                Dog.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
+                Mimic.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
                 //Stop simulation of Farmer
                 Destroy(Farmer.GetComponent<Rigidbody>());
             }
 
-            dogDisable(Dog);
+            dogDisable(Mimic);
             farmerDisable(Farmer);
             //Tell host that we are ready
             mPhotonView.RPC("tellReady", PhotonTargets.MasterClient);
@@ -76,14 +76,14 @@ public class NetworkManager : MonoBehaviour {
             //Offline, mostly used for testing.
             if(useDogOffline)
             {
-                Dog.SetActive(true);
+                Mimic.SetActive(true);
                 Farmer.SetActive(false);
-                Camera.GetComponent<ThirdPersonOrbitCamBasic>().player = Dog.transform;
-                Dog.GetComponent<MimicMovemenment>().Camera_Mimic = Camera.transform;
+                Camera.GetComponent<ThirdPersonOrbitCamBasic>().player = Mimic.transform;
+                Mimic.GetComponent<MimicMovemenment>().Camera_Mimic = Camera.transform;
             }
             else
             {
-                Dog.SetActive(false);
+                Mimic.SetActive(false);
                 Farmer.SetActive(true);
                 Camera.GetComponent<ThirdPersonOrbitCamBasic>().player = Farmer.transform;
                 Farmer.GetComponent<BasicBehaviour>().playerCamera = Camera.transform;
@@ -132,7 +132,7 @@ public class NetworkManager : MonoBehaviour {
         }
         else
         {
-            dogEnable(Dog);
+            dogEnable(Mimic);
         }
         //Unlock all movement controls
     }
