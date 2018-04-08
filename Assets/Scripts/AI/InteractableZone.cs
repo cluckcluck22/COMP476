@@ -5,25 +5,47 @@ using UnityEngine;
 public class InteractableZone : MonoBehaviour {
 
     List<AnimalAI> animals;
-    Interactable[] iObjects;
+    List<Interactable> iObjects;
 
     private void OnTriggerEnter(Collider other)
     {
-        //TODO register animal
+        Interactable interactable = other.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            iObjects.Add(interactable);
+        }
+
+        AnimalAI animal = other.GetComponent<AnimalAI>();
+        if (animal != null)
+        {
+            animals.Add(animal);
+        }
+    }
+
+    public void handlerOntriggerEnter(Collider other)
+    {
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //TODO deregister animal
+        AnimalAI animal = other.GetComponent<AnimalAI>();
+        if (animal != null)
+        {
+            animals.Remove(animal);
+        }
     }
 
-    public int getAnimalCount(string type)
+    public int getAnimalCount(Species type)
     {
         int count=0;
 
         foreach (AnimalAI a in animals)
         {
-            //if the animal is of the correct type, increment count
+            if (a.getSpecies() == type)
+            {
+                count++;
+            }
         }
 
         return count;
@@ -31,9 +53,13 @@ public class InteractableZone : MonoBehaviour {
 
     public bool hasInteractable(Interactable.Type t)
     {
-        for (int i = 0; i < iObjects.Length; i++)
+        for (int i = 0; i < iObjects.Count; i++)
         {
-            if (iObjects[i].getType() == t) { return true; }
+            if (iObjects[i].getType() == t &&
+                iObjects[i].isAvailable())
+            {
+                return true;
+            }
         }
 
         return false;

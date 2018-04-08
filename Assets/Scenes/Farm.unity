@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 369435053}
   - component: {fileID: 369435054}
   m_Layer: 0
-  m_Name: RallyZone
+  m_Name: DefaultRally
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1993,7 +1993,7 @@ Transform:
   m_GameObject: {fileID: 369435052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.59, y: 5.5, z: 13.939556}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 25, y: 10, z: 25}
   m_Children: []
   m_Father: {fileID: 708367941}
   m_RootOrder: 3
@@ -2005,10 +2005,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369435052}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 10, z: 25}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &373633354
 GameObject:
@@ -2277,6 +2277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 423036349}
   - component: {fileID: 423036350}
+  - component: {fileID: 423036351}
   m_Layer: 0
   m_Name: RestZone
   m_TagString: Rest
@@ -2292,7 +2293,7 @@ Transform:
   m_GameObject: {fileID: 423036348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -30.35, y: 5.51, z: 46.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 25, y: 10, z: 25}
   m_Children: []
   m_Father: {fileID: 708367941}
   m_RootOrder: 2
@@ -2307,8 +2308,19 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 10, z: 25}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &423036351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423036348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &423906539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,6 +3494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 544786049}
   - component: {fileID: 544786050}
+  - component: {fileID: 544786051}
   m_Layer: 0
   m_Name: EatZone
   m_TagString: Eat
@@ -3514,6 +3527,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &544786051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 544786048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &547451259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8820,6 +8844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1543988220}
   - component: {fileID: 1543988221}
+  - component: {fileID: 1543988222}
   m_Layer: 0
   m_Name: PlayZone
   m_TagString: Play
@@ -8852,6 +8877,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1543988222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543988219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41e942ba2d1c64aafa7e46aa3fd34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575255919
 GameObject:
   m_ObjectHideFlags: 0
@@ -11339,6 +11375,57 @@ Transform:
   m_PrefabParentObject: {fileID: 4861153908790034, guid: 5f1232d7449b13045941d65ed7769163,
     type: 2}
   m_PrefabInternal: {fileID: 2042753281}
+--- !u!1 &2062691288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2062691290}
+  - component: {fileID: 2062691289}
+  m_Layer: 0
+  m_Name: ZoneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2062691289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062691288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799d004a7b8a8f34388536a1f151ab69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableZones:
+  - {fileID: 544786051}
+  - {fileID: 1543988222}
+  - {fileID: 423036351}
+  rallyZones:
+  - species: 11
+    position: {fileID: 369435053}
+  - species: 4
+    position: {fileID: 369435053}
+  - species: 3
+    position: {fileID: 369435053}
+--- !u!4 &2062691290
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062691288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2092801577
 Prefab:
   m_ObjectHideFlags: 0
