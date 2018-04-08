@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7f6181830425214f8ad8ec9f8c65c3d, type: 3}
-  m_Name: DefaultAnimalConfig
+  m_Name: CowAnimalConfig
   m_EditorClassIdentifier: 
-  species: 0
+  species: 4
   randomMinRatio: 0
   randomMaxRatio: 0
   maxHunger: 100
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   maxFatigue: 100
   fatigueRecuperation: 6
-  fatigueLossRate: 0
+  fatigueLossRate: 1
   fatigueNeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -172,5 +172,5 @@ MonoBehaviour:
   fov: 135
   sightDistance: 80
   lkpSightDistance: 10
-  headOffset: {x: 0, y: 0.6, z: 0.7}
+  headOffset: {x: 0, y: 0.6, z: 0}
   lkpExpire: 45
