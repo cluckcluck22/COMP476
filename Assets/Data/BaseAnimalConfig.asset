@@ -131,14 +131,14 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 24.973877
-      value: 0.00016784668
+      time: 10
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 49.785904
-      value: 0.30025178
+      time: 30
+      value: 0.29622346
       inSlope: 0
       outSlope: 0
       tangentMode: 0
