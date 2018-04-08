@@ -5,7 +5,6 @@ using UnityEngine;
 public class ZoneManager : MonoBehaviour {
 
 	public InteractableZone[] interactableZones;
-    public RallyZone[] rallyZones;
 
     public Transform FindInteractableZone(AnimalAI animal, Interactable.Type type)
     {
@@ -38,10 +37,19 @@ public class ZoneManager : MonoBehaviour {
     {
         // This should only be called once, when the animal has all its needs fulfilled
 
-        RallyZone candidate = null;
+        List<InteractableZone> rallyZones = new List<InteractableZone>();
+        foreach (InteractableZone zone in interactableZones)
+        {
+            if (zone.type == InteractableZone.ZoneType.Rally)
+            {
+                rallyZones.Add(zone);
+            }
+        }
+
+            InteractableZone candidate = null;
         int bestCount = 0;
         int currentCount = 0;
-        foreach (RallyZone zone in rallyZones)
+        foreach (InteractableZone zone in rallyZones)
         {
             currentCount = zone.getAnimalCount(animal.getSpecies());
             if (zone.isAnimalInZone(animal))
@@ -57,8 +65,8 @@ public class ZoneManager : MonoBehaviour {
         if (candidate == null)
         {
             // Pick a random one
-            int random = Random.Range(0, rallyZones.Length - 1);
-            candidate = rallyZones[random];
+            int random = Random.Range(0, rallyZones.Count - 1);
+            candidate = interactableZones[random];
         }
         return candidate.transform;
 

@@ -8,7 +8,8 @@ public class Interactable : MonoBehaviour {
     {
         Food,
         Rest,
-        Play
+        Talk,
+        Chill
     }
 
     public float maxCount;
