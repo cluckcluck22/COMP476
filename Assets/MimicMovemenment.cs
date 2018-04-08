@@ -19,20 +19,25 @@ public class MimicMovemenment : MonoBehaviour
 
     //Animations
     public AnimatorDriverAnimal m_AnimatorDriverAnimal;
+    public PhotonView mPhotonView;
     private bool isWalking;
     private bool isRunning;
 
     void Start()
     {
         //m_AnimatorDriverAnimal = GetComponentInChildren<AnimatorDriverAnimal>();
+        mPhotonView = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        if (!PhotonNetwork.connected ||mPhotonView.isMine)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
 
-        InputHandler();
+            InputHandler();
+        }
     }
 
     private void SetPlayerRelativeToCameraForward() 
