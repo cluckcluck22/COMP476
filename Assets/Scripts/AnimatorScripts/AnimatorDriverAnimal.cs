@@ -249,7 +249,7 @@ public class AnimatorDriverAnimal : MonoBehaviour {
         }
         return current;
     }
-    //test
+    //test2
     private void BlendInterpolation(string paramName, float targetValue)
     {
         float current = m_animController.GetFloat(paramName);
