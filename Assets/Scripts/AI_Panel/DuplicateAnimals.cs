@@ -11,6 +11,9 @@ public class DuplicateAnimals : MonoBehaviour {
 	void Start () {
         AI = GetAnimals();
         duplicateAI = CloneAI(AI);
+        duplicateAI[0].transform.position = transform.position;
+        duplicateAI[0].transform.parent = this.transform;
+        GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class DuplicateAnimals : MonoBehaviour {
             DetachCurrentChild();
             duplicateAI[0].transform.position = transform.position;
             duplicateAI[0].transform.parent = this.transform;
+            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {

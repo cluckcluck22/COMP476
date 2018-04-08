@@ -18,13 +18,13 @@ public class MimicMovemenment : MonoBehaviour
     public float turnSmoothTime = 0.2f;
 
     //Animations
-    private AnimatorDriverAnimal m_AnimatorDriverAnimal;
+    public AnimatorDriverAnimal m_AnimatorDriverAnimal;
     private bool isWalking;
     private bool isRunning;
 
     void Start()
     {
-        m_AnimatorDriverAnimal = GetComponent<AnimatorDriverAnimal>();
+        //m_AnimatorDriverAnimal = GetComponentInChildren<AnimatorDriverAnimal>();
     }
 
     void Update()
