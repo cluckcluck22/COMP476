@@ -307,6 +307,12 @@ public class AnimalAI : MonoBehaviour {
         {
             if (stopper.shouldStop)
             {
+                if (blackboard.ContainsKey("InteractableTarget"))
+                {
+                    Interactable toRemove = (Interactable)blackboard["InteractableTarget"];
+                    toRemove.unReserve(this);
+                    blackboard.Remove("InteractableTarget");
+                }
                 navAgent.isStopped = true;
                 stopper.shouldStop = false;
                 animatorDriver.PlayFullBodyState(States.AnimalFullBody.Idle);

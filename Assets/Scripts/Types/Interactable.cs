@@ -61,6 +61,11 @@ public class Interactable : MonoBehaviour {
         reserved.Add(animal);
     }
 
+    public void unReserve(AnimalAI animal)
+    {
+        reserved.Remove(animal);
+    }
+
     public void fill(float amount)
     {
         count += amount;
