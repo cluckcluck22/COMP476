@@ -10,13 +10,16 @@ public class ZoneManager : MonoBehaviour {
     public Transform FindInteractableZone(AnimalAI animal, Interactable.Type type)
     {
         int highestCount = -1;
+        int currentCount = 0;
         InteractableZone candidate = null;
         foreach (InteractableZone zone in interactableZones)
         {
             if (zone.hasInteractable(type))
             {
-                if (zone.getAnimalCount(animal.getSpecies()) > highestCount)
+                currentCount = zone.getAnimalCount(animal.getSpecies());
+                if (currentCount > highestCount)
                 {
+                    highestCount = currentCount;
                     candidate = zone;
                 }
             }
