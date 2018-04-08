@@ -11,7 +11,7 @@ public class LobbyManager : Photon.MonoBehaviour {
 
     public string roomName = "";
     private string message = "";
-    PhotonView photonView;
+    public PhotonView photonView = null;
     private string[] chat = new string[30];
 
 	// Use this for initialization
