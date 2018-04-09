@@ -11,18 +11,20 @@ public class BTDecision : BTNode
     private BTNode[] actions;
 
     private int currentRunningNode;
+    private float currentRunningScore;
     private int childCount;
 
     private int frameTicker;
     private int evalFrequency;
+    private float switchThreshold;
 
-    public BTDecision(string frequency, IEnumerable<BTNode> subNodes) 
-        : this(frequency, subNodes.ToArray())
+    public BTDecision(string frequency, string switchThresholdParam, IEnumerable<BTNode> subNodes) 
+        : this(frequency, switchThresholdParam, subNodes.ToArray())
     {
 
     }
 
-    public BTDecision(string frequency, params BTNode[] subNodes)
+    public BTDecision(string frequency, string switchThresholdParam, params BTNode[] subNodes)
     {
         childCount = subNodes.Count();
 
@@ -35,14 +37,19 @@ public class BTDecision : BTNode
             actions[i/2] = subNodes.ElementAt(i + 1);
         }
 
+        if (!float.TryParse(switchThresholdParam, out switchThreshold))
+        {
+            switchThreshold = 0.10f;
+        }
+
         if (!int.TryParse(frequency, out evalFrequency))
         {
             evalFrequency = 5;
         }
 
         frameTicker = 0;
-
         currentRunningNode = -1;
+        currentRunningScore = float.MinValue;
     }
 
     public override BTCoroutine Procedure()
@@ -90,6 +97,7 @@ public class BTDecision : BTNode
                 }
 
                 routine = actions[bestCondition].Procedure();
+                currentRunningNode = bestCondition;
             }
 
             routine.MoveNext();
@@ -117,9 +125,9 @@ public class BTDecision : BTNode
 
     private int ScoreConditions()
     {
-        int bestScore = 0;
+        float bestScore = float.MinValue;
         int bestScoreIndex = -1;
-        int currentScore = 0;
+        float currentScore = 0;
         for (int i = 0; i < conditions.Length; i++)
         {
             BTCoroutine routine = conditions[i].Procedure();
@@ -137,6 +145,14 @@ public class BTDecision : BTNode
             }
         }
 
-        return bestScoreIndex;
+        if (bestScore >= currentRunningScore + switchThreshold)
+        {
+            currentRunningScore = bestScore;
+            return bestScoreIndex;
+        }
+        else
+        {
+            return currentRunningNode;
+        }
     }
 }
