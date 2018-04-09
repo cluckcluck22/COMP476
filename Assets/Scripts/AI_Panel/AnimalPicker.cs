@@ -8,11 +8,13 @@ public class AnimalPicker : MonoBehaviour {
     GameObject currentChoice;
     bool F1, F2, F3, F4;
 
+    //Toggle Options
     public GameObject CowChoices;
     public GameObject PigChoices;
     public GameObject SheepChoices;
     public GameObject RamChoices;
     
+    //Actual transforms of the Animal (clones)
     public GameObject[] MimicAnimalOptions;
     public Transform[] cows;
     public Transform[] pigs;
@@ -34,7 +36,7 @@ public class AnimalPicker : MonoBehaviour {
         //    setFilteredList();
         //}
 
-        //MimicAnimalOptions = GameObject.FindGameObjectsWithTag("AI_Animal"); //Getting animals but we want clones
+        MimicAnimalOptions = GameObject.FindGameObjectsWithTag("AI_Animal"); //Getting animals but we want clones
 
         HandleInput();
 
@@ -67,16 +69,7 @@ public class AnimalPicker : MonoBehaviour {
             SelectionEnabled = !SelectionEnabled;
             F4 = !F4;
         }
-
-        //if (Input.GetAxis("Mouse ScrollWheel") > 0 && SelectionEnabled)
-        //{
-        //    Debug.Log("Scrolling up");
-        //}
-
-        //if (Input.GetAxis("Mouse ScrollWheel") < 0 && SelectionEnabled)
-        //{
-        //    Debug.Log("Scrolling down");
-        //}
+        
 
         if (SelectionEnabled)
             currentChoice.SetActive(true);
@@ -95,16 +88,17 @@ public class AnimalPicker : MonoBehaviour {
     //returns a filtered list of animal clones of designated (type)
     Transform[] GetFilteredAnimalType(string type) {
         //TODO
-
-        Transform[] animals;
-        foreach(GameObject animal in MimicAnimalOptions)
-        {
-            if(animal.name.Contains(type))
-            {
-
-            }
-        }
         return null;
+    }
+
+    void ChooseSelection(GameObject[] animal)
+    {
+        int counter = 0;
+        animal = new GameObject[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            animal[i] = transform.GetChild(i).gameObject;
+        }
     }
 
 
