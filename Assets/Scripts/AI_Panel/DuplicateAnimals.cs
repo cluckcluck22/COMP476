@@ -8,9 +8,10 @@ public class DuplicateAnimals : MonoBehaviour {
     public GameObject[] duplicateAI;
     public Transform cloneSpawn;
 	// Use this for initialization
-	void Start () {
+	void Start () {     
         AI = GetAnimals();
-        duplicateAI = CloneAI(AI);
+        //duplicateAI = CloneAI(AI);
+        CorrectAI(duplicateAI);
         duplicateAI[0].transform.position = transform.position;
         duplicateAI[0].transform.parent = this.transform;
         GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
@@ -71,7 +72,7 @@ public class DuplicateAnimals : MonoBehaviour {
         int i = 0;
         foreach(GameObject animal in animalsToClone)
         {
-            clones[i] = Instantiate(animal,cloneSpawn.position,Quaternion.identity);
+            clones[i] =  Instantiate(animal,cloneSpawn.position,Quaternion.identity);
             clones[i].GetComponent<AnimatorDriverAnimal>().enabled = false;
             clones[i].GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             clones[i].GetComponent<Rigidbody>().isKinematic = true;
@@ -84,5 +85,19 @@ public class DuplicateAnimals : MonoBehaviour {
             i++;
         }
         return clones;
+    }
+    public void CorrectAI(GameObject[] AI)
+    {
+        foreach(GameObject animal in AI)
+        {
+            animal.GetComponent<AnimatorDriverAnimal>().enabled = false;
+            animal.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            animal.GetComponent<Rigidbody>().isKinematic = true;
+            AnimalAI animalAiScript = animal.GetComponent<AnimalAI>();
+            animalAiScript.enabled = false;
+            animalAiScript.debugBT = false;
+            animalAiScript.debugNav = false;
+            animalAiScript.debugPerception = false;
+        }
     }
 }

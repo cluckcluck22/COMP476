@@ -160,7 +160,6 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
         }
         else
         {
-            Debug.Log("Hello");
             float playerFocusHeight = player.GetComponent<BoxCollider>().size.y * 0.5f;
             return ViewingPosCheck(checkPos, playerFocusHeight) && ReverseViewingPosCheck(checkPos, playerFocusHeight, offset);
         }
