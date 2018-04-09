@@ -85,15 +85,21 @@ public class AnimalPicker : MonoBehaviour
             currentChoice.SetActive(true); 
         }
         else
-            currentChoice.SetActive(false);
+        {
+            if (currentChoice == null) 
+                return;
 
+            currentChoice.SetActive(false); 
+        } 
 
-        if (Input.GetKeyDown(KeyCode.E) && SelectionEnabled)
+        //Mouse ScrollWheel Up or E
+        if ((Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKeyDown(KeyCode.E)) && SelectionEnabled)
         {
             ChooseSelectionForward(currentChoice);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && SelectionEnabled)
+        //Mouse ScrollWheel Down or Q
+        if ((Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKeyDown(KeyCode.Q)) && SelectionEnabled)
         {
             ChooseSelectionBackward(currentChoice);
         }
