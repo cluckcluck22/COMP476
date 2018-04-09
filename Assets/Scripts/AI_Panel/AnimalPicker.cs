@@ -34,14 +34,14 @@ public class AnimalPicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(!haveClones) {
+        ////Needs to be done
+        //if (!haveClones)
+        //{
         //    MimicAnimalOptions = GameObject.FindGameObjectsWithTag("AI_Clones"); //Getting animals but we want clones
         //    haveClones = true;
         //    setFilteredList();
         //}
-
-        MimicAnimalOptions = GameObject.FindGameObjectsWithTag("AI_Animal"); //Getting animals but we want clones
-
+        
         HandleInput();
 
     }
@@ -81,16 +81,16 @@ public class AnimalPicker : MonoBehaviour
 
 
         if (SelectionEnabled)
-        { 
-            currentChoice.SetActive(true); 
+        {
+            currentChoice.SetActive(true);
         }
         else
         {
-            if (currentChoice == null) 
+            if (currentChoice == null)
                 return;
 
-            currentChoice.SetActive(false); 
-        } 
+            currentChoice.SetActive(false);
+        }
 
         //Mouse ScrollWheel Up or E
         if ((Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKeyDown(KeyCode.E)) && SelectionEnabled)
@@ -105,19 +105,11 @@ public class AnimalPicker : MonoBehaviour
         }
     }
 
-    void setFilteredList()
-    {
-        cows = GetFilteredAnimalType("_Cow");
-        pigs = GetFilteredAnimalType("_Pig");
-        sheep = GetFilteredAnimalType("_Sheep");
-        rams = GetFilteredAnimalType("_Ram");
-    }
 
     //returns a filtered list of animal clones of designated (type)
-    Transform[] GetFilteredAnimalType(string type)
+    public void OnValueChange()
     {
-        //TODO
-        return null;
+        
     }
 
     void ChooseSelectionForward(GameObject currentChoice)
@@ -131,14 +123,15 @@ public class AnimalPicker : MonoBehaviour
         counter++;
 
         //Create another function that will add the  transform of the clone set to a certain number....1, 2, 3, 4
+
     }
 
     void ChooseSelectionBackward(GameObject currentChoice)
     {
-        if (counter == 0) 
+        if (counter == 0)
             counter = animal_arr.Length;
 
-        
+
         PopulateTheAnimalArr(currentChoice);
 
         //Move through the array and when on the selected choice highlight the selection:
