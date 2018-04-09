@@ -12,6 +12,7 @@ public class AnimalAI : MonoBehaviour {
     public bool debugNav;
     public bool debugPerception;
     public bool debugBT;
+
     private string runningBT = "";
 
     private PerceptionModule perception;
@@ -34,7 +35,7 @@ public class AnimalAI : MonoBehaviour {
 
     private void Awake()
     {
-        bt = new BehaviorTree(Application.dataPath + "/Data/animal-behavior.xml", this);
+        bt = new BehaviorTree(animalConfig.xmlTree, this);
         debugBT = debugNav = debugPerception = true;
 
         zoneManager = FindObjectOfType<ZoneManager>();
@@ -144,7 +145,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-food-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, zoneManager.FindInteractableZone(this, Interactable.Type.Food).position);
+        BTCoroutine routine = gotoImplementation(stopper, zoneManager.findInteractableZone(this, Interactable.Type.Food).position);
         return routine;
     }
 
@@ -153,7 +154,7 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-rest-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, zoneManager.FindInteractableZone(this, Interactable.Type.Rest).position);
+        BTCoroutine routine = gotoImplementation(stopper, zoneManager.findInteractableZone(this, Interactable.Type.Rest).position);
         return routine;
     }
 
@@ -258,7 +259,7 @@ public class AnimalAI : MonoBehaviour {
                 break;
         }
 
-        Vector3 targetDir = target.getInteractionPos(this).rotation.eulerAngles;
+        Vector3 targetDir = target.getInteractionPos(this).transform.forward;
 
         targetDir = Vector3.Normalize(targetDir);
         float step = navAgent.angularSpeed * Time.deltaTime;
@@ -269,10 +270,14 @@ public class AnimalAI : MonoBehaviour {
         while (true)
         {
             // Rotate until we are "close enough"
-            if (!Mathf.Approximately(Vector3.Dot(transform.forward, targetDir), 1.0f))
+            float dot = Vector3.Dot(transform.forward, targetDir);
+            if (dot <= 0.99f)
             {
-                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-                transform.rotation = Quaternion.LookRotation(newDir);
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0f);
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(targetDir);
             }
 
 

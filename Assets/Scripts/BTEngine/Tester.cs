@@ -22,7 +22,7 @@ public class Tester : MonoBehaviour {
     {
         first = 0;
         second = 0;
-        bt = new BehaviorTree(Application.dataPath + "/Scripts/BTEngine/tester-behavior.xml", this);
+        //bt = new BehaviorTree(Application.dataPath + "/Scripts/BTEngine/tester-behavior.xml", this);
         bt.Start();
     }
 

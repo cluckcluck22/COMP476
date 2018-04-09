@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a813cfa44bb384aa754c3fb55d3f2f, type: 3}
   m_Name: BaseAnimalConfig
   m_EditorClassIdentifier: 
+  xmlTree: {fileID: 4900000, guid: 22f680d74608e414d84b0d1c764c646f, type: 3}
   m_randomMinRatio: 0.5
   m_randomMaxRatio: 1
   m_hungerNeedCurve:

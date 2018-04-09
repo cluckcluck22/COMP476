@@ -4,7 +4,12 @@
 public class AnimalConfig : ScriptableObject
 {
     public Species species;
-    public BaseAnimalConfig baseAnimalConfig; // placehodler type
+    public BaseAnimalConfig baseAnimalConfig;
+
+    public TextAsset xmlTree
+    {
+        get { return baseAnimalConfig.xmlTree; }
+    }
 
     public float randomMinRatio
     {

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ZoneManager : MonoBehaviour {
 
-	public InteractableZone[] interactableZones;
+    public InteractableZone[] interactableZones;
 
-    private List<InteractableZone> needsZones;
-    private List<InteractableZone> rallyZones;
+    public List<InteractableZone> needsZones { get; private set; }
+    public List<InteractableZone> rallyZones { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         needsZones = new List<InteractableZone>();
         rallyZones = new List<InteractableZone>();
@@ -27,14 +27,14 @@ public class ZoneManager : MonoBehaviour {
         }
     }
 
-    public Transform FindInteractableZone(AnimalAI animal, Interactable.Type type)
+    public Transform findInteractableZone(AnimalAI animal, Interactable.Type type)
     {
         InteractableZone candidate = null;
         int highestCount = 0;
         int currentCount = 0;
         foreach (InteractableZone zone in needsZones)
         {
-            if (zone.hasInteractable(type))
+            if (zone.hasNeedsInteractable(type))
             {
                 currentCount = zone.getAnimalCount(animal.getSpecies());
                 if (zone.isAnimalInZone(animal))
@@ -57,7 +57,7 @@ public class ZoneManager : MonoBehaviour {
         return candidate.transform;
     }
 
-    public Transform FindRallyZone(AnimalAI animal)
+    public Transform findRallyZone(AnimalAI animal)
     {
         InteractableZone candidate = null;
         int bestCount = 0;
@@ -83,6 +83,17 @@ public class ZoneManager : MonoBehaviour {
         }
 
         return candidate.transform;
+    }
 
+    public List<Interactable> getAllNeedsInteractables()
+    {
+        List<Interactable> output = new List<Interactable>();
+
+        foreach (InteractableZone zone in interactableZones)
+        {
+            output.AddRange(zone.needsInteractables);
+        }
+
+        return output;
     }
 }
