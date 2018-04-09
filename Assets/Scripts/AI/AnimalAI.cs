@@ -41,17 +41,24 @@ public class AnimalAI : MonoBehaviour {
 
     void Start ()
     {
-        hunger = animalConfig.maxHunger;
-        fatigue = animalConfig.maxFatigue;
-        boredom = animalConfig.maxBoredom;
-        health = animalConfig.maxHealth;
-        perception = new PerceptionModule(this);
-        animatorDriver = GetComponent<AnimatorDriverAnimal>();
-        navAgent = GetComponent<NavMeshAgent>();
-        perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
-        StartCoroutine(perceptionRoutine);
-        bt.Start();
-        blackboard = new Dictionary<string, object>();
+        if (PhotonNetwork.isMasterClient || !PhotonNetwork.connected)
+        {
+            hunger = animalConfig.maxHunger;
+            fatigue = animalConfig.maxFatigue;
+            boredom = animalConfig.maxBoredom;
+            health = animalConfig.maxHealth;
+            perception = new PerceptionModule(this);
+            animatorDriver = GetComponent<AnimatorDriverAnimal>();
+            navAgent = GetComponent<NavMeshAgent>();
+            perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
+            StartCoroutine(perceptionRoutine);
+            bt.Start();
+            blackboard = new Dictionary<string, object>();
+        }
+        else
+        {
+            Destroy(this);
+        }
 	}
 	
 	void Update ()
