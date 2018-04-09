@@ -13,6 +13,7 @@ public class AnimalPicker : MonoBehaviour
     GameObject[] animal_arr;
 
     //Toggle Options
+    public GameObject mPanel;
     public GameObject CowChoices;
     public GameObject PigChoices;
     public GameObject SheepChoices;
@@ -83,6 +84,7 @@ public class AnimalPicker : MonoBehaviour
         if (SelectionEnabled)
         {
             currentChoice.SetActive(true);
+            mPanel.SetActive(true);
         }
         else
         {
@@ -90,6 +92,7 @@ public class AnimalPicker : MonoBehaviour
                 return;
 
             currentChoice.SetActive(false);
+            mPanel.SetActive(false);
         }
 
         //Mouse ScrollWheel Up or E
