@@ -260,7 +260,6 @@ GameObject:
   - component: {fileID: 114676915323557402}
   - component: {fileID: 114593997108371968}
   - component: {fileID: 114743309655487220}
-  - component: {fileID: 114136987145263190}
   m_Layer: 0
   m_Name: Rams
   m_TagString: Untagged
@@ -481,7 +480,6 @@ GameObject:
   - component: {fileID: 114628954899044964}
   - component: {fileID: 114433794050943780}
   - component: {fileID: 114816177111606706}
-  - component: {fileID: 114112204534920730}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Untagged
@@ -635,7 +633,6 @@ GameObject:
   - component: {fileID: 114485029224393752}
   - component: {fileID: 114965163553339024}
   - component: {fileID: 114548471576750930}
-  - component: {fileID: 114028341449522528}
   m_Layer: 0
   m_Name: Cows
   m_TagString: Untagged
@@ -721,7 +718,6 @@ GameObject:
   - component: {fileID: 114884367429388840}
   - component: {fileID: 114375673895853684}
   - component: {fileID: 114809415532095698}
-  - component: {fileID: 114309372079980266}
   m_Layer: 0
   m_Name: Pigs
   m_TagString: Untagged
@@ -770,7 +766,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224786781217806234}
-  - component: {fileID: 114982718774031732}
+  - component: {fileID: 114604915811394692}
   m_Layer: 0
   m_Name: Transform_Into
   m_TagString: Untagged
@@ -1161,17 +1157,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114028341449522528
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1590215829051388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cb2eaf128c37c40b4ffb5d57203f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114056206143139986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1382,17 +1367,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
---- !u!114 &114112204534920730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1507463693948394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cb2eaf128c37c40b4ffb5d57203f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114114546200608452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1474,17 +1448,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114136987145263190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217754539984194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cb2eaf128c37c40b4ffb5d57203f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114140294779791034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1809,17 +1772,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114309372079980266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643114814813502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cb2eaf128c37c40b4ffb5d57203f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114317890400348926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2477,6 +2429,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 0
+--- !u!114 &114604915811394692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672737532768194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cb2eaf128c37c40b4ffb5d57203f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_transforms: []
 --- !u!114 &114611627951533432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2744,6 +2708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43ba135dc079e646ba2c29e4e77fcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mTransformGUI: {fileID: 1672737532768194}
   mPanel: {fileID: 1952332982539730}
   CowChoices: {fileID: 1590215829051388}
   PigChoices: {fileID: 1643114814813502}
@@ -3528,17 +3493,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
---- !u!114 &114982718774031732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1672737532768194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47cb2eaf128c37c40b4ffb5d57203f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114984205116104088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4474,7 +4428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -310.7, y: 97.99999}
+  m_AnchoredPosition: {x: -307.7, y: 97.99999}
   m_SizeDelta: {x: 52.7, y: 52.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224370768828949626
@@ -4724,7 +4678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -416, y: 98}
+  m_AnchoredPosition: {x: -413, y: 98}
   m_SizeDelta: {x: 52.7, y: 52.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224632382964890724
@@ -4801,7 +4755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -363.4, y: 97.99999}
+  m_AnchoredPosition: {x: -360.4, y: 97.99999}
   m_SizeDelta: {x: 52.7, y: 52.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224688065673004354
@@ -4975,7 +4929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -257.80002, y: 97.99999}
+  m_AnchoredPosition: {x: -254.80002, y: 97.99999}
   m_SizeDelta: {x: 52.7, y: 52.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224844856960989768
