@@ -20,7 +20,23 @@ public class FadeOut : MonoBehaviour {
         timeSinceStart += Time.deltaTime;
         if (timeSinceStart >= fadeTime)
         {
-            Destroy(this);
+            if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
+            {
+                //Check if object is the mimic
+                if (false)
+                {
+                    //TODO destroy mimic and end the game
+                }
+                else
+                {
+                    //TODO check that this call works
+                    PhotonNetwork.Destroy(gameObject);
+                }
+            }
+            else
+            {
+                Destroy(this);
+            }
             //TODO good place to trigger done
         }
         else

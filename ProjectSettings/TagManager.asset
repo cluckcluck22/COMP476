@@ -7,6 +7,10 @@ TagManager:
   - Rest
   - Eat
   - Rally
+  - Play
+  - mimic
+  - AI_Animal
+  - NetworkManager
   layers:
   - Default
   - TransparentFX
