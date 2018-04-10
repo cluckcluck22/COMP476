@@ -11,6 +11,10 @@ public class AnimalPicker : MonoBehaviour
     bool F1, F2, F3, F4;
     int counter = 0;
     GameObject[] animal_arr;
+    int currentIndex;
+
+    //TransformGUI Array
+    public GameObject mTransformGUI;
 
     //Toggle Options
     public GameObject mPanel;
@@ -28,9 +32,15 @@ public class AnimalPicker : MonoBehaviour
     bool haveClones = false;
 
 
+    void Start()
+    {
+        //mTransformGUI = GetComponent<TransformGUI>();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        #region Old Code--Probably not relivent anymore, because the clones are already on the scene
         ////Needs to be done
         //if (!haveClones)
         //{
@@ -38,7 +48,8 @@ public class AnimalPicker : MonoBehaviour
         //    haveClones = true;
         //    setFilteredList();
         //}
-        
+        #endregion
+
         HandleInput();
 
     }
@@ -108,55 +119,59 @@ public class AnimalPicker : MonoBehaviour
     //Sets the Name of the Current Animal with its actual transform to its according number keys: 1- Cow, 2- Pig, 3-Sheep, 4-Dog
     public void OnValueChange(bool transformation_number)
     {
-        Debug.Log("Made it here !");
         if(currentChoice.name == "Cows")
         {
-            
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[currentIndex];
         }
 
         if (currentChoice.name == "Pigs")
         {
-
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[currentIndex];
         }
 
         if (currentChoice.name == "Sheep")
         {
-
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[currentIndex];
         }
 
         if (currentChoice.name == "Rams")
         {
-
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[currentIndex];
         }
     }
 
     void ChooseSelectionForward(GameObject currentChoice)
     {
+        //NOTE: Might not be the best place to call this function...
         PopulateTheAnimalArr(currentChoice);
 
         //Move through the array and when on the selected choice highlight the selection:
         animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().isOn = true;
-        
-        counter++;
 
-        //Create another function that will add the  transform of the clone set to a certain number....1, 2, 3, 4
+        //Call the Listner of the Toggers to transform of the clone set to a certain number....1, 2, 3, 4
+        currentIndex = counter % animal_arr.Length;
         animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
+
+        counter++;
     }
 
     void ChooseSelectionBackward(GameObject currentChoice)
     {
+        //Prevents the counter from becoming negative
         if (counter == 0)
             counter = animal_arr.Length;
 
-
+        //NOTE: Might not be the best place to call this function...
         PopulateTheAnimalArr(currentChoice);
 
         //Move through the array and when on the selected choice highlight the selection:
         animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().isOn = true;
-        counter--;
 
-        //Create another function that will add the  transform of the clone set to a certain number....1, 2, 3, 4
+        //Call the Listner of the Toggers to transform of the clone set to a certain number....1, 2, 3, 4
+        currentIndex = counter % animal_arr.Length;
         animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
+
+        counter--;
     }
 
     void PopulateTheAnimalArr(GameObject currentChoice)
