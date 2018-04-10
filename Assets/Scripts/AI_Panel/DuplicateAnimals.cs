@@ -45,10 +45,16 @@ public class DuplicateAnimals : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             DetachCurrentChild();
+            duplicateAI[1].transform.position = transform.position;
+            duplicateAI[1].transform.parent = this.transform;
+            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(1).GetComponent<AnimatorDriverAnimal>();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             DetachCurrentChild();
+            duplicateAI[2].transform.position = transform.position;
+            duplicateAI[2].transform.parent = this.transform;
+            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(2).GetComponent<AnimatorDriverAnimal>();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
