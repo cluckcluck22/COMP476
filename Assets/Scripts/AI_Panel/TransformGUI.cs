@@ -25,6 +25,9 @@ public class TransformGUI : MonoBehaviour
         //}
     }
 
-
+    public Transform[] GetMimicAnimalList() 
+    {
+        return m_transforms;
+    }
 
 }
