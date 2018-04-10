@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e222162ddb8d34547a133b673221b195, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.5108935, g: 0.4240186, b: 0.40105042, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 1
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5cac725779a19034095357004ac57866, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e5b3a1a6e275cd241b55b26a488bc437, type: 2}
 --- !u!1 &13233944
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,14 +122,13 @@ GameObject:
   m_Component:
   - component: {fileID: 13233945}
   - component: {fileID: 13233948}
-  - component: {fileID: 13233947}
   - component: {fileID: 13233946}
   m_Layer: 0
   m_Name: GrassySector (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &13233945
 Transform:
@@ -178,18 +177,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &13233947
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 13233944}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &13233948
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -332,14 +319,13 @@ GameObject:
   m_Component:
   - component: {fileID: 27398450}
   - component: {fileID: 27398453}
-  - component: {fileID: 27398452}
   - component: {fileID: 27398451}
   m_Layer: 0
   m_Name: GrassySector (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &27398450
 Transform:
@@ -388,18 +374,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &27398452
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27398449}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &27398453
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -444,8 +418,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4457532373624818, guid: 3e98c71e006e89d4f8408dbf439d84be, type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 114451944535155358, guid: 3e98c71e006e89d4f8408dbf439d84be,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cc89d20fce3036e44a833de5befc6272,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e98c71e006e89d4f8408dbf439d84be, type: 2}
   m_IsPrefabParent: 0
@@ -645,8 +625,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4848734148212590, guid: 5ba4b51e3c508544db17371ea99a1b6d, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 114963947336853916, guid: 5ba4b51e3c508544db17371ea99a1b6d,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cc89d20fce3036e44a833de5befc6272,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ba4b51e3c508544db17371ea99a1b6d, type: 2}
   m_IsPrefabParent: 0
@@ -1414,8 +1400,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4490406216837148, guid: e3faae1255c721a47926043b0997b1ef, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 114629024653252340, guid: e3faae1255c721a47926043b0997b1ef,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6110d64ead9b67c4d8ec618527d2c2b4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3faae1255c721a47926043b0997b1ef, type: 2}
   m_IsPrefabParent: 0
@@ -1552,8 +1544,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4652644538504510, guid: 37044409fbbc9a74fbfbd79c05c00f15, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 114924582780928824, guid: 37044409fbbc9a74fbfbd79c05c00f15,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 833b719ed7c01d04ca9f4b55b3b1bc35,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37044409fbbc9a74fbfbd79c05c00f15, type: 2}
   m_IsPrefabParent: 0
@@ -1904,14 +1902,13 @@ GameObject:
   m_Component:
   - component: {fileID: 213407911}
   - component: {fileID: 213407914}
-  - component: {fileID: 213407913}
   - component: {fileID: 213407912}
   m_Layer: 0
   m_Name: GrassySector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &213407911
 Transform:
@@ -1920,7 +1917,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 213407910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.6, y: 0.1, z: 44.9}
+  m_LocalPosition: {x: 59.6, y: 0.05, z: 44.9}
   m_LocalScale: {x: 80, y: 1, z: 80}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -1960,18 +1957,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &213407913
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 213407910}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &213407914
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2021,7 +2006,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4843560462014332, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114025574900950678, guid: 6f22cf8b00472a14481b686c9e987745,
         type: 2}
@@ -2284,7 +2269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4729402451561758, guid: 18ffe447f0d552a4ab8d6949b9894419, type: 2}
       propertyPath: m_RootOrder
-      value: 45
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 1396598332199588, guid: 18ffe447f0d552a4ab8d6949b9894419, type: 2}
       propertyPath: m_Name
@@ -2518,7 +2503,7 @@ Prefab:
     - target: {fileID: 224035663113818194, guid: 692bae59dfea70541ae3f143b23b802b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 224035663113818194, guid: 692bae59dfea70541ae3f143b23b802b,
         type: 2}
@@ -2789,7 +2774,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4658805493858186, guid: 0bfaf37b296205a48940b981bb944834, type: 2}
       propertyPath: m_RootOrder
-      value: 48
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 1038621731852458, guid: 0bfaf37b296205a48940b981bb944834, type: 2}
       propertyPath: m_Name
@@ -2925,6 +2910,7 @@ GameObject:
   - component: {fileID: 331668244}
   - component: {fileID: 331668243}
   - component: {fileID: 331668242}
+  - component: {fileID: 331668248}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2982,7 +2968,7 @@ Camera:
   m_GameObject: {fileID: 331668241}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.19215687, b: 0.19215687, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -3023,6 +3009,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &331668248
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331668241}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: e222162ddb8d34547a133b673221b195, type: 2}
 --- !u!1 &333149087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,14 +3026,13 @@ GameObject:
   m_Component:
   - component: {fileID: 333149088}
   - component: {fileID: 333149091}
-  - component: {fileID: 333149090}
   - component: {fileID: 333149089}
   m_Layer: 0
   m_Name: GrassySector (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &333149088
 Transform:
@@ -3048,7 +3041,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 333149087}
   m_LocalRotation: {x: -0, y: 0.17364816, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: 17.4, y: 0.1, z: 59.2}
+  m_LocalPosition: {x: 17.4, y: 0.05, z: 59.2}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -3088,18 +3081,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &333149090
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333149087}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &333149091
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3116,14 +3097,13 @@ GameObject:
   m_Component:
   - component: {fileID: 336910832}
   - component: {fileID: 336910835}
-  - component: {fileID: 336910834}
   - component: {fileID: 336910833}
   m_Layer: 0
   m_Name: GrassySector (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &336910832
 Transform:
@@ -3132,7 +3112,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336910831}
   m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 18.7, y: 0.1, z: 48.8}
+  m_LocalPosition: {x: 18.7, y: 0.05, z: 48.8}
   m_LocalScale: {x: 15, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -3172,18 +3152,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &336910834
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 336910831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &336910835
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3279,7 +3247,7 @@ RectTransform:
   - {fileID: 140029201}
   - {fileID: 1318751262}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3802,14 +3770,13 @@ GameObject:
   m_Component:
   - component: {fileID: 403829539}
   - component: {fileID: 403829542}
-  - component: {fileID: 403829541}
   - component: {fileID: 403829540}
   m_Layer: 0
   m_Name: GrassySector (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &403829539
 Transform:
@@ -3818,7 +3785,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403829538}
   m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 56.23, y: 0.1, z: 1.7}
+  m_LocalPosition: {x: 56.23, y: 0.05, z: 1.7}
   m_LocalScale: {x: 16, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -3858,18 +3825,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &403829541
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 403829538}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &403829542
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3914,7 +3869,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4183284656518678, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
       propertyPath: m_RootOrder
-      value: 33
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 114796977323008278, guid: b44356f8ee69dc440976ddcb6f1c8e9b,
         type: 2}
@@ -4082,7 +4037,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4799346296410044, guid: d087604a9e0b6154a86c944d7e3c1d23, type: 2}
       propertyPath: m_RootOrder
-      value: 36
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 1652968560906872, guid: d087604a9e0b6154a86c944d7e3c1d23, type: 2}
       propertyPath: m_Name
@@ -5032,14 +4987,13 @@ GameObject:
   m_Component:
   - component: {fileID: 512671252}
   - component: {fileID: 512671255}
-  - component: {fileID: 512671254}
   - component: {fileID: 512671253}
   m_Layer: 0
   m_Name: GrassySector (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &512671252
 Transform:
@@ -5048,7 +5002,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512671251}
   m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 14, y: 0.1, z: 73}
+  m_LocalPosition: {x: 14, y: 0.05, z: 73}
   m_LocalScale: {x: 12, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -5088,18 +5042,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &512671254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 512671251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &512671255
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5202,8 +5144,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4658805493858186, guid: 0bfaf37b296205a48940b981bb944834, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 114211353624727770, guid: 0bfaf37b296205a48940b981bb944834,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cc89d20fce3036e44a833de5befc6272,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bfaf37b296205a48940b981bb944834, type: 2}
   m_IsPrefabParent: 0
@@ -5383,14 +5331,13 @@ GameObject:
   m_Component:
   - component: {fileID: 535173844}
   - component: {fileID: 535173847}
-  - component: {fileID: 535173846}
   - component: {fileID: 535173845}
   m_Layer: 0
   m_Name: GrassySector (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &535173844
 Transform:
@@ -5439,18 +5386,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &535173846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535173843}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &535173847
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5577,7 +5512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4555294112540586, guid: d74ebd6ea64a61b42afcedb6eb75fa86, type: 2}
       propertyPath: m_RootOrder
-      value: 46
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 1743301031621772, guid: d74ebd6ea64a61b42afcedb6eb75fa86, type: 2}
       propertyPath: m_Name
@@ -5709,14 +5644,13 @@ GameObject:
   m_Component:
   - component: {fileID: 586754593}
   - component: {fileID: 586754596}
-  - component: {fileID: 586754595}
   - component: {fileID: 586754594}
   m_Layer: 0
   m_Name: GrassySector (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &586754593
 Transform:
@@ -5725,7 +5659,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 586754592}
   m_LocalRotation: {x: 0, y: 0.17364816, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 93.4, y: 0.1, z: 2.9}
+  m_LocalPosition: {x: 93.4, y: 0.05, z: 2.9}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -5765,18 +5699,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &586754595
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 586754592}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &586754596
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5860,14 +5782,13 @@ GameObject:
   m_Component:
   - component: {fileID: 601495830}
   - component: {fileID: 601495833}
-  - component: {fileID: 601495832}
   - component: {fileID: 601495831}
   m_Layer: 0
   m_Name: GrassySector (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &601495830
 Transform:
@@ -5876,7 +5797,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 601495829}
   m_LocalRotation: {x: 0, y: 0.6427876, z: 0, w: 0.7660445}
-  m_LocalPosition: {x: 70.4, y: 0.1, z: 0.2}
+  m_LocalPosition: {x: 70.4, y: 0.05, z: 0.2}
   m_LocalScale: {x: 14, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -5916,18 +5837,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &601495832
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601495829}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &601495833
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6043,8 +5952,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4504357537977146, guid: 6020f38f44625594c8cd6666a1a23523, type: 2}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 114578436116214194, guid: 6020f38f44625594c8cd6666a1a23523,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6110d64ead9b67c4d8ec618527d2c2b4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6020f38f44625594c8cd6666a1a23523, type: 2}
   m_IsPrefabParent: 0
@@ -6216,14 +6131,13 @@ GameObject:
   m_Component:
   - component: {fileID: 625430258}
   - component: {fileID: 625430261}
-  - component: {fileID: 625430260}
   - component: {fileID: 625430259}
   m_Layer: 0
   m_Name: Path (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &625430258
 Transform:
@@ -6272,18 +6186,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &625430260
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 625430257}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &625430261
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6495,7 +6397,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4183284656518678, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114796977323008278, guid: b44356f8ee69dc440976ddcb6f1c8e9b,
         type: 2}
@@ -6507,6 +6409,12 @@ Prefab:
       propertyPath: instantiationId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114403879283967374, guid: b44356f8ee69dc440976ddcb6f1c8e9b,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cf4a804dc3d1b774ca96d44a4bf42e48,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114104478140548488, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
     - {fileID: 114796977323008278, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
@@ -6720,8 +6628,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4729402451561758, guid: 18ffe447f0d552a4ab8d6949b9894419, type: 2}
       propertyPath: m_RootOrder
-      value: 29
+      value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 114320016994628102, guid: 18ffe447f0d552a4ab8d6949b9894419,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cf4a804dc3d1b774ca96d44a4bf42e48,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ffe447f0d552a4ab8d6949b9894419, type: 2}
   m_IsPrefabParent: 0
@@ -6961,8 +6875,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4799346296410044, guid: d087604a9e0b6154a86c944d7e3c1d23, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114866802553290474, guid: d087604a9e0b6154a86c944d7e3c1d23,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 833b719ed7c01d04ca9f4b55b3b1bc35,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d087604a9e0b6154a86c944d7e3c1d23, type: 2}
   m_IsPrefabParent: 0
@@ -7346,7 +7266,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4337359290590750, guid: c079a21206ff2904792baa124320bd0b, type: 2}
       propertyPath: m_RootOrder
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1664956580676356, guid: c079a21206ff2904792baa124320bd0b, type: 2}
       propertyPath: m_Name
@@ -8533,13 +8453,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 49d82b08dddf80047a79b37b29510693, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 49d82b08dddf80047a79b37b29510693, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400002, guid: 49d82b08dddf80047a79b37b29510693, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 49d82b08dddf80047a79b37b29510693, type: 3}
   m_IsPrefabParent: 0
 --- !u!1001 &919731109
@@ -8579,7 +8500,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4218669536823456, guid: 0c220498bfe3ad84b87e5bb7f54ea080, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c220498bfe3ad84b87e5bb7f54ea080, type: 2}
@@ -8779,7 +8700,7 @@ Transform:
   - {fileID: 1920798410}
   - {fileID: 2007629735}
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939360658
 GameObject:
@@ -8795,8 +8716,8 @@ GameObject:
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 4294967255
   m_IsActive: 1
 --- !u!154 &939360659
 TerrainCollider:
@@ -8861,14 +8782,13 @@ GameObject:
   m_Component:
   - component: {fileID: 966261631}
   - component: {fileID: 966261634}
-  - component: {fileID: 966261633}
   - component: {fileID: 966261632}
   m_Layer: 0
   m_Name: GrassySector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &966261631
 Transform:
@@ -8917,18 +8837,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &966261633
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 966261630}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &966261634
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8945,14 +8853,13 @@ GameObject:
   m_Component:
   - component: {fileID: 966557890}
   - component: {fileID: 966557893}
-  - component: {fileID: 966557892}
   - component: {fileID: 966557891}
   m_Layer: 0
   m_Name: GrassySector (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &966557890
 Transform:
@@ -9001,18 +8908,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &966557892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 966557889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &966557893
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9124,7 +9019,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4490406216837148, guid: e3faae1255c721a47926043b0997b1ef, type: 2}
       propertyPath: m_RootOrder
-      value: 49
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1069274806570214, guid: e3faae1255c721a47926043b0997b1ef, type: 2}
       propertyPath: m_Name
@@ -9256,14 +9151,13 @@ GameObject:
   m_Component:
   - component: {fileID: 988278040}
   - component: {fileID: 988278043}
-  - component: {fileID: 988278042}
   - component: {fileID: 988278041}
   m_Layer: 0
   m_Name: GrassySector (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &988278040
 Transform:
@@ -9312,18 +9206,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &988278042
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 988278039}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &988278043
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9850,14 +9732,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1053463523}
   - component: {fileID: 1053463526}
-  - component: {fileID: 1053463525}
   - component: {fileID: 1053463524}
   m_Layer: 0
   m_Name: GrassySector (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1053463523
 Transform:
@@ -9906,18 +9787,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1053463525
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053463522}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1053463526
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9934,14 +9803,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1053893939}
   - component: {fileID: 1053893942}
-  - component: {fileID: 1053893941}
   - component: {fileID: 1053893940}
   m_Layer: 0
   m_Name: GrassySector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1053893939
 Transform:
@@ -9950,7 +9818,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053893938}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 20.6, y: 0.1, z: 38.6}
+  m_LocalPosition: {x: 20.6, y: 0.05, z: 38.6}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -9990,18 +9858,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1053893941
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053893938}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1053893942
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10281,8 +10137,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4337359290590750, guid: c079a21206ff2904792baa124320bd0b, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 114727561103966616, guid: c079a21206ff2904792baa124320bd0b,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 833b719ed7c01d04ca9f4b55b3b1bc35,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c079a21206ff2904792baa124320bd0b, type: 2}
   m_IsPrefabParent: 0
@@ -10692,8 +10554,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4104541592472430, guid: 6d421d7f9a0e45445aad02ede0aa7f47, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 114472457865156534, guid: 6d421d7f9a0e45445aad02ede0aa7f47,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cf4a804dc3d1b774ca96d44a4bf42e48,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d421d7f9a0e45445aad02ede0aa7f47, type: 2}
   m_IsPrefabParent: 0
@@ -10938,7 +10806,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1210229860
 Transform:
@@ -10951,7 +10819,7 @@ Transform:
   m_LocalScale: {x: 200, y: 1, z: 170}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1210229861
 MeshRenderer:
@@ -11611,14 +11479,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1302097651}
   - component: {fileID: 1302097654}
-  - component: {fileID: 1302097653}
   - component: {fileID: 1302097652}
   m_Layer: 0
   m_Name: GrassySector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1302097651
 Transform:
@@ -11667,18 +11534,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1302097653
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1302097650}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1302097654
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11897,7 +11752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118733693611150, guid: 46bb60dcdfb1c6d4f8872e7f8869ddb2, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46bb60dcdfb1c6d4f8872e7f8869ddb2, type: 2}
@@ -12117,7 +11972,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118733693611150, guid: 46bb60dcdfb1c6d4f8872e7f8869ddb2, type: 2}
       propertyPath: m_RootOrder
-      value: 39
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1703058990033382, guid: 46bb60dcdfb1c6d4f8872e7f8869ddb2, type: 2}
       propertyPath: m_Name
@@ -12272,7 +12127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4032439102043616, guid: 719f074a7703bd94da2283829863fec2, type: 2}
       propertyPath: m_RootOrder
-      value: 41
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 1156166034763354, guid: 719f074a7703bd94da2283829863fec2, type: 2}
       propertyPath: m_Name
@@ -12404,14 +12259,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1427287451}
   - component: {fileID: 1427287454}
-  - component: {fileID: 1427287453}
   - component: {fileID: 1427287452}
   m_Layer: 0
   m_Name: GrassySector (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1427287451
 Transform:
@@ -12420,7 +12274,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427287450}
   m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 20.6, y: 0.1, z: 4.2}
+  m_LocalPosition: {x: 20.6, y: 0.05, z: 4.2}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -12460,18 +12314,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1427287453
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427287450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1427287454
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12488,14 +12330,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1434692405}
   - component: {fileID: 1434692408}
-  - component: {fileID: 1434692407}
   - component: {fileID: 1434692406}
   m_Layer: 0
   m_Name: Path (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1434692405
 Transform:
@@ -12544,18 +12385,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1434692407
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1434692404}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1434692408
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12760,7 +12589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4545375153210790, guid: 95223ba1ab47979438b8c0e07c32686b, type: 2}
       propertyPath: m_RootOrder
-      value: 50
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 1903446851073120, guid: 95223ba1ab47979438b8c0e07c32686b, type: 2}
       propertyPath: m_Name
@@ -12920,7 +12749,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4218669536823456, guid: 0c220498bfe3ad84b87e5bb7f54ea080, type: 2}
       propertyPath: m_RootOrder
-      value: 38
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1920756488495996, guid: 0c220498bfe3ad84b87e5bb7f54ea080, type: 2}
       propertyPath: m_Name
@@ -13047,14 +12876,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1483015991}
   - component: {fileID: 1483015994}
-  - component: {fileID: 1483015993}
   - component: {fileID: 1483015992}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1483015991
 Transform:
@@ -13103,18 +12931,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1483015993
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1483015990}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1483015994
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13354,14 +13170,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1508889219}
   - component: {fileID: 1508889222}
-  - component: {fileID: 1508889221}
   - component: {fileID: 1508889220}
   m_Layer: 0
   m_Name: GrassySector (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1508889219
 Transform:
@@ -13410,18 +13225,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1508889221
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1508889218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1508889222
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13438,14 +13241,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1518133928}
   - component: {fileID: 1518133931}
-  - component: {fileID: 1518133930}
   - component: {fileID: 1518133929}
   m_Layer: 0
   m_Name: GrassySector (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1518133928
 Transform:
@@ -13454,7 +13256,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518133927}
   m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 24.11, y: 0.1, z: 1.94}
+  m_LocalPosition: {x: 24.11, y: 0.05, z: 1.94}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -13494,18 +13296,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1518133930
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1518133927}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1518133931
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13686,7 +13476,7 @@ Transform:
   - {fileID: 675591680}
   - {fileID: 2137907425}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546049502
 GameObject:
@@ -13697,14 +13487,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1546049503}
   - component: {fileID: 1546049506}
-  - component: {fileID: 1546049505}
   - component: {fileID: 1546049504}
   m_Layer: 0
   m_Name: GrassySector (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1546049503
 Transform:
@@ -13753,18 +13542,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1546049505
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1546049502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1546049506
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13781,14 +13558,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1550127949}
   - component: {fileID: 1550127952}
-  - component: {fileID: 1550127951}
   - component: {fileID: 1550127950}
   m_Layer: 0
   m_Name: GrassySector (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1550127949
 Transform:
@@ -13837,18 +13613,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1550127951
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1550127948}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1550127952
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13865,14 +13629,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1553667962}
   - component: {fileID: 1553667965}
-  - component: {fileID: 1553667964}
   - component: {fileID: 1553667963}
   m_Layer: 0
   m_Name: GrassySector (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1553667962
 Transform:
@@ -13881,7 +13644,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553667961}
   m_LocalRotation: {x: 0, y: 0.10452846, z: 0, w: 0.9945219}
-  m_LocalPosition: {x: 26.6, y: 0.1, z: 5.2}
+  m_LocalPosition: {x: 26.6, y: 0.05, z: 5.2}
   m_LocalScale: {x: 3, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -13921,18 +13684,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1553667964
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1553667961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1553667965
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13949,14 +13700,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1555480222}
   - component: {fileID: 1555480225}
-  - component: {fileID: 1555480224}
   - component: {fileID: 1555480223}
   m_Layer: 0
   m_Name: GrassySector (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1555480222
 Transform:
@@ -13965,7 +13715,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1555480221}
   m_LocalRotation: {x: -0, y: 0.6427876, z: -0, w: 0.7660445}
-  m_LocalPosition: {x: 36.66, y: 0.1, z: 4.31}
+  m_LocalPosition: {x: 36.66, y: 0.05, z: 4.31}
   m_LocalScale: {x: 14.000002, y: 1, z: 25.000017}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -14005,18 +13755,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1555480224
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1555480221}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1555480225
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14061,8 +13799,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4839450312671204, guid: 1741404b1a3bc994f87cb960e452d2ac, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 114547154249052704, guid: 1741404b1a3bc994f87cb960e452d2ac,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cf4a804dc3d1b774ca96d44a4bf42e48,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1741404b1a3bc994f87cb960e452d2ac, type: 2}
   m_IsPrefabParent: 0
@@ -14171,14 +13915,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1579924072}
   - component: {fileID: 1579924075}
-  - component: {fileID: 1579924074}
   - component: {fileID: 1579924073}
   m_Layer: 0
   m_Name: GrassySector (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1579924072
 Transform:
@@ -14227,18 +13970,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1579924074
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1579924071}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1579924075
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14397,14 +14128,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1622858797}
   - component: {fileID: 1622858800}
-  - component: {fileID: 1622858799}
   - component: {fileID: 1622858798}
   m_Layer: 0
   m_Name: GrassySector (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1622858797
 Transform:
@@ -14413,7 +14143,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622858796}
   m_LocalRotation: {x: -0, y: 0.5735764, z: -0, w: 0.8191521}
-  m_LocalPosition: {x: 9.299999, y: 0.1, z: 60.100002}
+  m_LocalPosition: {x: 9.299999, y: 0.05, z: 60.100002}
   m_LocalScale: {x: 15.000004, y: 1, z: 10.000002}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -14453,18 +14183,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1622858799
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1622858796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1622858800
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14509,7 +14227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4504357537977146, guid: 6020f38f44625594c8cd6666a1a23523, type: 2}
       propertyPath: m_RootOrder
-      value: 42
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 1858222578491100, guid: 6020f38f44625594c8cd6666a1a23523, type: 2}
       propertyPath: m_Name
@@ -14728,8 +14446,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4032439102043616, guid: 719f074a7703bd94da2283829863fec2, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114468397108834822, guid: 719f074a7703bd94da2283829863fec2,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: cc89d20fce3036e44a833de5befc6272,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 719f074a7703bd94da2283829863fec2, type: 2}
   m_IsPrefabParent: 0
@@ -14933,7 +14657,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4848734148212590, guid: 5ba4b51e3c508544db17371ea99a1b6d, type: 2}
       propertyPath: m_RootOrder
-      value: 47
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 1205649085073472, guid: 5ba4b51e3c508544db17371ea99a1b6d, type: 2}
       propertyPath: m_Name
@@ -15093,7 +14817,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4839450312671204, guid: 1741404b1a3bc994f87cb960e452d2ac, type: 2}
       propertyPath: m_RootOrder
-      value: 40
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 1833449027923496, guid: 1741404b1a3bc994f87cb960e452d2ac, type: 2}
       propertyPath: m_Name
@@ -15253,7 +14977,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4335643732670252, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
@@ -15641,14 +15365,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1715219888}
   - component: {fileID: 1715219891}
-  - component: {fileID: 1715219890}
   - component: {fileID: 1715219889}
   m_Layer: 0
   m_Name: GrassySector (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1715219888
 Transform:
@@ -15697,18 +15420,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1715219890
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1715219887}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1715219891
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15753,7 +15464,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4104541592472430, guid: 6d421d7f9a0e45445aad02ede0aa7f47, type: 2}
       propertyPath: m_RootOrder
-      value: 44
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1744700497070974, guid: 6d421d7f9a0e45445aad02ede0aa7f47, type: 2}
       propertyPath: m_Name
@@ -16069,8 +15780,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4555294112540586, guid: d74ebd6ea64a61b42afcedb6eb75fa86, type: 2}
       propertyPath: m_RootOrder
-      value: 30
+      value: 31
       objectReference: {fileID: 0}
+    - target: {fileID: 114174239445391892, guid: d74ebd6ea64a61b42afcedb6eb75fa86,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6110d64ead9b67c4d8ec618527d2c2b4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d74ebd6ea64a61b42afcedb6eb75fa86, type: 2}
   m_IsPrefabParent: 0
@@ -16270,7 +15987,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4335643732670252, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
       propertyPath: m_RootOrder
-      value: 43
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1094050451651418, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
       propertyPath: m_Name
@@ -16539,14 +16256,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1797114420}
   - component: {fileID: 1797114423}
-  - component: {fileID: 1797114422}
   - component: {fileID: 1797114421}
   m_Layer: 0
   m_Name: GrassySector (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1797114420
 Transform:
@@ -16595,18 +16311,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1797114422
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1797114419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1797114423
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16734,7 +16438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: aa2ceabc116c3b246868f1af2180f4d7, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: aa2ceabc116c3b246868f1af2180f4d7, type: 3}
       propertyPath: m_Controller
@@ -17252,7 +16956,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4457532373624818, guid: 3e98c71e006e89d4f8408dbf439d84be, type: 2}
       propertyPath: m_RootOrder
-      value: 51
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 1559273301713632, guid: 3e98c71e006e89d4f8408dbf439d84be, type: 2}
       propertyPath: m_Name
@@ -17459,14 +17163,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1875573932}
   - component: {fileID: 1875573935}
-  - component: {fileID: 1875573934}
   - component: {fileID: 1875573933}
   m_Layer: 0
   m_Name: GrassySector (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1875573932
 Transform:
@@ -17515,18 +17218,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1875573934
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1875573931}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1875573935
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17543,14 +17234,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1882303959}
   - component: {fileID: 1882303962}
-  - component: {fileID: 1882303961}
   - component: {fileID: 1882303960}
   m_Layer: 0
   m_Name: Path (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1882303959
 Transform:
@@ -17599,18 +17289,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1882303961
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1882303958}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1882303962
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17676,7 +17354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4652644538504510, guid: 37044409fbbc9a74fbfbd79c05c00f15, type: 2}
       propertyPath: m_RootOrder
-      value: 37
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 1868428029929058, guid: 37044409fbbc9a74fbfbd79c05c00f15, type: 2}
       propertyPath: m_Name
@@ -17808,14 +17486,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1899238388}
   - component: {fileID: 1899238391}
-  - component: {fileID: 1899238390}
   - component: {fileID: 1899238389}
   m_Layer: 0
   m_Name: GrassySector (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1899238388
 Transform:
@@ -17864,18 +17541,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1899238390
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899238387}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1899238391
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17990,7 +17655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1918483599
 Prefab:
@@ -18199,14 +17864,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1958340925}
   - component: {fileID: 1958340928}
-  - component: {fileID: 1958340927}
   - component: {fileID: 1958340926}
   m_Layer: 0
   m_Name: GrassySector (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1958340925
 Transform:
@@ -18215,7 +17879,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1958340924}
   m_LocalRotation: {x: -0, y: 0.10452846, z: -0, w: 0.9945219}
-  m_LocalPosition: {x: 20.6, y: 0.1, z: 12}
+  m_LocalPosition: {x: 20.6, y: 0.05, z: 12}
   m_LocalScale: {x: 3, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -18255,18 +17919,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1958340927
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1958340924}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1958340928
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18385,8 +18037,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4545375153210790, guid: 95223ba1ab47979438b8c0e07c32686b, type: 2}
       propertyPath: m_RootOrder
-      value: 31
+      value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 114391668376347846, guid: 95223ba1ab47979438b8c0e07c32686b,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6110d64ead9b67c4d8ec618527d2c2b4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95223ba1ab47979438b8c0e07c32686b, type: 2}
   m_IsPrefabParent: 0
@@ -18495,14 +18153,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1998960906}
   - component: {fileID: 1998960909}
-  - component: {fileID: 1998960908}
   - component: {fileID: 1998960907}
   m_Layer: 0
   m_Name: GrassySector (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1998960906
 Transform:
@@ -18511,7 +18168,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998960905}
   m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 17.4, y: 0.1, z: 67.9}
+  m_LocalPosition: {x: 17.4, y: 0.05, z: 67.9}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -18551,18 +18208,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1998960908
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1998960905}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1998960909
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18872,8 +18517,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4337359290590750, guid: abd0287c256877e4f91732f4cde5c6ec, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114727561103966616, guid: abd0287c256877e4f91732f4cde5c6ec,
+        type: 2}
+      propertyPath: animalConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 833b719ed7c01d04ca9f4b55b3b1bc35,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abd0287c256877e4f91732f4cde5c6ec, type: 2}
   m_IsPrefabParent: 0
@@ -18982,14 +18633,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2018388434}
   - component: {fileID: 2018388437}
-  - component: {fileID: 2018388436}
   - component: {fileID: 2018388435}
   m_Layer: 0
   m_Name: GrassySector (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2018388434
 Transform:
@@ -18998,7 +18648,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2018388433}
   m_LocalRotation: {x: 0, y: 0.5735764, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 85.3, y: 0.1, z: 3.8}
+  m_LocalPosition: {x: 85.3, y: 0.05, z: 3.8}
   m_LocalScale: {x: 15, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 144488088}
@@ -19038,18 +18688,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2018388436
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2018388433}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2018388437
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19169,7 +18807,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4337359290590750, guid: abd0287c256877e4f91732f4cde5c6ec, type: 2}
       propertyPath: m_RootOrder
-      value: 35
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1664956580676356, guid: abd0287c256877e4f91732f4cde5c6ec, type: 2}
       propertyPath: m_Name
@@ -19553,14 +19191,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2146418265}
   - component: {fileID: 2146418268}
-  - component: {fileID: 2146418267}
   - component: {fileID: 2146418266}
   m_Layer: 0
   m_Name: Path (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2146418265
 Transform:
@@ -19609,18 +19246,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2146418267
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2146418264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2146418268
 MeshFilter:
   m_ObjectHideFlags: 0
