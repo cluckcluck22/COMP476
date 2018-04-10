@@ -15,6 +15,7 @@ public class AnimatorDriverFarmerDebug : System.Object
 public class AnimatorDriverFarmer : MonoBehaviour {
 
     private Animator m_animController;
+    private PhotonView m_photonView;
 
     [Header("Debug Tools")]
     public bool m_useDebugKeyboardBindings = false;
@@ -27,6 +28,13 @@ public class AnimatorDriverFarmer : MonoBehaviour {
 
     public void PlayFullBodyState(States.FarmerFullBody state)
     {
+        if(PhotonNetwork.connected)
+        {
+            //Send RPC call to others
+            m_photonView.RPC("PlayFullBodyStateNetwork",PhotonTargets.Others,(int)state);
+        }
+
+
         m_animController.SetBool("IsWalking", 1 == (1 & ((int)state >> 1)));
         m_animController.SetBool("IsRunning", 1 == (1 & ((int)state >> 2)));
         m_animController.SetBool("IsDigging", 1 == (1 & ((int)state >> 3)));
@@ -85,6 +93,7 @@ public class AnimatorDriverFarmer : MonoBehaviour {
     private void Awake()
     {
         m_animController = GetComponent<Animator>();
+        m_photonView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -138,5 +147,36 @@ public class AnimatorDriverFarmer : MonoBehaviour {
         {
             PlayLayeredState(States.FarmerLayered.Sign);
         }
+    }
+
+
+
+
+
+
+
+    [PunRPC]
+    public void PlayFullBodyStateNetworked(int state)
+    {
+        m_animController.SetBool("IsWalking", 1 == (1 & (state >> 1)));
+        m_animController.SetBool("IsRunning", 1 == (1 & (state >> 2)));
+        m_animController.SetBool("IsDigging", 1 == (1 & (state >> 3)));
+
+        switch (state)
+        {
+            case (int)States.FarmerFullBody.Dig:
+                m_animController.SetTrigger("TriggerDig");
+                break;
+            case (int)States.FarmerFullBody.Fire:
+                m_animController.SetTrigger("TriggerFire");
+                break;
+            case (int)States.FarmerFullBody.Interact:
+                m_animController.SetTrigger("TriggerInteract");
+                break;
+            default:
+                break;
+        }
+
+        currentFullBodyState = (States.FarmerFullBody)(state);
     }
 }

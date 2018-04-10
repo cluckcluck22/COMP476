@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e95133d65618ba2479d1eceb28c4ed87
+timeCreated: 1523370620
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ottanio Shaded DEMO
+  fontNames:
+  - Ottanio Shaded DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

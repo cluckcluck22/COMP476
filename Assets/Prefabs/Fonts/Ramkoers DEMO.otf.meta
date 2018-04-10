@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e2c8d647685ea1146a9a78db573dd0a5
+timeCreated: 1523370730
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ramkoers DEMO
+  fontNames:
+  - Ramkoers DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

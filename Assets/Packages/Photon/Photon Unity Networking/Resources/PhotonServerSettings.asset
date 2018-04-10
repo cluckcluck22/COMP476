@@ -42,4 +42,11 @@ MonoBehaviour:
   - ChangeScene
   - SendMessage
   - receiveMessage
+  - loadLevel
+  - startGame
+  - tellReady
+  - endGameNetwork
+  - PlayFullBodyStateNetworked
+  - PlayFullBodyStateNetwork
+  - SyncLayeredState
   DisableAutoOpenWizard: 1
