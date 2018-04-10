@@ -109,24 +109,23 @@ public class AnimalPicker : MonoBehaviour
     }
 
 
-    //returns a filtered list of animal clones of designated (type)
-    public void OnValueChange()
+    //Sets the Name of the Current Animal with its actual transform to its according number keys: 1- Cow, 2- Pig, 3-Sheep, 4-Dog
+    public void OnValueChange(bool transformation_number)
     {
-        
+        Debug.Log("Made it here !");
     }
 
     void ChooseSelectionForward(GameObject currentChoice)
     {
-        Debug.Log("In choose seclection");
-
         PopulateTheAnimalArr(currentChoice);
 
         //Move through the array and when on the selected choice highlight the selection:
         animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().isOn = true;
+        
         counter++;
 
         //Create another function that will add the  transform of the clone set to a certain number....1, 2, 3, 4
-
+        animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
     }
 
     void ChooseSelectionBackward(GameObject currentChoice)
@@ -140,6 +139,9 @@ public class AnimalPicker : MonoBehaviour
         //Move through the array and when on the selected choice highlight the selection:
         animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().isOn = true;
         counter--;
+
+        //Create another function that will add the  transform of the clone set to a certain number....1, 2, 3, 4
+        animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
     }
 
     void PopulateTheAnimalArr(GameObject currentChoice)
