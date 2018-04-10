@@ -49,8 +49,10 @@ public class AnimalPicker : MonoBehaviour
         //    setFilteredList();
         //}
         #endregion
-
-        HandleInput();
+        if(!PhotonNetwork.connected || !PhotonNetwork.isMasterClient)
+        {
+            HandleInput();
+        }
 
     }
 

@@ -1997,7 +1997,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4843560462014332, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 4843560462014332, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2153,6 +2153,11 @@ Prefab:
       propertyPath: duplicateAI.Array.data[19]
       value: 
       objectReference: {fileID: 1861478428}
+    - target: {fileID: 195648242155604352, guid: 6f22cf8b00472a14481b686c9e987745,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
   m_IsPrefabParent: 0
@@ -3942,6 +3947,10 @@ Prefab:
     m_RemovedComponents:
     - {fileID: 114104478140548488, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
     - {fileID: 114796977323008278, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
+    - {fileID: 65644648581246500, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
+    - {fileID: 54529724561065116, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
+    - {fileID: 114403879283967374, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
+    - {fileID: 195482520256147522, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &407447436 stripped
