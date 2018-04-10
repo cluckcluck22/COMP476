@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreateToggleGUI : MonoBehaviour
+public class TransformGUI : MonoBehaviour
 {
 
     // Use this for initialization
