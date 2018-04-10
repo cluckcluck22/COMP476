@@ -346,6 +346,22 @@ public class AnimatorDriverAnimal : MonoBehaviour {
     [PunRPC]
     public void SyncLayeredState(int state, float time)
     {
+        switch ((States.AnimalLayered)state)
+        {
+            case States.AnimalLayered.Attack:
+                m_animController.SetTrigger("TriggerAttack");
+                break;
+            case States.AnimalLayered.Talk:
+                m_animController.SetTrigger("TriggerTalk");
+                break;
+            case States.AnimalLayered.HitReaction:
+                m_animController.SetTrigger("TriggerHitReaction");
+                break;
+            case States.AnimalLayered.None:
+            default:
+                break;
+        }
+
         currentLayeredState = (States.AnimalLayered)state;
         m_layeredUpdateTimeout = time;
     }
