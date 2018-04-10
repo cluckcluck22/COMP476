@@ -20,17 +20,13 @@ public class AnimalPicker : MonoBehaviour
     public GameObject RamChoices;
 
     //Actual transforms of the Animal (clones)
-    public GameObject[] MimicAnimalOptions;
+        //public GameObject[] MimicAnimalOptions;
     public Transform[] cows;
     public Transform[] pigs;
     public Transform[] sheep;
     public Transform[] rams;
     bool haveClones = false;
 
-    // Use this for initialization
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -113,6 +109,25 @@ public class AnimalPicker : MonoBehaviour
     public void OnValueChange(bool transformation_number)
     {
         Debug.Log("Made it here !");
+        if(currentChoice.name == "Cows")
+        {
+            
+        }
+
+        if (currentChoice.name == "Pigs")
+        {
+
+        }
+
+        if (currentChoice.name == "Sheep")
+        {
+
+        }
+
+        if (currentChoice.name == "Rams")
+        {
+
+        }
     }
 
     void ChooseSelectionForward(GameObject currentChoice)
