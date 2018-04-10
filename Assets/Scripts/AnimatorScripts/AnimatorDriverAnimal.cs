@@ -61,6 +61,7 @@ public class AnimatorDriverAnimal : MonoBehaviour {
         if (PhotonNetwork.connected)
         {
             //Send RPC call to others
+            Debug.Log("Object" + this.gameObject);
             m_photonView.RPC("PlayFullBodyStateNetwork", PhotonTargets.Others, (int)state);
         }
         // So C# can't convert implicitly from 1 to True...

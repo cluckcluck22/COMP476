@@ -10,7 +10,6 @@ public class DuplicateAnimals : MonoBehaviour {
 	// Use this for initialization
 	void Start () {     
         AI = GetAnimals();
-        //duplicateAI = CloneAI(AI);
         CorrectAI(duplicateAI);
         duplicateAI[0].transform.position = transform.position;
         duplicateAI[0].transform.parent = this.transform;
@@ -54,10 +53,6 @@ public class DuplicateAnimals : MonoBehaviour {
         {
             DetachCurrentChild();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            DetachCurrentChild();
-        }
     }
 
     GameObject[] GetAnimals()
@@ -66,25 +61,6 @@ public class DuplicateAnimals : MonoBehaviour {
         return AI;
     }
 
-    GameObject[] CloneAI(GameObject[] animalsToClone)
-    {
-        GameObject[] clones = new GameObject[animalsToClone.Length];
-        int i = 0;
-        foreach(GameObject animal in animalsToClone)
-        {
-            clones[i] =  Instantiate(animal,cloneSpawn.position,Quaternion.identity);
-            clones[i].GetComponent<AnimatorDriverAnimal>().enabled = false;
-            clones[i].GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-            clones[i].GetComponent<Rigidbody>().isKinematic = true;
-            AnimalAI animalAiScript = clones[i].GetComponent<AnimalAI>();
-            animalAiScript.enabled = false;
-            animalAiScript.debugBT = false;
-            animalAiScript.debugNav = false;
-            animalAiScript.debugPerception = false;
-            i++;
-        }
-        return clones;
-    }
     public void CorrectAI(GameObject[] AI)
     {
         foreach(GameObject animal in AI)
