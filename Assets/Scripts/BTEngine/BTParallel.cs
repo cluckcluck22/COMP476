@@ -75,7 +75,7 @@ public class BTParallel : BTNode
             {
                 foreach (BTNode node in runningNodes)
                 {
-                    node.GetStopper().shouldStop = true;
+                    node.Stop();
                 }
             }
 
@@ -143,8 +143,8 @@ public class BTParallel : BTNode
         // At this point there are no more running nodes
         if (GetStopper().shouldStop)
         {
-            yield return BTNodeResult.Stopped;
             GetStopper().shouldStop = false;
+            yield return BTNodeResult.Stopped;
             yield break;
         }
         else
@@ -160,7 +160,7 @@ public class BTParallel : BTNode
         {
             if (!marked[i])
             {
-                running[i].GetStopper().shouldStop = true;
+                running[i].Stop();
             }
         }
     }

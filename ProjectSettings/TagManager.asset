@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Play
   - Rest
   - Eat
-  - AI_Animal
-  - mimic
+  - Rally
   layers:
   - Default
   - TransparentFX

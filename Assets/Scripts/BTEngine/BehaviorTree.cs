@@ -22,7 +22,7 @@ public sealed class BehaviorTree
         this.parent = parent;
     }
 
-    public BehaviorTree(string xmlPath, MonoBehaviour parent)
+    public BehaviorTree(UnityEngine.TextAsset xml, MonoBehaviour parent)
     {
         XmlReaderSettings settings = new XmlReaderSettings();
         settings.IgnoreComments = true;
@@ -31,7 +31,9 @@ public sealed class BehaviorTree
 
         this.parent = parent;
 
-        using(XmlReader reader = XmlReader.Create(xmlPath, settings))
+        System.IO.StringReader stringReader = new System.IO.StringReader(xml.text);
+
+        using (XmlReader reader = XmlReader.Create(stringReader, settings))
         {
             XDocument doc = XDocument.Load(reader);
 

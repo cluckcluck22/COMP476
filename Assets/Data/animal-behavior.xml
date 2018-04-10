@@ -25,6 +25,28 @@
         </sequence>
       </selector>
     </sequence>
+    <!-- IsTired -->
+    <condition name="isTired" />
+    <sequence>
+      <parallel_first>
+        <complex name="goto-rest-area" />
+        <repeat_success>
+          <simple name="rest-found" />
+        </repeat_success>
+      </parallel_first>
+      <selector>
+        <sequence>
+          <parallel_first>
+            <complex name="idle-wander" />
+            <repeat_success>
+              <simple name="rest-found" />
+            </repeat_success>
+          </parallel_first>
+          <complex name="goto-rest-item" />
+          <complex name="rest" />
+        </sequence>
+      </selector>
+    </sequence>
     <!-- Idle -->
     <condition name="should-idle" />
     <complex name="idle-wander" />

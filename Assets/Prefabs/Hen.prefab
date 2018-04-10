@@ -353,8 +353,8 @@ GameObject:
   - component: {fileID: 65118716031249860}
   - component: {fileID: 114433889363045992}
   - component: {fileID: 54210326018332312}
-  - component: {fileID: 114069192673980808}
   - component: {fileID: 195322224138994890}
+  - component: {fileID: 114730815829196670}
   m_Layer: 0
   m_Name: Hen
   m_TagString: Untagged
@@ -932,23 +932,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114069192673980808
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828418378062566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0da9afe934f5cc40bb8c3646251c9f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactThreshold: 0.02
-  target: {fileID: 0}
-  agent: {fileID: 0}
-  restStat: 0
-  eatStat: 0
-  playStat: 0
 --- !u!114 &114433889363045992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -975,6 +958,22 @@ MonoBehaviour:
   WalkVariations: 2
   SitVariations: 0
   BlendSpeed: 1
+--- !u!114 &114730815829196670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828418378062566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5efcf70bd2d17c458acee7bc8aed421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalConfig: {fileID: 11400000, guid: d49c3b05de5cef945a2f4298e39c4c78, type: 2}
+  zoneConfig: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2, type: 2}
+  debugNav: 0
+  debugPerception: 0
+  debugBT: 0
 --- !u!137 &137176840761226556
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1061,7 +1060,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

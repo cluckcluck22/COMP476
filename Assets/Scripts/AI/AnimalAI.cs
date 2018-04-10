@@ -8,12 +8,11 @@ using BTCoroutine = System.Collections.Generic.IEnumerator<BTNodeResult>;
 public class AnimalAI : MonoBehaviour {
 
     public AnimalConfig animalConfig;
-
-    public AreaConfig areaConfig;
-
+    public string animalName;
     public bool debugNav;
     public bool debugPerception;
     public bool debugBT;
+
     private string runningBT = "";
 
     private PerceptionModule perception;
@@ -28,37 +27,38 @@ public class AnimalAI : MonoBehaviour {
 
     public float hunger { get; private set; }
     public float fatigue { get; private set; }
-    public float boredom { get; private set; }
     public float health { get; private set; }
 
     private IEnumerator perceptionRoutine;
 
+    private ZoneManager zoneManager;
+
     private void Awake()
     {
-        bt = new BehaviorTree(Application.dataPath + "/Data/animal-behavior.xml", this);
+        bt = new BehaviorTree(animalConfig.xmlTree, this);
         debugBT = debugNav = debugPerception = true;
+
+        zoneManager = FindObjectOfType<ZoneManager>();
     }
 
     void Start ()
     {
-        if (PhotonNetwork.isMasterClient || !PhotonNetwork.connected)
-        {
-            hunger = animalConfig.maxHunger;
-            fatigue = animalConfig.maxFatigue;
-            boredom = animalConfig.maxBoredom;
-            health = animalConfig.maxHealth;
-            perception = new PerceptionModule(this);
-            animatorDriver = GetComponent<AnimatorDriverAnimal>();
-            navAgent = GetComponent<NavMeshAgent>();
-            perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
-            StartCoroutine(perceptionRoutine);
-            bt.Start();
-            blackboard = new Dictionary<string, object>();
-        }
-        else
-        {
-            Destroy(this);
-        }
+        float randomRatio;
+
+        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+        hunger = animalConfig.maxHunger * randomRatio;
+
+        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+        fatigue = animalConfig.maxFatigue * randomRatio;
+
+        health = animalConfig.maxHealth;
+        perception = new PerceptionModule(this);
+        animatorDriver = GetComponent<AnimatorDriverAnimal>();
+        navAgent = GetComponent<NavMeshAgent>();
+        perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
+        StartCoroutine(perceptionRoutine);
+        bt.Start();
+        blackboard = new Dictionary<string, object>();
 	}
 	
 	void Update ()
@@ -69,8 +69,6 @@ public class AnimalAI : MonoBehaviour {
             hunger = Mathf.Max(hunger, 0.0f);
             fatigue -= animalConfig.fatigueLossRate * Time.deltaTime;
             fatigue = Mathf.Max(fatigue, 0.0f);
-            boredom -= animalConfig.boredomLossRate * Time.deltaTime;
-            boredom = Mathf.Max(boredom, 0.0f);
         }
 	}
 
@@ -115,12 +113,6 @@ public class AnimalAI : MonoBehaviour {
         scorer.score = animalConfig.fatigueNeedCurve.Evaluate(fatigue / animalConfig.maxFatigue);
         return true;
     }
-    [BTLeaf("isBored")]
-    public bool isBored(Scorer scorer)
-    {
-        scorer.score = animalConfig.boredomNeedCurve.Evaluate(boredom / animalConfig.maxBoredom);
-        return true;
-    }
     [BTLeaf("isDead")]
     public bool isDead(Scorer scorer)
     {
@@ -153,29 +145,69 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "goto-food-area";
 
-        BTCoroutine routine = gotoImplementation(stopper, areaConfig.eatArea);
+        BTCoroutine routine = gotoImplementation(stopper, zoneManager.findInteractableZone(this, Interactable.Type.Food).position);
         return routine;
     }
+
+    [BTLeaf("goto-rest-area")]
+    public BTCoroutine gotoRestArea(Stopper stopper)
+    {
+        runningBT = "goto-rest-area";
+
+        BTCoroutine routine = gotoImplementation(stopper, zoneManager.findInteractableZone(this, Interactable.Type.Rest).position);
+        return routine;
+    }
+
     [BTLeaf("goto-food-item")]
     public BTCoroutine gotoFoodItem(Stopper stopper)
     {
         runningBT = "goto-food-item";
 
-        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this);
+        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
 
         BTCoroutine routine = gotoImplementation(stopper, destination);
         return routine;
     }
+
+    [BTLeaf("goto-rest-item")]
+    public BTCoroutine gotoRestItem(Stopper stopper)
+    {
+        runningBT = "goto-rest-item";
+
+        Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
+
+        BTCoroutine routine = gotoImplementation(stopper, destination);
+        return routine;
+    }
+
     [BTLeaf("food-found")]
     public bool isFoodAvailable()
     {
         return itemFoundImplementation(Interactable.Type.Food);
     }
-    
+
+    [BTLeaf("rest-found")]
+    public bool isRestAvailable()
+    {
+        return itemFoundImplementation(Interactable.Type.Rest);
+    }
+
     [BTLeaf("eat")]
     public BTCoroutine eat(Stopper stopper)
     {
         runningBT = "eat";
+
+        Interactable target = (Interactable)blackboard["InteractableTarget"];
+        blackboard.Remove("InteractableTarget");
+
+        BTCoroutine routine = consumeImplementation(stopper, target);
+        return routine;
+    }
+
+    [BTLeaf("rest")]
+    public BTCoroutine rest(Stopper stopper)
+    {
+        runningBT = "rest";
 
         Interactable target = (Interactable)blackboard["InteractableTarget"];
         blackboard.Remove("InteractableTarget");
@@ -227,7 +259,8 @@ public class AnimalAI : MonoBehaviour {
                 break;
         }
 
-        Vector3 targetDir = target.GetComponent<BoxCollider>().ClosestPointOnBounds(transform.position) - transform.position;
+        Vector3 targetDir = target.getInteractionPos(this).transform.forward;
+
         targetDir = Vector3.Normalize(targetDir);
         float step = navAgent.angularSpeed * Time.deltaTime;
         step = step / 180.0f * Mathf.PI;
@@ -237,10 +270,14 @@ public class AnimalAI : MonoBehaviour {
         while (true)
         {
             // Rotate until we are "close enough"
-            if (!Mathf.Approximately(Vector3.Dot(transform.forward, targetDir), 1.0f))
+            float dot = Vector3.Dot(transform.forward, targetDir);
+            if (dot <= 0.99f)
             {
-                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-                transform.rotation = Quaternion.LookRotation(newDir);
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0f);
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(targetDir);
             }
 
 
@@ -275,6 +312,12 @@ public class AnimalAI : MonoBehaviour {
         {
             if (stopper.shouldStop)
             {
+                if (blackboard.ContainsKey("InteractableTarget"))
+                {
+                    Interactable toRemove = (Interactable)blackboard["InteractableTarget"];
+                    toRemove.unReserve(this);
+                    blackboard.Remove("InteractableTarget");
+                }
                 navAgent.isStopped = true;
                 stopper.shouldStop = false;
                 animatorDriver.PlayFullBodyState(States.AnimalFullBody.Idle);
@@ -371,8 +414,6 @@ public class AnimalAI : MonoBehaviour {
         {
             case Interactable.Type.Food:
                 return animalConfig.hungerRecuperation * Time.deltaTime;
-            case Interactable.Type.Play:
-                return animalConfig.boredomRecuperation * Time.deltaTime;
             case Interactable.Type.Rest:
                 return animalConfig.fatigueRecuperation * Time.deltaTime;
             default:
@@ -391,13 +432,4 @@ public class AnimalAI : MonoBehaviour {
         fatigue += amount;
         fatigue = Mathf.Min(fatigue, animalConfig.maxFatigue);
     }
-
-    public void giveEntertainement(float amount)
-    {
-        boredom += amount;
-        boredom = Mathf.Min(boredom, animalConfig.maxBoredom);
-    }
-    
-
-
 }

@@ -8,16 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f6181830425214f8ad8ec9f8c65c3d, type: 3}
-  m_Name: DefaultAnimalConfig
+  m_Script: {fileID: 11500000, guid: 85a813cfa44bb384aa754c3fb55d3f2f, type: 3}
+  m_Name: BaseAnimalConfig
   m_EditorClassIdentifier: 
-  species: 0
-  baseAnimalConfig: {fileID: 11400000}
-  randomMinRatio: 0
-  randomMaxRatio: 0
-  maxHunger: 100
-  hungerRecuperation: 20
-  hungerLossRate: 5
+  xmlTree: {fileID: 4900000, guid: 22f680d74608e414d84b0d1c764c646f, type: 3}
+  m_randomMinRatio: 0.5
+  m_randomMaxRatio: 1
   m_hungerNeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -54,10 +50,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  maxFatigue: 100
-  fatigueRecuperation: 6
-  fatigueLossRate: 0
-  fatigueNeedCurve:
+  m_fatigueNeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
@@ -93,10 +86,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  maxBoredom: 100
-  boredomRecuperation: 6
-  boredomLossRate: 0
-  boredomNeedCurve:
+  m_boredomNeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
@@ -132,7 +122,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  affinityProximityNeedCurve:
+  m_affinityProximityNeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
@@ -142,14 +132,14 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 24.973877
-      value: 0.00016784668
+      time: 10
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 49.785904
-      value: 0.30025178
+      time: 30
+      value: 0.29622346
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -168,10 +158,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  maxHealth: 100
-  idleScore: 0.2
-  fov: 135
-  sightDistance: 80
-  lkpSightDistance: 10
-  headOffset: {x: 0, y: 0.6, z: 0.7}
-  lkpExpire: 45
+  m_idleScore: 0.2
+  m_fov: 135
+  m_sightDistance: 80
+  m_lkpSightDistance: 10
+  m_headOffset: {x: 0, y: 0.6, z: 0}
+  m_lkpExpire: 45

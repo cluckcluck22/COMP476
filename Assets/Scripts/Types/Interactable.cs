@@ -8,13 +8,14 @@ public class Interactable : MonoBehaviour {
     {
         Food,
         Rest,
-        Play
+        Talk,
+        Chill
     }
 
     public float maxCount;
     public Type type;
 
-    public Vector3[] interactionSpots;
+    public Transform[] interactionSpots;
 
     private float count;
     private List<AnimalAI> clients;
@@ -37,9 +38,6 @@ public class Interactable : MonoBehaviour {
                 case Type.Food:
                     animal.giveFood(consume(animal.getConsumption(Type.Food)));
                     break;
-                case Type.Play:
-                    animal.giveEntertainement(consume(animal.getConsumption(Type.Play)));
-                    break;
                 case Type.Rest:
                     animal.giveRest(consume(animal.getConsumption(Type.Rest)));
                     break;
@@ -61,6 +59,11 @@ public class Interactable : MonoBehaviour {
     public void reserve(AnimalAI animal)
     {
         reserved.Add(animal);
+    }
+
+    public void unReserve(AnimalAI animal)
+    {
+        reserved.Remove(animal);
     }
 
     public void fill(float amount)
@@ -101,12 +104,10 @@ public class Interactable : MonoBehaviour {
         return type;
     }
 
-    public Vector3 getInteractionPos(AnimalAI animal)
+    public Transform getInteractionPos(AnimalAI animal)
     {
         int spot = reserved.IndexOf(animal);
         Matrix4x4 toWorld = transform.localToWorldMatrix;
-        Vector3 offset = interactionSpots[spot];
-        Vector4 spotPoint = new Vector4(offset.x, offset.y, offset.z, 1.0f);
-        return toWorld * spotPoint;
+        return interactionSpots[spot];
     }
 }

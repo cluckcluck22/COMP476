@@ -1580,8 +1580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5efcf70bd2d17c458acee7bc8aed421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalConfig: {fileID: 11400000, guid: 610e213a1a1294741a8bb8fd6fc8d1b1, type: 2}
-  areaConfig: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2, type: 2}
+  animalConfig: {fileID: 11400000, guid: 6110d64ead9b67c4d8ec618527d2c2b4, type: 2}
+  zoneConfig: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2, type: 2}
+  debugNav: 0
+  debugPerception: 0
+  debugBT: 0
 --- !u!114 &114903705783952240
 MonoBehaviour:
   m_ObjectHideFlags: 1

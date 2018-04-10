@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f6181830425214f8ad8ec9f8c65c3d, type: 3}
+  m_Name: PigAnimalConfig
+  m_EditorClassIdentifier: 
+  species: 9
+  baseAnimalConfig: {fileID: 11400000, guid: 18184dc4111a90a4fa0bbe22f5ee8771, type: 2}
+  maxHunger: 100
+  hungerRecuperation: 20
+  hungerLossRate: 5
+  maxFatigue: 100
+  fatigueRecuperation: 6
+  fatigueLossRate: 1
+  maxBoredom: 100
+  boredomRecuperation: 6
+  boredomLossRate: 0
+  maxHealth: 100

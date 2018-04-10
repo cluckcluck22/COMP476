@@ -37,8 +37,8 @@ public class BTRepeat : BTNode
 
                 if (result == BTNodeResult.Stopped)
                 {
-                    yield return BTNodeResult.Stopped;
                     GetStopper().shouldStop = false;
+                    yield return BTNodeResult.Stopped;
                     yield break;
                 }
 
@@ -59,6 +59,10 @@ public class BTRepeat : BTNode
                     }
                 }
                 yield return BTNodeResult.Running;
+                if (GetStopper().shouldStop)
+                {
+                    childNode.Stop();
+                }
             }
         }
     }
@@ -66,6 +70,6 @@ public class BTRepeat : BTNode
     public override void Stop()
     {
         base.Stop();
-        childNode.GetStopper().shouldStop = true;
+        childNode.Stop();
     }
 }
