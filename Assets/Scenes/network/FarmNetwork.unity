@@ -2515,6 +2515,11 @@ Prefab:
       propertyPath: rams.Array.data[3]
       value: 
       objectReference: {fileID: 1477664557}
+    - target: {fileID: 224469365398686018, guid: 692bae59dfea70541ae3f143b23b802b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -406
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 692bae59dfea70541ae3f143b23b802b, type: 2}
   m_IsPrefabParent: 0
