@@ -1521,7 +1521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalConfig: {fileID: 11400000, guid: 610e213a1a1294741a8bb8fd6fc8d1b1, type: 2}
-  areaConfig: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2, type: 2}
+  animalName: 
   debugNav: 0
   debugPerception: 0
   debugBT: 0
