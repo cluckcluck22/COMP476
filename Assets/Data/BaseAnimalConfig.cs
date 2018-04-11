@@ -5,6 +5,7 @@ public class BaseAnimalConfig : ScriptableObject
 {
 
     public TextAsset xmlTree;
+    public TextAsset idleTree;
     public float m_randomMinRatio;    
     public float m_randomMaxRatio;    
                                                       
