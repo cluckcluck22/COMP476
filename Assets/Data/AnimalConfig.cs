@@ -48,17 +48,6 @@ public class AnimalConfig : ScriptableObject
         get { return baseAnimalConfig.m_fatigueNeedCurve; }
     }
 
-    public int maxBoredom;
-    [Tooltip("Amount recovered per second while playing")]
-    public int boredomRecuperation;
-    [Tooltip("Amount loss per second")]
-    public int boredomLossRate;
-
-    public AnimationCurve boredomNeedCurve
-    {
-        get { return baseAnimalConfig.m_boredomNeedCurve; }
-    }
-
     public AnimationCurve affinityProximityNeedCurve
     {
         get { return baseAnimalConfig.m_affinityProximityNeedCurve; }
@@ -69,6 +58,11 @@ public class AnimalConfig : ScriptableObject
     public float idleScore
     {
         get { return baseAnimalConfig.m_idleScore; }
+    }
+
+    public float rallyScore
+    {
+        get { return baseAnimalConfig.m_rallyScore; }
     }
 
     public float fov

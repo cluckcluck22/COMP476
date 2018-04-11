@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 195527085406540234}
   - component: {fileID: 114230049671319928}
   - component: {fileID: 114639734408732486}
+  - component: {fileID: 114645474831354892}
   m_Layer: 0
   m_Name: Chuck_Dog
   m_TagString: AI_Animal
@@ -1525,6 +1526,19 @@ MonoBehaviour:
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
+--- !u!114 &114645474831354892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920756488495996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136614701723585416
 CapsuleCollider:
   m_ObjectHideFlags: 1

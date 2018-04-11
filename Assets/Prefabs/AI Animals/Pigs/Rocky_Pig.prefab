@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114211353624727770}
   - component: {fileID: 114787794463482770}
   - component: {fileID: 114009007027747988}
+  - component: {fileID: 114813362074525130}
   m_Layer: 0
   m_Name: Rocky_Pig
   m_TagString: AI_Animal
@@ -1121,6 +1122,8 @@ MonoBehaviour:
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
 --- !u!114 &114525522373080050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1212,6 +1215,17 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114813362074525130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038621731852458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137707140658112668
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

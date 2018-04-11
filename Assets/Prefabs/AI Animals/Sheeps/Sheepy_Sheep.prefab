@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 114547154249052704}
   - component: {fileID: 114614318604854634}
   - component: {fileID: 114457821397687836}
+  - component: {fileID: 114511620682747928}
   m_Layer: 0
   m_Name: Sheepy_Sheep
   m_TagString: AI_Animal
@@ -1597,6 +1598,17 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114511620682747928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833449027923496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114547154249052704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1613,6 +1625,8 @@ MonoBehaviour:
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
 --- !u!114 &114614318604854634
 MonoBehaviour:
   m_ObjectHideFlags: 1

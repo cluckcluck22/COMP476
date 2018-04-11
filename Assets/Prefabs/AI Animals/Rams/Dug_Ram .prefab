@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 114629024653252340}
   - component: {fileID: 114823566847582386}
   - component: {fileID: 114800555692338166}
+  - component: {fileID: 114755860262357778}
   m_Layer: 9
   m_Name: 'Dug_Ram '
   m_TagString: AI_Animal
@@ -1587,6 +1588,19 @@ MonoBehaviour:
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
+--- !u!114 &114755860262357778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069274806570214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114800555692338166
 MonoBehaviour:
   m_ObjectHideFlags: 1

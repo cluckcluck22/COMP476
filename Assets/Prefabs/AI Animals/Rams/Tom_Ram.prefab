@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 114578436116214194}
   - component: {fileID: 114596270875344390}
   - component: {fileID: 114859751877435894}
+  - component: {fileID: 114444360577952454}
   m_Layer: 9
   m_Name: Tom_Ram
   m_TagString: AI_Animal
@@ -1571,6 +1572,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114444360577952454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858222578491100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114578436116214194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1587,6 +1599,8 @@ MonoBehaviour:
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
 --- !u!114 &114596270875344390
 MonoBehaviour:
   m_ObjectHideFlags: 1

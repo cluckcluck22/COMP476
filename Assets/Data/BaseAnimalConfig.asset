@@ -87,42 +87,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  m_boredomNeedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: -0.001133787
-      value: 1.0017867
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-    - serializedVersion: 2
-      time: 0.25
-      value: 1
-      inSlope: 0.000034641143
-      outSlope: 0.000034641143
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.5
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-    - serializedVersion: 2
-      time: 0.75
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-    - serializedVersion: 2
-      time: 0.99886614
-      value: 0.0048355474
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
   m_affinityProximityNeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -159,7 +123,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  m_idleScore: 0.2
+  m_idleScore: 0.1
+  m_rallyScore: 0.2
   m_fov: 135
   m_sightDistance: 80
   m_lkpSightDistance: 10

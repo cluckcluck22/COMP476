@@ -150,7 +150,7 @@ public class AnimalAI : MonoBehaviour {
     [BTLeaf("should-goto-rally")]
     public bool shouldGoToRally(Scorer scorer)
     {
-        scorer.score = animalConfig.idleScore;
+        scorer.score = animalConfig.rallyScore;
 
         InteractableZone zone = zoneManager.findMyZone(this);
         if (zone != null && zone.type == InteractableZone.ZoneType.Rally)
