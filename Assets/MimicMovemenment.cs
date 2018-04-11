@@ -163,19 +163,6 @@ public class MimicMovemenment : MonoBehaviour
 
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "AI_Animal")
-        {
-            Debug.Log("Triggered!");
-            if (Input.GetMouseButtonDown(0))
-            {
-                //Attack();
-
-                //Kill AI
-                Debug.Log("MIMIC ate: " + other.gameObject.name);
-            }
-        }
-    }
+   
 
 }
