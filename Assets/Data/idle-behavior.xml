@@ -5,8 +5,8 @@
       <repeat_success>
         <simple name="dynamic-reached" />
       </repeat_success>
-      <complex name="dynamic-action" />
     </parallel_success>
+    <complex name="dynamic-action" />
   </sequence>
 </behavior-tree>
 

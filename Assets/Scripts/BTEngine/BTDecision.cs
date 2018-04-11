@@ -126,7 +126,7 @@ public class BTDecision : BTNode
         float bestScore = float.MinValue;
         int bestScoreIndex = -1;
         float currentScore = 0;
-        float tempCurrentNodeScore = 0;
+        float tempCurrentNodeScore = -1f;
 
         if (currentRunningNode != -1)
         {
@@ -137,10 +137,6 @@ public class BTDecision : BTNode
             if (result == BTNodeResult.Success)
             {
                 tempCurrentNodeScore = conditions[currentRunningNode].GetScorer().score;
-            }
-            else
-            {
-                tempCurrentNodeScore = -1 * switchThreshold;
             }
         }
 
