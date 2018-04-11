@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class DuplicateAnimals : MonoBehaviour {
 
-    GameObject[] AI;
     public GameObject[] duplicateAI;
     public Transform cloneSpawn;
+    public Transform[] filteredAnimals;
+    public GameObject TransformGUI;
 	// Use this for initialization
-	void Start () {     
-        AI = GetAnimals();
+	void Start () {
         CorrectAI(duplicateAI);
-        duplicateAI[0].transform.position = transform.position;
         duplicateAI[0].transform.parent = this.transform;
+        duplicateAI[0].transform.position = transform.position;
+        duplicateAI[0].transform.rotation = transform.rotation;
         GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
     }
 
@@ -36,35 +37,36 @@ public class DuplicateAnimals : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
-            duplicateAI[0].transform.position = transform.position;
-            duplicateAI[0].transform.parent = this.transform;
+            filteredAnimals[0].transform.position = transform.position;
+            filteredAnimals[0].transform.parent = this.transform;
             GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
-            duplicateAI[1].transform.position = transform.position;
-            duplicateAI[1].transform.parent = this.transform;
-            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(1).GetComponent<AnimatorDriverAnimal>();
+            filteredAnimals[1].transform.position = transform.position;
+            filteredAnimals[1].transform.parent = this.transform;
+            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
-            duplicateAI[2].transform.position = transform.position;
-            duplicateAI[2].transform.parent = this.transform;
-            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(2).GetComponent<AnimatorDriverAnimal>();
+            filteredAnimals[2].transform.position = transform.position;
+            filteredAnimals[2].transform.parent = this.transform;
+            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
+            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
+            filteredAnimals[3].transform.position = transform.position;
+            filteredAnimals[3].transform.parent = this.transform;
+            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
-    }
-
-    GameObject[] GetAnimals()
-    {
-        GameObject[] AI = GameObject.FindGameObjectsWithTag("AI_Animal");
-        return AI;
     }
 
     public void CorrectAI(GameObject[] AI)
@@ -72,13 +74,6 @@ public class DuplicateAnimals : MonoBehaviour {
         foreach(GameObject animal in AI)
         {
             animal.GetComponent<AnimatorDriverAnimal>().enabled = false;
-            animal.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-            animal.GetComponent<Rigidbody>().isKinematic = true;
-            AnimalAI animalAiScript = animal.GetComponent<AnimalAI>();
-            animalAiScript.enabled = false;
-            animalAiScript.debugBT = false;
-            animalAiScript.debugNav = false;
-            animalAiScript.debugPerception = false;
         }
     }
 }

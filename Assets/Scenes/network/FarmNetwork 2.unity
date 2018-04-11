@@ -2424,11 +2424,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &263673363 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4729402451561758, guid: 18ffe447f0d552a4ab8d6949b9894419,
-    type: 2}
-  m_PrefabInternal: {fileID: 263673355}
 --- !u!1001 &269267777
 Prefab:
   m_ObjectHideFlags: 0
@@ -2656,7 +2651,7 @@ Prefab:
         type: 2}
       propertyPath: sheep.Array.data[3]
       value: 
-      objectReference: {fileID: 263673363}
+      objectReference: {fileID: 675435803}
     - target: {fileID: 114725949213496532, guid: 692bae59dfea70541ae3f143b23b802b,
         type: 2}
       propertyPath: rams.Array.data[0]
@@ -6889,6 +6884,11 @@ MonoBehaviour:
   instantiationId: 30
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!4 &675435803 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4729402451561758, guid: 18ffe447f0d552a4ab8d6949b9894419,
+    type: 2}
+  m_PrefabInternal: {fileID: 675435793}
 --- !u!4 &675591680 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 49d82b08dddf80047a79b37b29510693, type: 3}
