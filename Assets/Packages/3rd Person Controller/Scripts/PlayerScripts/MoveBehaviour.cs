@@ -3,7 +3,10 @@
 // MoveBehaviour inherits from GenericBehaviour. This class corresponds to basic walk and run behaviour, it is the default behaviour.
 public class MoveBehaviour : GenericBehaviour
 {
-	public float walkSpeed = 0.15f;                 // Default walk speed.
+
+    private AI_GUI AI_ShowStats;                    //To view AI Stats
+
+    public float walkSpeed = 0.15f;                 // Default walk speed.
 	public float runSpeed = 1.0f;                   // Default run speed.
 	public float sprintSpeed = 2.0f;                // Default sprint speed.
 	public float speedDampTime = 0.1f;              // Default damp time to change the animations based on current speed.
@@ -162,4 +165,22 @@ public class MoveBehaviour : GenericBehaviour
 	{
 		isColliding = false;
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "AI_Animal")
+        {
+            AI_ShowStats = other.GetComponentInChildren<AI_GUI>();
+            AI_ShowStats.DisplayStats = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "AI_Animal")
+        {
+            AI_ShowStats = other.GetComponentInChildren<AI_GUI>();
+            AI_ShowStats.DisplayStats = false;
+        }
+    }
 }

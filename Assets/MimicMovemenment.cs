@@ -23,6 +23,7 @@ public class MimicMovemenment : MonoBehaviour
     private bool isWalking;
     private bool isRunning;
 
+
     void Start()
     {
         //m_AnimatorDriverAnimal = GetComponentInChildren<AnimatorDriverAnimal>();
@@ -31,7 +32,7 @@ public class MimicMovemenment : MonoBehaviour
 
     void Update()
     {
-        if (!PhotonNetwork.connected ||mPhotonView.isMine)
+        if (!PhotonNetwork.connected || mPhotonView.isMine)
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
@@ -40,7 +41,7 @@ public class MimicMovemenment : MonoBehaviour
         }
     }
 
-    private void SetPlayerRelativeToCameraForward() 
+    private void SetPlayerRelativeToCameraForward()
     {
         Vector3 forward = GetCameraDirection();
         forward.y = 0.0f;
@@ -53,7 +54,7 @@ public class MimicMovemenment : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSmoothTime);
     }
 
-    private Vector3 GetCameraDirection() 
+    private Vector3 GetCameraDirection()
     {
         Vector3 CameraDirection = Camera_Mimic.TransformDirection(Vector3.forward);
         return CameraDirection;
@@ -66,7 +67,7 @@ public class MimicMovemenment : MonoBehaviour
 
     private void Movement()
     {
-       
+
         Vector3 input = new Vector3(horizontal, vertical, 0.0f);
         Vector3 inputDirection = input.normalized;
         if (inputDirection != Vector3.zero)
@@ -75,7 +76,7 @@ public class MimicMovemenment : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            m_speed = m_RunSpeed *inputDirection.magnitude;   //Running
+            m_speed = m_RunSpeed * inputDirection.magnitude;   //Running
             isRunning = true;
             isWalking = false;
         }
@@ -86,15 +87,15 @@ public class MimicMovemenment : MonoBehaviour
             isRunning = false;
         }
         transform.Translate(transform.forward * m_speed * Time.deltaTime, Space.World);
-        
-        
+
+
         //Animate
         if (isWalking)
         {
-            m_AnimatorDriverAnimal.PlayWalk(); 
+            m_AnimatorDriverAnimal.PlayWalk();
         }
         if (isRunning)
-        { 
+        {
             m_AnimatorDriverAnimal.PlayRun();
         }
     }
@@ -131,36 +132,31 @@ public class MimicMovemenment : MonoBehaviour
             m_AnimatorDriverAnimal.PlayFullBodyState(States.AnimalFullBody.Idle);
         }
 
-        //Eating
-        if (Input.GetKey(KeyCode.E))
-        {
-            Eating();
-        }
-        
-        //Attack
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            Attack();
-        }
+        ////Eating
+        //if (Input.GetKey(KeyCode.E))
+        //{
+        //    Eating();
+        //}
 
-        //Sleep
-        if (Input.GetKey(KeyCode.F))
-        {
-            Rest();
-        }
+        ////Attack
+        //if(Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    Attack();
+        //}
 
-        //Sleep
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Talk();
-        }
+        ////Sleep
+        //if (Input.GetKey(KeyCode.F))
+        //{
+        //    Rest();
+        //}
+
+        ////Sleep
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    Talk();
+        //}
 
     }
+    
 
-    //TO DO:
-    //Transforming the mimic: mimic management. DestoryObject(),
-    //Camera: destory anything below the Camera (children)
-    //onAwake the character and attach to the Camera_Mimic, and when destoried detach the Camera_Mimic
-    //Empty gameObject.
-    //swapping transform - copy Bessie & real Bessie (storing the states  information)
 }

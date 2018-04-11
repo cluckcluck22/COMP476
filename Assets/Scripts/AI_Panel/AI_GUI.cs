@@ -58,6 +58,7 @@ public class AI_GUI : MonoBehaviour
         }
         else
         {
+            displayStats = false;
             NameStatPanel.SetActive(true);
             NameText.SetActive(true);
             if (StatsPanel != null)
@@ -83,16 +84,16 @@ public class AI_GUI : MonoBehaviour
 
     //Get and Set
     //Will be set with framer radius trigger
-    public bool DisplayName
+    public bool DisplayStats
     {
         get
         {
-            return displayName;
+            return displayStats;
         }
 
         set
         {
-            displayName = value;
+            displayStats = value;
         }
     }
 }
