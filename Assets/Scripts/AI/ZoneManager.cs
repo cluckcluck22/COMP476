@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using BTCoroutine = System.Collections.Generic.IEnumerator<BTNodeResult>;
+
 public class ZoneManager : MonoBehaviour {
 
     public InteractableZone[] interactableZones;
@@ -62,6 +64,9 @@ public class ZoneManager : MonoBehaviour {
         InteractableZone candidate = null;
         int bestCount = 0;
         int currentCount = 0;
+        float closestDistance = float.MaxValue;
+        InteractableZone closestZone = null;
+
         foreach (InteractableZone zone in rallyZones)
         {
             currentCount = zone.getAnimalCount(animal.getSpecies());
@@ -73,16 +78,23 @@ public class ZoneManager : MonoBehaviour {
                 bestCount = currentCount;
                 candidate = zone;
             }
+
+            float distance = (zone.transform.position - animal.transform.position).magnitude;
+            if ( distance <= closestDistance )
+            {
+                closestDistance = distance;
+                closestZone = zone;
+            }
         }
 
         if (candidate == null)
         {
-            // Pick a random one
-            int random = Random.Range(0, rallyZones.Count - 1);
-            candidate = interactableZones[random];
+            return closestZone.transform;
         }
-
-        return candidate.transform;
+        else
+        {
+            return candidate.transform;
+        }
     }
 
     public List<Interactable> getAllNeedsInteractables()
@@ -95,5 +107,36 @@ public class ZoneManager : MonoBehaviour {
         }
 
         return output;
+    }
+
+    public InteractableZone findMyZone(AnimalAI animal)
+    {
+        foreach (InteractableZone zone in needsZones)
+        {
+            if (zone.isAnimalInZone(animal))
+                return zone;
+        }
+
+        foreach (InteractableZone zone in rallyZones)
+        {
+            if (zone.isAnimalInZone(animal))
+                return zone;
+        }
+
+        return null;
+    }
+
+    public Interactable requestIdleInteractable(AnimalAI animal)
+    {
+        InteractableZone zone = findMyZone(animal);
+        if (zone != null)
+        {
+            Interactable interactable = zone.getAvailableRallySpot();
+            if (interactable != null)
+            {
+                return interactable;
+            }
+        }
+        return null;
     }
 }

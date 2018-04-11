@@ -11,6 +11,11 @@ public class AnimalConfig : ScriptableObject
         get { return baseAnimalConfig.xmlTree; }
     }
 
+    public TextAsset idleTree
+    {
+        get { return baseAnimalConfig.idleTree; }
+    }
+
     public float randomMinRatio
     {
         get { return baseAnimalConfig.m_randomMinRatio; }

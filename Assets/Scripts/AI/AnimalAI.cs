@@ -15,11 +15,11 @@ public class AnimalAI : MonoBehaviour {
 
     private string runningBT = "";
 
-    private PerceptionModule perception;
+    public PerceptionModule perception { get; private set; }
 
-    private AnimatorDriverAnimal animatorDriver;
+    public AnimatorDriverAnimal animatorDriver { get; private set; }
 
-    private NavMeshAgent navAgent;
+    public NavMeshAgent navAgent { get; private set; }
 
     private Dictionary<string, object> blackboard;
 
@@ -33,12 +33,19 @@ public class AnimalAI : MonoBehaviour {
 
     private ZoneManager zoneManager;
 
+    private IdleBehaviorContainer idleBehavior;
+
+    public bool makeHungry = false;
+    public bool makeSleepy = false;
+
     private void Awake()
     {
         bt = new BehaviorTree(animalConfig.xmlTree, this);
         debugBT = debugNav = debugPerception = true;
 
         zoneManager = FindObjectOfType<ZoneManager>();
+
+        idleBehavior = GetComponent<IdleBehaviorContainer>();
     }
 
     void Start ()
@@ -70,6 +77,17 @@ public class AnimalAI : MonoBehaviour {
 	
 	void Update ()
     {
+        if (makeHungry)
+        {
+            hunger = 0f;
+            makeHungry = false;
+        }
+        if (makeSleepy)
+        {
+            fatigue = 0f;
+            makeSleepy = false;
+        }
+
         if (health != 0)
         {
             hunger -= animalConfig.hungerLossRate * Time.deltaTime;
@@ -136,12 +154,25 @@ public class AnimalAI : MonoBehaviour {
         scorer.score = animalConfig.affinityProximityNeedCurve.Evaluate(distance);
         return true;
     }
+    [BTLeaf("should-goto-rally")]
+    public bool shouldGoToRally(Scorer scorer)
+    {
+        scorer.score = animalConfig.idleScore;
+
+        InteractableZone zone = zoneManager.findMyZone(this);
+        if (zone != null && zone.type == InteractableZone.ZoneType.Rally)
+            return false;
+
+        return perception.hasNoFlock;
+    }
+
     [BTLeaf("should-idle")]
     public bool shouldIdle(Scorer scorer)
     {
         scorer.score = animalConfig.idleScore;
-        return true;
+        return zoneManager.requestIdleInteractable(this) != null;
     }
+
     [BTLeaf("destination-reached")]
     public bool destinationReached()
     {
@@ -182,6 +213,28 @@ public class AnimalAI : MonoBehaviour {
         runningBT = "goto-rest-item";
 
         Vector3 destination = ((Interactable)blackboard["InteractableTarget"]).getInteractionPos(this).position;
+
+        BTCoroutine routine = gotoImplementation(stopper, destination);
+        return routine;
+    }
+
+    [BTLeaf("goto-flock-center")]
+    public BTCoroutine gotFlockCenter(Stopper stopper)
+    {
+        runningBT = "goto-flock-center";
+
+        Vector3 destination = perception.flockCenter;
+
+        BTCoroutine routine = gotoImplementation(stopper, destination);
+        return routine;
+    }
+
+    [BTLeaf("goto-nearest-rally")]
+    public BTCoroutine gotoNearestRally(Stopper stopper)
+    {
+        runningBT = "goto-nearest-rally";
+
+        Vector3 destination = zoneManager.findRallyZone(this).position;
 
         BTCoroutine routine = gotoImplementation(stopper, destination);
         return routine;
@@ -228,13 +281,34 @@ public class AnimalAI : MonoBehaviour {
     {
         runningBT = "idle-wander";
 
-        navAgent.isStopped = true;
+        Interactable interactable = zoneManager.requestIdleInteractable(this); 
 
-        while (true)
+        if (interactable == null)
         {
+            yield return BTNodeResult.Failure;
+            yield break;
+        }
+
+        idleBehavior.setContext(interactable);
+
+        BTNode subRoot = idleBehavior.getRoot();
+
+        BTCoroutine routine = subRoot.Procedure();
+
+        while (routine.MoveNext())
+        {
+            BTNodeResult result = routine.Current;
+
             if (stopper.shouldStop)
             {
-                navAgent.isStopped = false;
+                subRoot.Stop();
+                routine.MoveNext();
+                result = routine.Current;
+                if (result != BTNodeResult.Stopped)
+                {
+                    throw new System.Exception("On stopping current node in idle");
+                }
+
                 stopper.shouldStop = false;
                 yield return BTNodeResult.Stopped;
                 yield break;
@@ -242,13 +316,6 @@ public class AnimalAI : MonoBehaviour {
 
             yield return BTNodeResult.Running;
         }
-
-        //float angle = Random.Range(-35.0f, 35.0f);
-        //float distance = Random.Range(3.0f, 7.0f);
-        //Vector3 direction = Quaternion.Euler(0, angle, 0) * transform.forward;
-        //Vector3 target = transform.position + direction;
-
-        //return gotoImplementation(stopper, target);
     }
 
 
@@ -256,6 +323,42 @@ public class AnimalAI : MonoBehaviour {
     {
         Physics.IgnoreCollision(target.GetComponent<BoxCollider>(), GetComponent<BoxCollider>());
         target.attach(this);
+
+        Vector3 targetDir = target.getInteractionPos(this).transform.forward;
+
+        targetDir = Vector3.Normalize(targetDir);
+        float step = navAgent.angularSpeed * Time.deltaTime;
+        step = step / 180.0f * Mathf.PI;
+
+
+        // The animal does not have to do anything beyond this, the container "feeds" the animal
+        // on update (like an observer pattern)
+        while (true)
+        {
+            if (stopper.shouldStop)
+            {
+                stopper.shouldStop = false;
+                target.detach(this);
+                Physics.IgnoreCollision(target.GetComponent<BoxCollider>(), GetComponent<BoxCollider>(), false);
+                animatorDriver.PlayFullBodyState(States.AnimalFullBody.Idle);
+                yield return BTNodeResult.Stopped;
+                yield break;
+            }
+
+            // Rotate until we are "close enough"
+            float dot = Vector3.Dot(transform.forward, targetDir);
+            if (dot <= 0.99f)
+            {
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0f);
+                yield return BTNodeResult.Running;
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(targetDir);
+                break;
+            }
+        }
+
         switch (target.type)
         {
             case Interactable.Type.Food:
@@ -266,28 +369,8 @@ public class AnimalAI : MonoBehaviour {
                 break;
         }
 
-        Vector3 targetDir = target.getInteractionPos(this).transform.forward;
-
-        targetDir = Vector3.Normalize(targetDir);
-        float step = navAgent.angularSpeed * Time.deltaTime;
-        step = step / 180.0f * Mathf.PI;
-
-        // The animal does not have to do anything beyond this, the container "feeds" the animal
-        // on update (like an observer pattern)
         while (true)
-        {
-            // Rotate until we are "close enough"
-            float dot = Vector3.Dot(transform.forward, targetDir);
-            if (dot <= 0.99f)
-            {
-                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0f);
-            }
-            else
-            {
-                transform.rotation = Quaternion.LookRotation(targetDir);
-            }
-
-
+        { 
             if (stopper.shouldStop)
             {
                 stopper.shouldStop = false;

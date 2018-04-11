@@ -14,11 +14,11 @@ MonoBehaviour:
   species: 11
   baseAnimalConfig: {fileID: 11400000, guid: 18184dc4111a90a4fa0bbe22f5ee8771, type: 2}
   maxHunger: 100
-  hungerRecuperation: 20
-  hungerLossRate: 5
+  hungerRecuperation: 6
+  hungerLossRate: 0
   maxFatigue: 100
   fatigueRecuperation: 6
-  fatigueLossRate: 1
+  fatigueLossRate: 0
   maxBoredom: 100
   boredomRecuperation: 6
   boredomLossRate: 0

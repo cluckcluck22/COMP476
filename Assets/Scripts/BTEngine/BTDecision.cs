@@ -138,6 +138,10 @@ public class BTDecision : BTNode
             {
                 tempCurrentNodeScore = conditions[currentRunningNode].GetScorer().score;
             }
+            else
+            {
+                tempCurrentNodeScore = -1 * switchThreshold;
+            }
         }
 
         for (int i = 0; i < conditions.Length; i++)
