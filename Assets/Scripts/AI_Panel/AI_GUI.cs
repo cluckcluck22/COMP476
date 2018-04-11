@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class AI_GUI : MonoBehaviour {
 
     public string mString;
+    public GameObject NameText;
     public Text mText;
     public float fadeTime;
+    public bool displayName;
     public bool displayStats;
 
 	void Start () 
     {
-        mText = GameObject.Find("Text").GetComponent<Text>();
+        NameText.SetActive(true);
+        displayName = true;
+        mText = NameText.GetComponentInChildren<Text>();
         mText.color = Color.clear;
 	}
 	
@@ -22,19 +26,19 @@ public class AI_GUI : MonoBehaviour {
         FadeText();
 	}
 
-    void OnMouseOver()
-    {
-        Debug.Log("DISPLAY TEXT!");
-        displayStats = true;
-    }
+    //void OnMouseOver()
+    //{
+    //    displayStats = true;
+    //}
 
-    void OnMouseExit()
-    {
-        displayStats = false;
-    }
+    //void OnMouseExit()
+    //{
+    //    displayStats = false;
+   // }
 
     void FadeText()
     {
+        /*
         if(displayStats)
         {
             mText.text = mString;
@@ -43,6 +47,17 @@ public class AI_GUI : MonoBehaviour {
         else 
         {
             mText.color = Color.Lerp(mText.color, Color.clear, fadeTime * Time.deltaTime);
+        }
+        */
+
+        if (displayName)
+        {
+            mText.text = mString;   //Name of the Animal is always displayed
+            mText.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
+        }
+        else
+        {
+            displayName = false;
         }
     }
 }
