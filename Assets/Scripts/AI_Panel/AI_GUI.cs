@@ -27,6 +27,9 @@ public class AI_GUI : MonoBehaviour
 
     public float fadeTime;
 
+    //Animal AI information
+    AnimalAI AnimalStat;
+
 
     void Start()
     {
@@ -50,17 +53,16 @@ public class AI_GUI : MonoBehaviour
         {
             if (displayStats)
             {
-
                 StatsPanel.SetActive(true);
                 NameStatPanel.SetActive(false);
                 NameText.SetActive(false);
                 mStatName = StatName.GetComponentInChildren<Text>();
                 mStat1Text = Stat1Text.GetComponentInChildren<Text>();
                 mStat2Text = Stat2Text.GetComponentInChildren<Text>();
+
                 mStatName.text = mString;
                 mStat1Text.text = CurrentValueOfStat1();
                 mStat2Text.text = CurrentValueOfStat2();
-                mStatName.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
             }
             else
             {
@@ -95,14 +97,22 @@ public class AI_GUI : MonoBehaviour
 
     private string CurrentValueOfStat1()
     {
-        //TODO: Grab the stat1 here
-        return "FuncStat1";
+        string text = "MIMIC HUNGER";
+        AnimalStat = gameObject.GetComponentInParent<AnimalAI>();
+        if (AnimalStat != null)
+            text = ((int)AnimalStat.hunger).ToString();
+
+        return text;
     }
 
     private string CurrentValueOfStat2()
     {
-        //TODO: Grab the stat1 here
-        return "FuncStat1";
+        string text = "MIMIC FATIGUE";
+        AnimalStat = gameObject.GetComponentInParent<AnimalAI>();
+        if (AnimalStat != null)
+            text = ((int)AnimalStat.fatigue).ToString();
+
+        return text;
     }
 
     //Get and Set
