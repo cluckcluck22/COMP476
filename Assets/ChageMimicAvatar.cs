@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ChageMimicAvatar : MonoBehaviour {
 
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		
 	}
 	
