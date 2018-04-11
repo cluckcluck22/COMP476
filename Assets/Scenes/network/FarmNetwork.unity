@@ -2236,6 +2236,11 @@ Prefab:
       propertyPath: TransformGUI
       value: 
       objectReference: {fileID: 1511404687}
+    - target: {fileID: 114749907566545276, guid: 6f22cf8b00472a14481b686c9e987745,
+        type: 2}
+      propertyPath: m_WalkSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
   m_IsPrefabParent: 0
