@@ -35,6 +35,10 @@ public class AnimalPicker : MonoBehaviour
     void Start()
     {
         //mTransformGUI = GetComponent<TransformGUI>();
+        mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[0];
+        mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[0];
+        mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[0];
+        mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[0];
     }
 
     // Update is called once per frame
