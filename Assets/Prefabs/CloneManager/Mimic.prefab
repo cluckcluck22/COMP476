@@ -24,9 +24,6 @@ GameObject:
   - component: {fileID: 114676029792651104}
   - component: {fileID: 114025574900950678}
   - component: {fileID: 195648242155604352}
-  - component: {fileID: 54866403182369876}
-  - component: {fileID: 65191626799780272}
-  - component: {fileID: 114668322434520428}
   m_Layer: 0
   m_Name: Mimic
   m_TagString: mimic
@@ -40,40 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863245915234726}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.16, z: 12.22}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 12.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54866403182369876
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1863245915234726}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!65 &65191626799780272
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1863245915234726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.5395575, z: 1.8695717}
-  m_Center: {x: -9.468292e-16, y: 0.26977873, z: 0.20583534}
 --- !u!114 &114025574900950678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,29 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863992fd533bcae4ea4b28ebb5522d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duplicateAI:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  duplicateAI: []
   cloneSpawn: {fileID: 0}
-  filteredAnimals: []
-  TransformGUI: {fileID: 0}
 --- !u!114 &114093171341959456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,23 +77,12 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4843560462014332}
+  - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &114668322434520428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1863245915234726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7cd2cec77ea9b840983b7716fd90abe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114676029792651104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,14 +154,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863245915234726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1305ca1829ff04469f2cc8ac38bbb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Camera_Mimic: {fileID: 0}
   m_speed: 0
-  m_WalkSpeed: 3.5
+  m_WalkSpeed: 5
   m_RunSpeed: 8
   turnSmoothTime: 0.2
   m_AnimatorDriverAnimal: {fileID: 0}
@@ -234,7 +172,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863245915234726}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
