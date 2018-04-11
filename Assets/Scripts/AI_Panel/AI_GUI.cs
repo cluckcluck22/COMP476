@@ -11,7 +11,8 @@ public class AI_GUI : MonoBehaviour
     public GameObject NameStatPanel;
     public GameObject NameText;
     public Text mText;
-    public bool displayName;
+    [SerializeField]
+    private bool displayName;
 
     //Stats of Animal
     public GameObject StatsPanel;   //when set to active images and text will be active as well
@@ -21,7 +22,8 @@ public class AI_GUI : MonoBehaviour
     public Text mStatName;
     public Text mStat1Text;
     public Text mStat2Text;
-    public bool displayStats;
+    [SerializeField]
+    private bool displayStats;
 
     public float fadeTime;
 
@@ -43,28 +45,50 @@ public class AI_GUI : MonoBehaviour
 
     void FadeText()
     {
-        if (displayStats)
+        //The Stats should only be viewable to the farmer when in range of AI, else farmer will only see the name of AI
+        if (PhotonNetwork.connected || PhotonNetwork.isMasterClient)
         {
-            StatsPanel.SetActive(true);
-            NameStatPanel.SetActive(false);
-            NameText.SetActive(false);
-            mStatName = StatName.GetComponentInChildren<Text>();
-            mStat1Text = Stat1Text.GetComponentInChildren<Text>();
-            mStat2Text = Stat2Text.GetComponentInChildren<Text>();
-            mStatName.text = mString;
-            mStat1Text.text = CurrentValueOfStat1();
-            mStat2Text.text = CurrentValueOfStat2();
-            mStatName.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
+            if (displayStats)
+            {
+
+                StatsPanel.SetActive(true);
+                NameStatPanel.SetActive(false);
+                NameText.SetActive(false);
+                mStatName = StatName.GetComponentInChildren<Text>();
+                mStat1Text = Stat1Text.GetComponentInChildren<Text>();
+                mStat2Text = Stat2Text.GetComponentInChildren<Text>();
+                mStatName.text = mString;
+                mStat1Text.text = CurrentValueOfStat1();
+                mStat2Text.text = CurrentValueOfStat2();
+                mStatName.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
+            }
+            else
+            {
+                displayStats = false;
+                NameStatPanel.SetActive(true);
+                NameText.SetActive(true);
+                if (StatsPanel != null)
+                    StatsPanel.SetActive(false);
+                displayName = true;
+                mText.text = mString;
+                mText.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
+            }
         }
-        else
+
+        //The Mimic only sees the names of the AI's
+        if (!PhotonNetwork.connected || !PhotonNetwork.isMasterClient)
         {
-            NameStatPanel.SetActive(true);
-            NameText.SetActive(true);
-            if (StatsPanel != null)
-                StatsPanel.SetActive(false);
-            displayName = true;
-            mText.text = mString;  
-            mText.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
+            if (displayName)
+            {
+                displayStats = false;
+                NameStatPanel.SetActive(true);
+                NameText.SetActive(true);
+                if (StatsPanel != null)
+                    StatsPanel.SetActive(false);
+                displayName = true;
+                mText.text = mString;
+                mText.color = Color.Lerp(mText.color, Color.black, fadeTime * Time.deltaTime);
+            }
         }
 
     }
@@ -83,16 +107,16 @@ public class AI_GUI : MonoBehaviour
 
     //Get and Set
     //Will be set with framer radius trigger
-    public bool DisplayName
+    public bool DisplayStats
     {
         get
         {
-            return displayName;
+            return displayStats;
         }
 
         set
         {
-            displayName = value;
+            displayStats = value;
         }
     }
 }
