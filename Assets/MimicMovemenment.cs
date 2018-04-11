@@ -144,7 +144,7 @@ public class MimicMovemenment : MonoBehaviour
         //}
 
         ////Attack
-        //if(Input.GetKeyDown(KeyCode.Q))
+        //if (Input.GetKeyDown(KeyCode.Q))
         //{
         //    Attack();
         //}
@@ -162,6 +162,7 @@ public class MimicMovemenment : MonoBehaviour
         //}
 
     }
-    
+
+   
 
 }
