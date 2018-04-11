@@ -11,7 +11,8 @@ public class AI_GUI : MonoBehaviour
     public GameObject NameStatPanel;
     public GameObject NameText;
     public Text mText;
-    public bool displayName;
+    [SerializeField]
+    private bool displayName;
 
     //Stats of Animal
     public GameObject StatsPanel;   //when set to active images and text will be active as well
@@ -21,7 +22,8 @@ public class AI_GUI : MonoBehaviour
     public Text mStatName;
     public Text mStat1Text;
     public Text mStat2Text;
-    public bool displayStats;
+    [SerializeField] 
+    private bool displayStats;
 
     public float fadeTime;
 
