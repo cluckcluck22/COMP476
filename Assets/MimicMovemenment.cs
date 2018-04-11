@@ -37,8 +37,13 @@ public class MimicMovemenment : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
 
-            InputHandler();
+            //InputHandler();
         }
+    }
+
+    void FixedUpdate()
+    {
+        InputHandler();
     }
 
     private void SetPlayerRelativeToCameraForward()
