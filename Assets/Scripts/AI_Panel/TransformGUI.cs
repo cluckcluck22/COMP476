@@ -7,8 +7,8 @@ public class TransformGUI : MonoBehaviour
 {
 
     public Transform[] m_transforms;
-    // Use this for initialization
-    void Start()
+    
+    void Awake()
     {
         m_transforms = new Transform[4];
     }

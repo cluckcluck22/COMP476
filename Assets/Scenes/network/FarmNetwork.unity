@@ -2693,6 +2693,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1653260235369278, guid: 692bae59dfea70541ae3f143b23b802b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 692bae59dfea70541ae3f143b23b802b, type: 2}
   m_IsPrefabParent: 0
@@ -10648,6 +10652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39b1affe47944d4eb0697426561f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mimicImg: []
 --- !u!1001 &1138049100
 Prefab:
   m_ObjectHideFlags: 0
