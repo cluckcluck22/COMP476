@@ -40,6 +40,7 @@ public class DuplicateAnimals : MonoBehaviour {
             filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
             filteredAnimals[0].transform.position = transform.position;
+            filteredAnimals[0].transform.rotation = transform.rotation;
             filteredAnimals[0].transform.parent = this.transform;
             GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
@@ -48,6 +49,7 @@ public class DuplicateAnimals : MonoBehaviour {
             filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
             filteredAnimals[1].transform.position = transform.position;
+            filteredAnimals[1].transform.rotation = transform.rotation;
             filteredAnimals[1].transform.parent = this.transform;
             GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
@@ -56,6 +58,7 @@ public class DuplicateAnimals : MonoBehaviour {
             filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
             filteredAnimals[2].transform.position = transform.position;
+            filteredAnimals[2].transform.rotation = transform.rotation;
             filteredAnimals[2].transform.parent = this.transform;
             GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
@@ -64,6 +67,7 @@ public class DuplicateAnimals : MonoBehaviour {
             filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
             DetachCurrentChild();
             filteredAnimals[3].transform.position = transform.position;
+            filteredAnimals[3].transform.rotation = transform.rotation;
             filteredAnimals[3].transform.parent = this.transform;
             GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         }
