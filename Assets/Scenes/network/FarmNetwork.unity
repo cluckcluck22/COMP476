@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5108935, g: 0.4240186, b: 0.40105042, a: 1}
+  m_IndirectSpecularColor: {r: 0.510727, g: 0.42400008, b: 0.40056357, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2770,6 +2770,37 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 692bae59dfea70541ae3f143b23b802b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &280290235 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1162681593254010, guid: 692bae59dfea70541ae3f143b23b802b,
+    type: 2}
+  m_PrefabInternal: {fileID: 280290234}
+--- !u!114 &280290236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280290235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 42
+  instantiationId: 42
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &290548033
 Prefab:
   m_ObjectHideFlags: 0
@@ -5012,6 +5043,8 @@ MonoBehaviour:
   Farmer: {fileID: 1806608769}
   Camera: {fileID: 331668241}
   canvas: {fileID: 347265734}
+  endCanvas: {fileID: 0}
+  numOfKilledAnimals: 0
   useDogOffline: 1
 --- !u!1001 &468039977
 Prefab:

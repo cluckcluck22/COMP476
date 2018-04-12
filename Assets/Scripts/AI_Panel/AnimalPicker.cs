@@ -31,6 +31,8 @@ public class AnimalPicker : MonoBehaviour
     public Transform[] rams;
     bool haveClones = false;
 
+    public PhotonView mPhotonView;
+
 
     void Start()
     {
@@ -41,6 +43,8 @@ public class AnimalPicker : MonoBehaviour
         mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[0];
 
         animal_arr = new GameObject[4];
+
+        mPhotonView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -130,23 +134,64 @@ public class AnimalPicker : MonoBehaviour
         if(currentChoice.name == "Cows")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[currentIndex];
+            if(PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Cows", currentIndex);
+            }
         }
 
         if (currentChoice.name == "Pigs")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[currentIndex];
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Pigs", currentIndex);
+            }
         }
 
         if (currentChoice.name == "Sheep")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[currentIndex];
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Sheep", currentIndex);
+            }
         }
 
         if (currentChoice.name == "Rams")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[currentIndex];
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Rams", currentIndex);
+            }
         }
     }
+
+    [PunRPC]
+    public void syncOnValueChange(string choice, int index)
+    {
+        if (currentChoice.name == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[index];
+        }
+
+        if (currentChoice.name == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[index];
+        }
+
+        if (currentChoice.name == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[index];
+        }
+
+        if (currentChoice.name == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[index];
+        }
+    }
+    
 
     void ChooseSelectionForward(GameObject currentChoice)
     {
