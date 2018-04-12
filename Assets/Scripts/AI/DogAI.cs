@@ -292,7 +292,7 @@ public class DogAI : MonoBehaviour {
                         if ((transform.position - ownerPosition).magnitude <= goToFarmerDistance)
                         {
                             subState = DogSubState.LeadLookat;
-				// stop nav here
+                            navAgent.isStopped = true;				
                         }
                         else if ((ownerPosition - latestTargetPos).magnitude >= repathDistance)
                         {
@@ -387,7 +387,7 @@ public class DogAI : MonoBehaviour {
 
     private void Repath(Vector3 offset)
     {
-	    // set the stopped to false here
+        navAgent.isStopped = true;
         latestTargetPos = owner.transform.position;
         latestTargetFront = owner.transform.forward;
         navAgent.SetDestination(latestTargetPos + offset);
