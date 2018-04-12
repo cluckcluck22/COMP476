@@ -157,6 +157,7 @@ public class AnimalAI : MonoBehaviour {
     public bool playDeadAnim()
     {
         animatorDriver.PlayFullBodyState(States.AnimalFullBody.Dead);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         return true;
     }
 

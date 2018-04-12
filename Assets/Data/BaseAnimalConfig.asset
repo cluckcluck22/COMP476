@@ -151,6 +151,6 @@ MonoBehaviour:
   m_rallyScore: 0.2
   m_fov: 135
   m_sightDistance: 80
-  m_lkpSightDistance: 10
+  m_lkpSightDistance: 20
   m_headOffset: {x: 0, y: 0.6, z: 0}
   m_lkpExpire: 45
