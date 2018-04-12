@@ -15480,7 +15480,7 @@ MonoBehaviour:
   lookAtExitDistance: 1
   lookAtExitAngle: 45
   lookAtDelay: 1
-  sniffDistance: 0.25
+  sniffDistance: 2
   sniffTime: 1
   goToFarmerDistance: 2
   leadDistance: 1

@@ -9,7 +9,7 @@ public class DogAI : MonoBehaviour {
     public AudioSource audioSource;
 
     public Vector3 followOffset;
-    public float repathDistance=4.0f;
+    public float repathDistance=5.0f;
     public float repathAngle;
     public float followDistanceReached;
 
@@ -20,8 +20,8 @@ public class DogAI : MonoBehaviour {
     public float sniffDistance = 1.0f;
     public float sniffTime=1.0f;
 
-    public float goToFarmerDistance=2.0f;
-    public float leadDistance=1.0f;
+    public float goToFarmerDistance=4.0f;
+    public float leadDistance=2.0f;
 
     public float barkFrequency=5.0f;
 
@@ -35,8 +35,8 @@ public class DogAI : MonoBehaviour {
     private Vector3 latestTargetPos;
     private Vector3 latestTargetFront;
 
-    private DogState state;
-    private DogSubState subState;
+    public DogState state; //TODO make private
+    public DogSubState subState;//TODO make private
     private bool shouldFollow;
 
     private Interactable needsFilling;
@@ -47,14 +47,14 @@ public class DogAI : MonoBehaviour {
 
     private float barkTime;
 
-    private enum DogState
+    public enum DogState//TODO make private
     {
         Follow,
         Patrol,
         Lead
     }
 
-    private enum DogSubState
+    public enum DogSubState//TODO make private
     {
         FollowPath,
         FollowLookAt,
@@ -293,12 +293,16 @@ public class DogAI : MonoBehaviour {
                         {
                             subState = DogSubState.LeadLookat;
                         }
-                        else if ( (ownerPosition - latestTargetPos).magnitude >= repathDistance )
+                        else if ((ownerPosition - latestTargetPos).magnitude >= repathDistance)
                         {
                             //close distance with owner
                             Vector3 direction = (needsFilling.transform.position - owner.position).normalized;
                             direction *= goToFarmerDistance;
                             Repath(direction);
+                        }
+                        else
+                        {
+                            int i = 0;
                         }
                        
                         break;
