@@ -6,7 +6,7 @@ public class KillAnimal : MonoBehaviour {
 
 	public void KillAnimals()
     {
-        if(transform.parent != null)
+        if(transform.parent != null || transform.tag.Equals("mimic"))
         {
             //TODO end game
             if (gameObject.GetComponent<FadeOut>() == null)
