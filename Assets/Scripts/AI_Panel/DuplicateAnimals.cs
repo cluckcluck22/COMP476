@@ -106,7 +106,7 @@ public class DuplicateAnimals : MonoBehaviour {
             animal.GetComponent<AnimatorDriverAnimal>().enabled = false;
             if (PhotonNetwork.connected && !PhotonNetwork.isMasterClient)
             {
-                mPhotonView.TransferOwnership(PhotonNetwork.player);
+                animal.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
             }
         }
     }

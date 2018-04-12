@@ -171,22 +171,22 @@ public class AnimalPicker : MonoBehaviour
     [PunRPC]
     public void syncOnValueChange(string choice, int index)
     {
-        if (currentChoice.name == choice)
+        if ("Cows"== choice)
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[index];
         }
 
-        if (currentChoice.name == choice)
+        if ("Pigs" == choice)
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[index];
         }
 
-        if (currentChoice.name == choice)
+        if ("Sheep" == choice)
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[index];
         }
 
-        if (currentChoice.name == choice)
+        if ("Rams" == choice)
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[index];
         }
