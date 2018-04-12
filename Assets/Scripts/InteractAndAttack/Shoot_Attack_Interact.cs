@@ -6,10 +6,18 @@ public class Shoot_Attack_Interact : MonoBehaviour {
 
     public LayerMask interactables;
     public LayerMask layerOfCreatures;
+    public float fireRate = 0.35f;
+    float nextFire;
+    Transform cam;
     RaycastHit hit;
+    
 	// Use this for initialization
 	void Start () {
-
+        if(gameObject.tag == "Player")
+        {
+            cam = gameObject.GetComponent<BasicBehaviour>().playerCamera;
+        }
+        
     }
 	
 	// Update is called once per frame
@@ -39,8 +47,9 @@ public class Shoot_Attack_Interact : MonoBehaviour {
     //currently implemented for mimic
     void KillTarget()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate;
             if (gameObject.tag == "mimic")
             {
                 Collider[] creatures = Physics.OverlapSphere(transform.position, 5f, layerOfCreatures);
@@ -50,12 +59,25 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                     {
                         //call kill script
                         Debug.Log("killed " + hit.collider.gameObject.name);
+                        hit.collider.gameObject.GetComponent<KillAnimal>().KillAnimals();
                     }
                 }
             }
             else if (gameObject.tag == "Player")
             {
                 //need to shoot ray from gun
+                if(Input.GetKey(KeyCode.Mouse1))
+                {
+                    if (Input.GetKey(KeyCode.Mouse0))
+                    {
+                        Vector3 shotDirection = cam.forward;
+                        if(Physics.Raycast(transform.position, shotDirection, out hit, 50f, layerOfCreatures))
+                        {
+                            Debug.Log("killed " + hit.collider.gameObject.name);
+                            hit.collider.gameObject.GetComponent<KillAnimal>().KillAnimals();
+                        }
+                    }
+                }
             }
             
         }
