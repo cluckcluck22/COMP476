@@ -11,11 +11,11 @@ public class DogAI : MonoBehaviour {
     public Vector3 followOffset;
     public float repathDistance=5.0f;
     public float repathAngle;
-    public float followDistanceReached;
+    public float followDistanceReached=2.0f;
 
-    public float lookAtExitDistance;
-    public float lookAtExitAngle;
-    public float lookAtDelay;
+    public float lookAtExitDistance=1.0f;
+    public float lookAtExitAngle=45.0f;
+    public float lookAtDelay=1.0f;
 
     public float sniffDistance = 1.0f;
     public float sniffTime=1.0f;
@@ -35,8 +35,8 @@ public class DogAI : MonoBehaviour {
     private Vector3 latestTargetPos;
     private Vector3 latestTargetFront;
 
-    public DogState state; //TODO make private
-    public DogSubState subState;//TODO make private
+    private DogState state; 
+    private DogSubState subState;
     private bool shouldFollow;
 
     private Interactable needsFilling;
@@ -47,14 +47,14 @@ public class DogAI : MonoBehaviour {
 
     private float barkTime;
 
-    public enum DogState//TODO make private
+    private enum DogState
     {
         Follow,
         Patrol,
         Lead
     }
 
-    public enum DogSubState//TODO make private
+    private enum DogSubState
     {
         FollowPath,
         FollowLookAt,
