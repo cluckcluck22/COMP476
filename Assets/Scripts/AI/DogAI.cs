@@ -74,6 +74,7 @@ public class DogAI : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         startLookAtTime = float.MaxValue;
         sniffTimeEnd = float.MinValue;
+        shouldFollow = false;
     }
 
     void Start () {
@@ -226,7 +227,10 @@ public class DogAI : MonoBehaviour {
                         {
                             if (needsObjects[currentNeedsObjectIndex].isEmpty())
                             {
-                                needsFilling = needsObjects[currentNeedsObjectIndex]; //if empty save reference to lead owner back to it                                    
+                                needsFilling = needsObjects[currentNeedsObjectIndex]; //if empty save reference to lead owner back to it
+                                OnLeadEnter();
+                                state = DogState.Lead;
+                                subState = DogSubState.GoToOwner;
                             }
                             else
                             {
@@ -261,7 +265,7 @@ public class DogAI : MonoBehaviour {
     {
         navAgent.isStopped = false;
         state = DogState.Lead;
-        subState = DogSubState.LeadLookat;
+        subState = DogSubState.GoToOwner;
         startLookAtTime = float.MaxValue;
         animator.PlayWalk();
     }

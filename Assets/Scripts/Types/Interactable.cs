@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour {
 
     public Transform[] interactionSpots;
 
-    private float count;
+    public float count;//TODO: make private
     private List<AnimalAI> clients;
     private List<AnimalAI> reserved;
 
