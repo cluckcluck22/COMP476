@@ -28,6 +28,7 @@ public class NetworkManager : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.active = !canvas.active;
+            Cursor.visible = !Cursor.visible;
         }
         if(PhotonNetwork.isMasterClient)
         {
