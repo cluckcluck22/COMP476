@@ -17,6 +17,9 @@ public class DogAI : MonoBehaviour {
     public float lookAtExitAngle;
     public float lookAtDelay;
 
+    // PA - have you tried making this a bit larger ?
+    // Since you are pathing towards the middle of the interactable object he might get stuck
+    // on the outside of it and never be able to reach the destination
     public float sniffDistance = 0.25f;
     public float sniffTime=1.0f;
 
@@ -213,6 +216,11 @@ public class DogAI : MonoBehaviour {
                     {
                         if(!navAgent.pathPending && navAgent.remainingDistance <= sniffDistance)
                         {
+                            // PA - I've been doing this for animal that are interacting with the interactable objects
+                            /*
+                            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                            */
+                            // They always seem to spin/drag around when they are not told what to do (bastards)
                             subState = DogSubState.PatrolSniff; //dog checks out object  
                             navAgent.isStopped = true;
                             animator.CycleWalk();//called once to get to sniff animation
@@ -225,6 +233,10 @@ public class DogAI : MonoBehaviour {
                     {
                         if (Time.time >= sniffTimeEnd)
                         {
+                            // PA - if you're doing the freeze thing...
+                            /*
+                            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                            */
                             if (needsObjects[currentNeedsObjectIndex].isEmpty())
                             {
                                 needsFilling = needsObjects[currentNeedsObjectIndex]; //if empty save reference to lead owner back to it
@@ -268,6 +280,12 @@ public class DogAI : MonoBehaviour {
         subState = DogSubState.GoToOwner;
         startLookAtTime = float.MaxValue;
         animator.PlayWalk();
+        // PA - more on this a bit later
+        /*
+        Vector3 direction = (needsFilling.transform.position - owner.position).normalized;
+        direction *= goToFarmerDistance;
+        Repath(direction);
+        */
     }
 
     private void Lead()
@@ -288,9 +306,14 @@ public class DogAI : MonoBehaviour {
                         {
                             subState = DogSubState.LeadLookat;
                         }
-                        else
+                        else /*if ( (ownerPosition - latestTargetPos).magnitude >= repathDistance )*/
                         {
                             //close distance with owner
+                            // PA - here you only need to repath if the owner moves to far away from
+                            // its last position. When you call repath, you are actually setting a target
+                            // pos to the navMesh agent (no need to do this everyframe, it's super expensive)
+                            // So you call repath once (onEnter), then update it if the owner moves too far away.
+                            // You can use the same repath distance from the follow (it's sensible I think).
                             Vector3 direction = (needsFilling.transform.position - owner.position).normalized;
                             direction *= goToFarmerDistance;
                             Repath(direction);
@@ -303,10 +326,21 @@ public class DogAI : MonoBehaviour {
                         if ((transform.position - ownerPosition).magnitude > repathDistance)
                         {
                             subState = DogSubState.GoToOwner;
+                            // PA - Would probably get caught by the GoToOwner substate, but this is safer
+                            /*
+                            Vector3 direction = (needsFilling.transform.position - owner.position).normalized;
+                            direction *= goToFarmerDistance;
+                            Repath(direction);
+                            */
                         }
                         else if ((transform.position - ownerPosition).magnitude <= leadDistance)
                         {
                             subState = DogSubState.LeadPath;
+                            // PA - Here you only need to repath to the interactable that needs filling
+                            // If all goes well you do it once and the farmer will follow the dog all the way
+                            /*
+                            Repath(needsFilling.transform.position); 
+                            */ 
                         }
                         else
                         {
@@ -328,12 +362,13 @@ public class DogAI : MonoBehaviour {
                         {
                             subState = DogSubState.LeadLookat;
                         }
-                        else
-                        {
-                            Vector3 direction = (this.transform.position - needsFilling.transform.position).normalized;
-                            direction *= sniffDistance;//small offset
-                            Repath(direction);
-                        }
+                        //else
+                        //{
+                        //    // PA - If all goes well, we're just walking to it, no need to repath
+                        //    Vector3 direction = (this.transform.position - needsFilling.transform.position).normalized;
+                        //    direction *= sniffDistance;//small offset
+                        //    Repath(direction);
+                        //}
                         
                         break;
                     }
