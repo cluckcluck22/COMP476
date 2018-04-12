@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 195593044873059206}
   - component: {fileID: 114874461008325646}
   - component: {fileID: 114745527484141464}
+  - component: {fileID: 114627065259141094}
   m_Layer: 0
   m_Name: Tobi_Dog
   m_TagString: AI_Animal
@@ -1483,6 +1484,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114627065259141094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703058990033382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114745527484141464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1495,10 +1507,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalConfig: {fileID: 11400000, guid: 610e213a1a1294741a8bb8fd6fc8d1b1, type: 2}
-  areaConfig: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2, type: 2}
+  animalName: 
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
 --- !u!114 &114874461008325646
 MonoBehaviour:
   m_ObjectHideFlags: 1

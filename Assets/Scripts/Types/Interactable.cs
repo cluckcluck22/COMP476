@@ -91,7 +91,7 @@ public class Interactable : MonoBehaviour {
 
     public bool isAvailable()
     {
-        return reserved.Count < interactionSpots.Length && !isEmpty();
+        return reserved.Count < interactionSpots.Length && (!isNeedsInterable() || !isEmpty());
     }
 
     public int getClients()
@@ -109,5 +109,17 @@ public class Interactable : MonoBehaviour {
         int spot = reserved.IndexOf(animal);
         Matrix4x4 toWorld = transform.localToWorldMatrix;
         return interactionSpots[spot];
+    }
+
+    public bool isNeedsInterable()
+    {
+        switch (type)
+        {
+            case Type.Food:
+            case Type.Rest:
+                return true;
+            default:
+                return false;
+        }
     }
 }

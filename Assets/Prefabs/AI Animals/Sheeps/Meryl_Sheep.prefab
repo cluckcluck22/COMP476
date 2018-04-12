@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 114403879283967374}
   - component: {fileID: 114796977323008278}
   - component: {fileID: 114104478140548488}
+  - component: {fileID: 114460808898880238}
   m_Layer: 0
   m_Name: Meryl_Sheep
   m_TagString: AI_Animal
@@ -1652,6 +1653,19 @@ MonoBehaviour:
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
+--- !u!114 &114460808898880238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375093505522402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114520347285462054
 MonoBehaviour:
   m_ObjectHideFlags: 1
