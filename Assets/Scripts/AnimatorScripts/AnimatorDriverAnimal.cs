@@ -38,6 +38,9 @@ public class AnimatorDriverAnimal : MonoBehaviour {
     public int SitVariations = 3;
     public float BlendSpeed = 1.0f;
 
+    private int oldPlayFullBodyState = -1;
+    private int oldPlayLayeredState = -1;
+
     private int m_blendAttack { get; set; }
     private int m_blendEat { get; set; }
     private int m_blendHitReaction { get; set; }
@@ -58,11 +61,12 @@ public class AnimatorDriverAnimal : MonoBehaviour {
     public void PlayFullBodyState(States.AnimalFullBody state)
     {
 
-        if (PhotonNetwork.connected)
+        if (PhotonNetwork.connected && oldPlayFullBodyState != (int)state)
         {
             //Send RPC call to others
             //Debug.Log("Object" + this.gameObject);
             m_photonView.RPC("PlayFullBodyStateNetwork", PhotonTargets.Others, (int)state);
+            oldPlayFullBodyState = (int)state;
         }
         // So C# can't convert implicitly from 1 to True...
         // There is no "flag" to set for Idle, since it is the default state
@@ -108,9 +112,10 @@ public class AnimatorDriverAnimal : MonoBehaviour {
 
         currentLayeredState = state;
         m_layeredUpdateTimeout = Time.time + 0.50f;
-        if (PhotonNetwork.connected)
+        if (PhotonNetwork.connected && oldPlayLayeredState != (int)state)
         {
             m_photonView.RPC("SyncLayeredState", PhotonTargets.Others, (int)state, m_layeredUpdateTimeout);
+            oldPlayLayeredState = (int)state;
         }
     }
 

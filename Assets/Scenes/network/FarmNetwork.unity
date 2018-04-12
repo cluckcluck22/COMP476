@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5108935, g: 0.4240186, b: 0.40105042, a: 1}
+  m_IndirectSpecularColor: {r: 0.510727, g: 0.42400008, b: 0.40056357, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5341,6 +5341,7 @@ GameObject:
   - component: {fileID: 467941572}
   - component: {fileID: 467941575}
   - component: {fileID: 467941574}
+  - component: {fileID: 467941576}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: NetworkManager
@@ -5441,6 +5442,17 @@ MonoBehaviour:
   endCanvas: {fileID: 1389420195}
   numOfKilledAnimals: 0
   useDogOffline: 1
+--- !u!114 &467941576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467941571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d870e483b6e277049881d3ac1ecf4c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &468039977
 Prefab:
   m_ObjectHideFlags: 0
