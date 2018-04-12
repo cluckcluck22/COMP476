@@ -52,7 +52,8 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                 {
                     if (gameObject.tag == "Player")
                     {
-                        Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + "FILL!");
+                        Debug.Log("interactable Object " + interactObject.gameObject.name);
+                        Debug.Log("HEY THE: " + gameObject.name);
                         interactObject.fill(interactObject.maxCount);
                     }
 

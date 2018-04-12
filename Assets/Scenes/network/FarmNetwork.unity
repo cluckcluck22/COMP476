@@ -11342,6 +11342,16 @@ Prefab:
       propertyPath: m_Center.y
       value: 0.48
       objectReference: {fileID: 0}
+    - target: {fileID: 114413499149947926, guid: d83d177681d38e04f9992b96624cba64,
+        type: 2}
+      propertyPath: maxCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402125621292476, guid: d83d177681d38e04f9992b96624cba64,
+        type: 2}
+      propertyPath: maxCount
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 208265673456004924, guid: d83d177681d38e04f9992b96624cba64, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d83d177681d38e04f9992b96624cba64, type: 2}
@@ -18011,7 +18021,9 @@ Prefab:
       propertyPath: m_StoppingDistance
       value: 0.3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114821394194054890, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
+    - {fileID: 114270472544676180, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1689869142 stripped
@@ -18123,7 +18135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 1806608781}
   audioSource: {fileID: 1689869146}
-  followOffset: {x: 0, y: 0, z: 0}
+  followOffset: {x: 1, y: 0, z: -5}
   repathDistance: 5
   repathAngle: 0
   followDistanceReached: 2
