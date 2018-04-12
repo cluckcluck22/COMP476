@@ -38,7 +38,7 @@ public class Interactable : MonoBehaviour {
 
         if (useOnlyFront)
         {
-            actualInteractionSpots = new Transform[3];
+            actualInteractionSpots = new Transform[2];
             actualInteractionSpots[0] = interactionSpots[0];
             actualInteractionSpots[1] = interactionSpots[4];
         }

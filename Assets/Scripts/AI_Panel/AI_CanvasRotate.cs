@@ -13,6 +13,6 @@ public class AI_CanvasRotate : MonoBehaviour {
 
     void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - cameraTransform.position);
+        transform.rotation = Quaternion.LookRotation(cameraTransform.forward);
     }
 }
