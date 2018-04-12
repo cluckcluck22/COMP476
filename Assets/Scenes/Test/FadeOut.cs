@@ -7,7 +7,7 @@ public class FadeOut : MonoBehaviour {
     public float fadeTime = 5f;
     private float timeSinceStart = 0f;
     private Material m_mat;
-    private Shader tmpShader;
+    public Shader tmpShader;
 	// Use this for initialization
 	void Start () {
         m_mat = GetComponentInChildren<Renderer>().material;
