@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FarmerAIDogs : MonoBehaviour {
 
-    DogAI myDog;
+    public GameObject Dog;
+    public GameObject[] DogArr;
 
 	void Start () 
     {
@@ -16,13 +17,21 @@ public class FarmerAIDogs : MonoBehaviour {
         if (Input.GetKey(KeyCode.E))
         {
             //Patrol
-            //myDog = GetComponent<>(DogAI).TellDogToPatrol();
+            Debug.Log("Dogs Patrol!");
+            foreach(GameObject dog in DogArr)
+            { 
+                Dog.GetComponent<DogAI>().TellDogToPatrol();
+            }
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
             //Follow
-            //myDog = GetComponent<>(DogAI).TellDogToFollow();
+            Debug.Log("Dogs Follow!");
+            foreach (GameObject dog in DogArr)
+            {
+                Dog.GetComponent<DogAI>().TellDogToFollow();
+            }
         }
     }
 }

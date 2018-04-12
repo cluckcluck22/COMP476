@@ -9332,6 +9332,31 @@ MonoBehaviour:
   instantiationId: 32
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &919731113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919731110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75540c793af4984db24251dc97f7dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 1806608781}
+  audioSource: {fileID: 0}
+  followOffset: {x: 0, y: 0, z: 0}
+  repathDistance: 5
+  repathAngle: 0
+  followDistanceReached: 2
+  lookAtExitDistance: 1
+  lookAtExitAngle: 45
+  lookAtDelay: 1
+  sniffDistance: 1
+  sniffTime: 1
+  goToFarmerDistance: 3
+  leadDistance: 2
+  barkFrequency: 5
 --- !u!114 &919731122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13199,6 +13224,31 @@ MonoBehaviour:
   instantiationId: 35
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &1357921190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357921187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75540c793af4984db24251dc97f7dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 1806608781}
+  audioSource: {fileID: 0}
+  followOffset: {x: 0, y: 0, z: 0}
+  repathDistance: 5
+  repathAngle: 0
+  followDistanceReached: 2
+  lookAtExitDistance: 1
+  lookAtExitAngle: 45
+  lookAtDelay: 1
+  sniffDistance: 1
+  sniffTime: 1
+  goToFarmerDistance: 3
+  leadDistance: 2
+  barkFrequency: 5
 --- !u!114 &1357921199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17220,6 +17270,31 @@ MonoBehaviour:
   instantiationId: 38
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &1689869145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689869142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75540c793af4984db24251dc97f7dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 1806608781}
+  audioSource: {fileID: 0}
+  followOffset: {x: 0, y: 0, z: 0}
+  repathDistance: 5
+  repathAngle: 0
+  followDistanceReached: 2
+  lookAtExitDistance: 1
+  lookAtExitAngle: 45
+  lookAtDelay: 1
+  sniffDistance: 1
+  sniffTime: 1
+  goToFarmerDistance: 3
+  leadDistance: 2
+  barkFrequency: 5
 --- !u!114 &1689869154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18836,6 +18911,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b26956fd9911294e97ea02055533c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dog: {fileID: 1689869142}
+  DogArr:
+  - {fileID: 1689869142}
+  - {fileID: 919731110}
+  - {fileID: 1357921187}
+--- !u!4 &1806608781 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400008, guid: aa2ceabc116c3b246868f1af2180f4d7, type: 3}
+  m_PrefabInternal: {fileID: 1806608768}
 --- !u!1001 &1808811076
 Prefab:
   m_ObjectHideFlags: 0
