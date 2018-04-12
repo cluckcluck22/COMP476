@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class KillAnimal : MonoBehaviour {
 
-	public KillAnimal()
+	public void KillAnimalFunction()
     {
-        GetComponent<PhotonView>().RPC("KillAnimalNetwork", PhotonTargets.All);
+        if (!PhotonNetwork.connected)
+        {
+            KillAnimalNetwork();
+        }
+        else
+        {
+            GetComponent<PhotonView>().RPC("KillAnimalNetwork", PhotonTargets.All);
+        }
     }
 
     [PunRPC]
