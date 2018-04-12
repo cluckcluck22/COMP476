@@ -17,22 +17,53 @@ public class Interactable : MonoBehaviour {
 
     public Transform[] interactionSpots;
 
-    private float count;
-    private List<AnimalAI> clients;
-    private List<AnimalAI> reserved;
+    public bool useOnlyFront;
 
-	// Use this for initialization
-	void Start ()
+    private float count;
+
+    private int reservedCount;
+
+    private AnimalAI[] occupied;
+
+    private Transform[] actualInteractionSpots;
+
+    private List<AnimalAI> clients;
+
+    // Use this for initialization
+    void Start ()
     {
         count = maxCount;
+
         clients = new List<AnimalAI>();
-        reserved = new List<AnimalAI>();
-	}
+
+        if (useOnlyFront)
+        {
+            actualInteractionSpots = new Transform[3];
+            actualInteractionSpots[0] = interactionSpots[0];
+            actualInteractionSpots[1] = interactionSpots[2];
+            actualInteractionSpots[2] = interactionSpots[4];
+        }
+        else
+        {
+            actualInteractionSpots = interactionSpots;
+        }
+
+        occupied = new AnimalAI[actualInteractionSpots.Length];
+        for (int i = 0; i < occupied.Length; i++)
+        {
+            occupied[i] = null;
+        }
+
+        reservedCount = 0;
+    }
 
     void Update()
     {
         foreach (AnimalAI animal in clients)
         {
+            if (animal == null)
+                continue;
+
             switch (type)
             {
                 case Type.Food:
@@ -53,17 +84,34 @@ public class Interactable : MonoBehaviour {
     public void detach(AnimalAI animal)
     {
         clients.Remove(animal);
-        reserved.Remove(animal);
+        unReserve(animal);
     }
 
     public void reserve(AnimalAI animal)
     {
-        reserved.Add(animal);
+        for (int i = 0; i < occupied.Length; i++)
+        {
+            if (occupied[i] == null)
+            {
+                occupied[i] = animal;
+                break;
+            }
+        }
+        reservedCount++;
+        if (reservedCount > occupied.Length)
+            print("Interactable too many reserved");
     }
 
     public void unReserve(AnimalAI animal)
     {
-        reserved.Remove(animal);
+        for (int i = 0; i < occupied.Length; i++)
+        {
+            if (occupied[i] == animal)
+            {
+                occupied[i] = null;
+            }
+        }
+        reservedCount--;
     }
 
     public void fill(float amount)
@@ -91,12 +139,7 @@ public class Interactable : MonoBehaviour {
 
     public bool isAvailable()
     {
-        return reserved.Count < interactionSpots.Length && (!isNeedsInterable() || !isEmpty());
-    }
-
-    public int getClients()
-    {
-        return reserved.Count;
+        return reservedCount < actualInteractionSpots.Length && (!isNeedsInterable() || !isEmpty());
     }
 
     public Interactable.Type getType()
@@ -106,9 +149,19 @@ public class Interactable : MonoBehaviour {
 
     public Transform getInteractionPos(AnimalAI animal)
     {
-        int spot = reserved.IndexOf(animal);
-        Matrix4x4 toWorld = transform.localToWorldMatrix;
-        return interactionSpots[spot];
+        int spot = -1;
+        for (int i = 0; i < occupied.Length; i++)
+        {
+            if (occupied[i] == animal)
+            {
+                spot = i;
+                break;
+            }
+        }
+        if (spot == -1)
+            print("Interactable can't find spot");
+
+        return actualInteractionSpots[spot];
     }
 
     public bool isNeedsInterable()

@@ -35,6 +35,12 @@ public class IdleBehaviorContainer : MonoBehaviour
     [BTLeaf("dynamic-goto")]
     public BTCoroutine dynamicGoto(Stopper stopper)
     {
+        if (interactable == null)
+        {
+            yield return BTNodeResult.Failure;
+            yield break;
+        }
+
         user.navAgent.isStopped = false;
         user.animatorDriver.PlayWalk();
         user.navAgent.destination = interactable.transform.position;
@@ -99,6 +105,7 @@ public class IdleBehaviorContainer : MonoBehaviour
             if (dot <= 0.99f)
             {
                 Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0f);
+                transform.rotation = Quaternion.LookRotation(newDir);
                 yield return BTNodeResult.Running;
             }
             else
@@ -116,6 +123,8 @@ public class IdleBehaviorContainer : MonoBehaviour
                 break;
         }
 
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
         while (true)
         {
             if (stopper.shouldStop)
@@ -124,6 +133,7 @@ public class IdleBehaviorContainer : MonoBehaviour
                 interactable.detach(user);
                 Physics.IgnoreCollision(interactable.GetComponent<BoxCollider>(), GetComponent<BoxCollider>(), false);
                 user.animatorDriver.PlayFullBodyState(States.AnimalFullBody.Idle);
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 yield return BTNodeResult.Stopped;
                 yield break;
             }

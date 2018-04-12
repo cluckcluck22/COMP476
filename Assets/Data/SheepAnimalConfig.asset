@@ -13,13 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   species: 13
   baseAnimalConfig: {fileID: 11400000, guid: 18184dc4111a90a4fa0bbe22f5ee8771, type: 2}
-  maxHunger: 100
-  hungerRecuperation: 5
+  maxHunger: 400
+  hungerRecuperation: 10
   hungerLossRate: 1
-  maxFatigue: 100
-  fatigueRecuperation: 5
+  maxFatigue: 400
+  fatigueRecuperation: 10
   fatigueLossRate: 1
-  maxBoredom: 100
-  boredomRecuperation: 6
-  boredomLossRate: 0
   maxHealth: 100

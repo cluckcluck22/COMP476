@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 4639687612656178}
   - component: {fileID: 65828298758350002}
   - component: {fileID: 114402125621292476}
+  - component: {fileID: 208265673456004924}
   m_Layer: 8
   m_Name: EatObject
   m_TagString: Untagged
@@ -941,3 +942,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!208 &208265673456004924
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875800171785128}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

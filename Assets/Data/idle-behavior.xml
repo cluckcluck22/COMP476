@@ -1,11 +1,11 @@
 <behavior-tree>
   <sequence>
-    <parallel_success>
+    <parallel_first>
       <complex name="dynamic-goto" />
       <repeat_success>
         <simple name="dynamic-reached" />
       </repeat_success>
-    </parallel_success>
+    </parallel_first>
     <complex name="dynamic-action" />
   </sequence>
 </behavior-tree>

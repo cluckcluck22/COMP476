@@ -89,6 +89,11 @@ public class InteractableZone : MonoBehaviour {
         return count;
     }
 
+    public int getAllAnimalCount()
+    {
+        return animals.Count;
+    }
+
     public bool isAnimalInZone(AnimalAI animal)
     {
         return animals.Contains(animal);

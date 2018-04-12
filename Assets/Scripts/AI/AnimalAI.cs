@@ -163,7 +163,8 @@ public class AnimalAI : MonoBehaviour {
         if (zone != null && zone.type == InteractableZone.ZoneType.Rally)
             return false;
 
-        return perception.hasNoFlock;
+        Scorer dummy = new Scorer();
+        return !isFar(dummy) || perception.hasNoFlock;
     }
 
     [BTLeaf("should-idle")]
@@ -285,43 +286,22 @@ public class AnimalAI : MonoBehaviour {
 
         if (interactable == null)
         {
-            yield return BTNodeResult.Failure;
-            yield break;
+            print("nullInteractable !");
         }
 
         idleBehavior.setContext(interactable);
 
         BTNode subRoot = idleBehavior.getRoot();
 
+        subRoot.overrwriteStopper(stopper);
+
         BTCoroutine routine = subRoot.Procedure();
-
-        while (routine.MoveNext())
-        {
-            BTNodeResult result = routine.Current;
-
-            if (stopper.shouldStop)
-            {
-                subRoot.Stop();
-                routine.MoveNext();
-                result = routine.Current;
-                if (result != BTNodeResult.Stopped)
-                {
-                    throw new System.Exception("On stopping current node in idle");
-                }
-
-                stopper.shouldStop = false;
-                yield return BTNodeResult.Stopped;
-                yield break;
-            }
-
-            yield return BTNodeResult.Running;
-        }
+        return routine;
     }
 
 
     private BTCoroutine consumeImplementation(Stopper stopper, Interactable target)
     {
-        Physics.IgnoreCollision(target.GetComponent<BoxCollider>(), GetComponent<BoxCollider>());
         target.attach(this);
 
         Vector3 targetDir = target.getInteractionPos(this).transform.forward;
@@ -350,6 +330,7 @@ public class AnimalAI : MonoBehaviour {
             if (dot <= 0.99f)
             {
                 Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0f);
+                transform.rotation = Quaternion.LookRotation(newDir);
                 yield return BTNodeResult.Running;
             }
             else
@@ -369,6 +350,8 @@ public class AnimalAI : MonoBehaviour {
                 break;
         }
 
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
         while (true)
         { 
             if (stopper.shouldStop)
@@ -377,6 +360,7 @@ public class AnimalAI : MonoBehaviour {
                 target.detach(this);
                 Physics.IgnoreCollision(target.GetComponent<BoxCollider>(), GetComponent<BoxCollider>(), false);
                 animatorDriver.PlayFullBodyState(States.AnimalFullBody.Idle);
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 yield return BTNodeResult.Stopped;
                 yield break;
             }
@@ -405,6 +389,7 @@ public class AnimalAI : MonoBehaviour {
                 if (blackboard.ContainsKey("InteractableTarget"))
                 {
                     Interactable toRemove = (Interactable)blackboard["InteractableTarget"];
+                    Physics.IgnoreCollision(toRemove.GetComponent<BoxCollider>(), GetComponent<BoxCollider>(), false);
                     toRemove.unReserve(this);
                     blackboard.Remove("InteractableTarget");
                 }

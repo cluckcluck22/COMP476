@@ -15,10 +15,10 @@
       <selector>
         <sequence>
           <parallel_first>
-            <complex name="idle-wander" />
             <repeat_success>
               <simple name="food-found" />
             </repeat_success>
+            <complex name="idle-wander" />
           </parallel_first>
           <complex name="goto-food-item" />
           <complex name="eat" />
@@ -37,10 +37,10 @@
       <selector>
         <sequence>
           <parallel_first>
-            <complex name="idle-wander" />
             <repeat_success>
               <simple name="rest-found" />
             </repeat_success>
+            <complex name="idle-wander" />
           </parallel_first>
           <complex name="goto-rest-item" />
           <complex name="rest" />

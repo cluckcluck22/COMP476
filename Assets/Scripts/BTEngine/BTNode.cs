@@ -22,4 +22,9 @@ public abstract class BTNode : IBTStoppable
     {
         return stopper;
     }
+
+    public void overrwriteStopper(Stopper newStopper)
+    {
+        this.stopper = newStopper;
+    }
 }

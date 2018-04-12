@@ -185,10 +185,10 @@ public class PerceptionModule
         int count = 0;
         foreach (PerceptionEntry entry in validFlockMembers)
         {
-            if ((avgPos - entry.animal.getPosition()).magnitude <=  sigma)
+            if ((avgPos - entry.lkp).magnitude <=  sigma)
             {
                 count++;
-                flockCenter += entry.animal.getPosition();
+                flockCenter += entry.lkp;
             }
         }
         if (count != 0)

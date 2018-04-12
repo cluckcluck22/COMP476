@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xmlTree: {fileID: 4900000, guid: 22f680d74608e414d84b0d1c764c646f, type: 3}
   idleTree: {fileID: 4900000, guid: 193f517744c1123428bb882c42dc71a8, type: 3}
-  m_randomMinRatio: 1
+  m_randomMinRatio: 0.3
   m_randomMaxRatio: 1
   m_hungerNeedCurve:
     serializedVersion: 2
@@ -31,20 +31,20 @@ MonoBehaviour:
       outSlope: 0.000034641143
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.5
-      value: 0.5
+      time: 0.28799438
+      value: 0.50305176
       inSlope: 0
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.75
-      value: 0.5
+      time: 0.7375488
+      value: 0.50305176
       inSlope: 0
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.99886614
-      value: 0.0048355474
+      time: 0.80047023
+      value: 0.00025177468
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -67,20 +67,20 @@ MonoBehaviour:
       outSlope: 0.000034641143
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.5
-      value: 0.5
+      time: 0.28799438
+      value: 0.50305176
       inSlope: 0
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.75
-      value: 0.5
+      time: 0.7375488
+      value: 0.50305176
       inSlope: 0
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.99886614
-      value: 0.0048355474
+      time: 0.80047023
+      value: 0.00025177468
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -92,38 +92,26 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 0.0027770996
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 10
-      value: 0
+      time: 19.960815
+      value: 0.0018615723
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 30
-      value: 0.29622346
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 73.457115
-      value: 0.2980159
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 99.83441
-      value: 0.60446596
+      time: 30.113197
+      value: 0.3220333
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  m_idleScore: 0.1
+  m_idleScore: 0.2
   m_rallyScore: 0.2
   m_fov: 135
   m_sightDistance: 80
