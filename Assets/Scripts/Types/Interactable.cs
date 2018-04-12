@@ -38,10 +38,9 @@ public class Interactable : MonoBehaviour {
 
         if (useOnlyFront)
         {
-            actualInteractionSpots = new Transform[3];
+            actualInteractionSpots = new Transform[2];
             actualInteractionSpots[0] = interactionSpots[0];
-            actualInteractionSpots[1] = interactionSpots[2];
-            actualInteractionSpots[2] = interactionSpots[4];
+            actualInteractionSpots[1] = interactionSpots[4];
         }
         else
         {
@@ -94,10 +93,10 @@ public class Interactable : MonoBehaviour {
             if (occupied[i] == null)
             {
                 occupied[i] = animal;
+                reservedCount++;
                 break;
             }
         }
-        reservedCount++;
         if (reservedCount > occupied.Length)
             print("Interactable too many reserved");
     }
@@ -109,9 +108,10 @@ public class Interactable : MonoBehaviour {
             if (occupied[i] == animal)
             {
                 occupied[i] = null;
+                reservedCount--;
+                break;
             }
         }
-        reservedCount--;
     }
 
     public void fill(float amount)

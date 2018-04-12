@@ -18,8 +18,15 @@ public class IdleBehaviorContainer : MonoBehaviour
 
     private void Awake()
     {
-        user = GetComponent<AnimalAI>();
-        bt = new BehaviorTree(user.animalConfig.idleTree, this);
+        if (PhotonNetwork.isMasterClient || !PhotonNetwork.connected)
+        {
+            user = GetComponent<AnimalAI>();
+            bt = new BehaviorTree(user.animalConfig.idleTree, this);
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     public void setContext(Interactable interactable)

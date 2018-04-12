@@ -180,7 +180,7 @@ public class NetworkManager : MonoBehaviour {
     public void endGameFunctionNetwork()
     {
         endCanvas.active = true;
-        endCanvas.GetComponentInChildren<Text>().text = "Game Over\n Number of Animals Killed:\n" + numOfKilledAnimals.ToString();
+        endCanvas.GetComponentInChildren<Text>().text = "Game Over\n Number of Animals Killed:" + numOfKilledAnimals.ToString();
         Invoke("goBackToMenu",5f);
 
     }

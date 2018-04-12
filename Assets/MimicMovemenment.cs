@@ -23,11 +23,14 @@ public class MimicMovemenment : MonoBehaviour
     private bool isWalking;
     private bool isRunning;
 
+    private bool isConsuming;
+
 
     void Start()
     {
         //m_AnimatorDriverAnimal = GetComponentInChildren<AnimatorDriverAnimal>();
         mPhotonView = GetComponent<PhotonView>();
+        isConsuming = false;
     }
 
     void Update()
@@ -65,7 +68,7 @@ public class MimicMovemenment : MonoBehaviour
         return CameraDirection;
     }
 
-    private bool isMoving()
+    public bool isMoving()
     {
         return (horizontal != 0) || (vertical != 0);
     }
@@ -105,9 +108,10 @@ public class MimicMovemenment : MonoBehaviour
         }
     }
 
-    private void Eating()
+    public void Eating()
     {
         m_AnimatorDriverAnimal.PlayFullBodyState(States.AnimalFullBody.Eat);
+        isConsuming = true;
     }
 
     private void Attack()
@@ -115,9 +119,10 @@ public class MimicMovemenment : MonoBehaviour
         m_AnimatorDriverAnimal.PlayLayeredState(States.AnimalLayered.Attack);
     }
 
-    private void Rest()
+    public void Rest()
     {
         m_AnimatorDriverAnimal.PlayFullBodyState(States.AnimalFullBody.Rest);
+        isConsuming = true;
     }
 
     private void Talk()
@@ -129,9 +134,10 @@ public class MimicMovemenment : MonoBehaviour
     {
         if (isMoving())
         {
+            isConsuming = false;
             Movement();
         }
-        else if (!isMoving())
+        else if (!isMoving() && !isConsuming)
         {
             //If Not moving then idle
             m_AnimatorDriverAnimal.PlayFullBodyState(States.AnimalFullBody.Idle);

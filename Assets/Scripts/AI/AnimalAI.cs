@@ -25,8 +25,8 @@ public class AnimalAI : MonoBehaviour {
 
     private BehaviorTree bt { get; set; }
 
-    public float hunger { get; private set; }
-    public float fatigue { get; private set; }
+    public float hunger { get;  set; }
+    public float fatigue { get;  set; }
     public float health { get; private set; }
 
     private IEnumerator perceptionRoutine;
@@ -396,10 +396,21 @@ public class AnimalAI : MonoBehaviour {
     private BTCoroutine gotoImplementation(Stopper stopper, Vector3 target)
     {
         navAgent.isStopped = false;
-        animatorDriver.PlayWalk();
         navAgent.destination = target;
+        Rigidbody rb = GetComponent<Rigidbody>();
         while (true)
         {
+            if (navAgent.hasPath)
+            {
+                animatorDriver.PlayWalk();
+                if (rb.constraints == RigidbodyConstraints.FreezeAll)
+                    rb.constraints = RigidbodyConstraints.None;
+            }
+            else
+            {
+                animatorDriver.PlayFullBodyState(States.AnimalFullBody.Idle);
+                rb.constraints = RigidbodyConstraints.FreezeAll;
+            }
             if (stopper.shouldStop)
             {
                 if (blackboard.ContainsKey("InteractableTarget"))
