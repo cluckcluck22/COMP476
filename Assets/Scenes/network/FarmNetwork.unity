@@ -2199,6 +2199,10 @@ Prefab:
       propertyPath: m_WalkSpeed
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1863245915234726, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f22cf8b00472a14481b686c9e987745, type: 2}
   m_IsPrefabParent: 0
@@ -2241,6 +2245,7 @@ MonoBehaviour:
   layerOfCreatures:
     serializedVersion: 2
     m_Bits: 512
+  fireRate: 0.35
 --- !u!54 &255748136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18082,6 +18087,7 @@ MonoBehaviour:
   layerOfCreatures:
     serializedVersion: 2
     m_Bits: 1536
+  fireRate: 0.35
 --- !u!1001 &1808811076
 Prefab:
   m_ObjectHideFlags: 0
