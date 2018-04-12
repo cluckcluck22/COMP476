@@ -17,7 +17,6 @@ public class FarmerAIDogs : MonoBehaviour {
         if (Input.GetKey(KeyCode.E))
         {
             //Patrol
-            Debug.Log("Dogs Patrol!");
             foreach(GameObject dog in DogArr)
             { 
                 Dog.GetComponent<DogAI>().TellDogToPatrol();
@@ -27,7 +26,6 @@ public class FarmerAIDogs : MonoBehaviour {
         if (Input.GetKey(KeyCode.Q))
         {
             //Follow
-            Debug.Log("Dogs Follow!");
             foreach (GameObject dog in DogArr)
             {
                 Dog.GetComponent<DogAI>().TellDogToFollow();

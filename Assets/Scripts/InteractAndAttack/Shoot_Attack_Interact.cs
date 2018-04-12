@@ -39,8 +39,18 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                 {
                     //call interact script
                     Debug.Log("interactable Object " + hit.collider.gameObject.name);
-                        Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag);
-                        hit.collider.gameObject.GetComponent<Interactable>().fill(hit.collider.gameObject.GetComponent<Interactable>().maxCount);
+                    Interactable interactObject;
+                    interactObject = hit.collider.gameObject.GetComponent<Interactable>();
+                    if (gameObject.tag == "Player")
+                    {
+                        Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + "FILL!");
+                        interactObject.fill(interactObject.maxCount);
+                    }
+                    if (gameObject.tag == "mimic")
+                    {
+                        Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + " ATTACH/EAT");
+                        interactObject.attach(gameObject.GetComponent<AnimalAI>());
+                    }
                 }
             }
         }
