@@ -2286,6 +2286,7 @@ MonoBehaviour:
   debugBT: 0
   makeHungry: 0
   makeSleepy: 0
+  isMimic: 1
 --- !u!54 &255748136
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -38,6 +38,8 @@ public class AnimalAI : MonoBehaviour {
     public bool makeHungry = false;
     public bool makeSleepy = false;
 
+    public bool isMimic = false;
+
     public void kill()
     {
         health = 0f;
@@ -71,7 +73,8 @@ public class AnimalAI : MonoBehaviour {
             navAgent = GetComponent<NavMeshAgent>();
             perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
             StartCoroutine(perceptionRoutine);
-            bt.Start();
+            if (!isMimic)
+                bt.Start();
             blackboard = new Dictionary<string, object>();
         }
         else
