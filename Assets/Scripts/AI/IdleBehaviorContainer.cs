@@ -50,8 +50,7 @@ public class IdleBehaviorContainer : MonoBehaviour
 
         user.navAgent.isStopped = false;
         user.animatorDriver.PlayWalk();
-        user.navAgent.destination = interactable.transform.position;
-        interactable.reserve(user);
+        user.navAgent.destination = interactable.getInteractionPos(user).position;
 
         while (true)
         {

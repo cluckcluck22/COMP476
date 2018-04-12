@@ -32,7 +32,7 @@ public class ZoneManager : MonoBehaviour {
     public Transform findInteractableZone(AnimalAI animal, Interactable.Type type)
     {
         InteractableZone candidate = null;
-        int highestCount = 0;
+        int highestCount = int.MaxValue;
         int currentCount = 0;
 
         float closestDistance = float.MaxValue;
@@ -46,19 +46,21 @@ public class ZoneManager : MonoBehaviour {
                 if (zone.isAnimalInZone(animal))
                     currentCount--;
 
-                if (currentCount > highestCount)
+                if (currentCount < highestCount)
                 {
                     highestCount = currentCount;
                     candidate = zone;
                 }
+
+                float currentDistance = (zone.transform.position - animal.transform.position).magnitude;
+                if (currentDistance <= closestDistance)
+                {
+                    closestDistance = currentDistance;
+                    closestZone = zone;
+                }
             }
 
-            float currentDistance = (zone.transform.position - animal.transform.position).magnitude;
-            if (currentDistance <= closestDistance)
-            {
-                closestDistance = currentDistance;
-                closestZone = zone;
-            }
+
         }
         if (candidate == null)
         {
@@ -144,10 +146,25 @@ public class ZoneManager : MonoBehaviour {
         {
             Interactable interactable = zone.getAvailableRallySpot();
             if (interactable != null)
-            {
+            { 
+                interactable.reserve(animal);
                 return interactable;
             }
         }
         return null;
+    }
+
+    public bool canRequestIdleInteractable(AnimalAI animal)
+    {
+        InteractableZone zone = findMyZone(animal);
+        if (zone != null)
+        {
+            Interactable interactable = zone.getAvailableRallySpot();
+            if (interactable != null)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

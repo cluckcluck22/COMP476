@@ -138,12 +138,18 @@ public class AnimalAI : MonoBehaviour {
     public bool isHungry(Scorer scorer)
     {
         scorer.score = animalConfig.hungerNeedCurve.Evaluate(hunger / animalConfig.maxHunger);
+        if (runningBT.Equals("eat"))
+            scorer.score += 0.1f;
+
         return true;
     }
     [BTLeaf("isTired")]
     public bool isTired(Scorer scorer)
     {
         scorer.score = animalConfig.fatigueNeedCurve.Evaluate(fatigue / animalConfig.maxFatigue);
+        if (runningBT.Equals("rest"))
+            scorer.score += 0.2f;
+
         return true;
     }
     [BTLeaf("isDead")]
@@ -188,7 +194,7 @@ public class AnimalAI : MonoBehaviour {
     public bool shouldIdle(Scorer scorer)
     {
         scorer.score = animalConfig.idleScore;
-        return zoneManager.requestIdleInteractable(this) != null;
+        return zoneManager.canRequestIdleInteractable(this);
     }
 
     [BTLeaf("destination-reached")]
@@ -300,11 +306,6 @@ public class AnimalAI : MonoBehaviour {
         runningBT = "idle-wander";
 
         Interactable interactable = zoneManager.requestIdleInteractable(this); 
-
-        if (interactable == null)
-        {
- 
-        }
 
         idleBehavior.setContext(interactable);
 
