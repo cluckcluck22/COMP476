@@ -71,7 +71,7 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                     if (Input.GetKey(KeyCode.Mouse0))
                     {
                         Vector3 shotDirection = cam.forward;
-                        if(Physics.Raycast(transform.position, shotDirection, out hit, 50f, layerOfCreatures))
+                        if(Physics.Raycast(cam.transform.position, shotDirection, out hit, 50f, layerOfCreatures))
                         {
                             Debug.Log("killed " + hit.collider.gameObject.name);
                             hit.collider.gameObject.GetComponent<KillAnimal>().KillAnimals();
