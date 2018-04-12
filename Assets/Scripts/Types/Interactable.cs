@@ -40,8 +40,7 @@ public class Interactable : MonoBehaviour {
         {
             actualInteractionSpots = new Transform[3];
             actualInteractionSpots[0] = interactionSpots[0];
-            actualInteractionSpots[1] = interactionSpots[2];
-            actualInteractionSpots[2] = interactionSpots[4];
+            actualInteractionSpots[1] = interactionSpots[4];
         }
         else
         {
