@@ -15474,7 +15474,7 @@ MonoBehaviour:
   owner: {fileID: 1177185294}
   audioSource: {fileID: 1670657000}
   followOffset: {x: 1, y: 0, z: 1}
-  repathDistance: 4
+  repathDistance: 5
   repathAngle: 0
   followDistanceReached: 2
   lookAtExitDistance: 1
@@ -15482,9 +15482,11 @@ MonoBehaviour:
   lookAtDelay: 1
   sniffDistance: 2
   sniffTime: 1
-  goToFarmerDistance: 2
-  leadDistance: 1
+  goToFarmerDistance: 3
+  leadDistance: 2
   barkFrequency: 5
+  state: 0
+  subState: 0
 --- !u!195 &1670657009
 NavMeshAgent:
   m_ObjectHideFlags: 0

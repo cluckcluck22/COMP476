@@ -20,7 +20,7 @@ public class DogAI : MonoBehaviour {
     public float sniffDistance = 1.0f;
     public float sniffTime=1.0f;
 
-    public float goToFarmerDistance=4.0f;
+    public float goToFarmerDistance=3.0f;
     public float leadDistance=2.0f;
 
     public float barkFrequency=5.0f;
@@ -322,7 +322,7 @@ public class DogAI : MonoBehaviour {
                         else if ((transform.position - ownerPosition).magnitude <= leadDistance)
                         {
                             subState = DogSubState.LeadPath;
-                            Repath(needsFilling.transform.position);
+                            Repath(needsFilling.transform.position-transform.position);
                         }
                         else
                         {
