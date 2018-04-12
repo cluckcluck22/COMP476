@@ -10,14 +10,20 @@ public class Shoot_Attack_Interact : MonoBehaviour {
     float nextFire;
     Transform cam;
     RaycastHit hit;
-    
+
+    MimicMovemenment mimicController;
+
+    Interactable currentInteractObject;
+
 	// Use this for initialization
 	void Start () {
         if(gameObject.tag == "Player")
         {
             cam = gameObject.GetComponent<BasicBehaviour>().playerCamera;
         }
-        
+
+        mimicController = GetComponent<MimicMovemenment>();
+        currentInteractObject = null;
     }
 	
 	// Update is called once per frame
@@ -28,30 +34,41 @@ public class Shoot_Attack_Interact : MonoBehaviour {
 
     void InteractWithWorld()
     {
-        if (Input.GetKey(KeyCode.Mouse1)|| Input.GetMouseButtonDown(0))
+        if (currentInteractObject != null && mimicController.isMoving())
         {
-            Collider[] interactbleObjects = Physics.OverlapSphere(transform.position, 5f, interactables);
+            currentInteractObject.detach(gameObject.GetComponent<AnimalAI>());
+            currentInteractObject = null;
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.Mouse1) || Input.GetMouseButtonDown(0))
+        {
+            Collider[] interactbleObjects = Physics.OverlapSphere(transform.position, 10f, interactables);
             foreach(Collider interactable in interactbleObjects)
             {
-                Vector3 direction = interactable.transform.position - transform.position;
-                //call interact script if mimic, if farmer, fill food and stuff...
-                if (Physics.Raycast(transform.position, transform.forward, out hit, 5f, interactables))
+                Interactable interactObject;
+                interactObject = interactable.GetComponent<Interactable>();
+                if (interactObject != null)
                 {
-                    //call interact script
-                    Debug.Log("interactable Object " + hit.collider.gameObject.name);
-                    Interactable interactObject;
-                    interactObject = hit.collider.gameObject.GetComponent<Interactable>();
                     if (gameObject.tag == "Player")
                     {
                         Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + "FILL!");
                         interactObject.fill(interactObject.maxCount);
                     }
-                    if (gameObject.tag == "mimic")
+
+                    else if (gameObject.tag == "mimic" && !interactObject.isEmpty())
                     {
                         Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + " ATTACH/EAT");
                         interactObject.attach(gameObject.GetComponent<AnimalAI>());
+                        if (interactObject.type == Interactable.Type.Food)
+                            mimicController.Eating();
+                        else
+                            mimicController.Rest();
+                        currentInteractObject = interactObject;
                     }
                 }
+
+                return;
             }
         }
     }

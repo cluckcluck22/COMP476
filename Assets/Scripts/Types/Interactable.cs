@@ -93,10 +93,10 @@ public class Interactable : MonoBehaviour {
             if (occupied[i] == null)
             {
                 occupied[i] = animal;
+                reservedCount++;
                 break;
             }
         }
-        reservedCount++;
         if (reservedCount > occupied.Length)
             print("Interactable too many reserved");
     }
@@ -108,9 +108,10 @@ public class Interactable : MonoBehaviour {
             if (occupied[i] == animal)
             {
                 occupied[i] = null;
+                reservedCount--;
+                break;
             }
         }
-        reservedCount--;
     }
 
     public void fill(float amount)
