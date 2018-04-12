@@ -10,15 +10,15 @@ public class SyncMimicNeeds : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         mPhotonView = GetComponent<PhotonView>();
-		if(!PhotonNetwork.connected || PhotonNetwork.isMasterClient)
-        {
-            Destroy(this);
-        }
+        mAnimalAI = GetComponent<AnimalAI>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        mPhotonView.RPC("syncNeeds", PhotonTargets.Others,mAnimalAI.hunger,mAnimalAI.fatigue);
+        if (PhotonNetwork.connected && !PhotonNetwork.isMasterClient)
+        {
+            mPhotonView.RPC("syncNeeds", PhotonTargets.Others, mAnimalAI.hunger, mAnimalAI.fatigue);
+        }
 	}
 
     [PunRPC]
