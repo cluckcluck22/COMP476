@@ -9349,7 +9349,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1920756488495996, guid: 0c220498bfe3ad84b87e5bb7f54ea080, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1920756488495996, guid: 0c220498bfe3ad84b87e5bb7f54ea080, type: 2}
       propertyPath: m_TagString
@@ -13400,7 +13400,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1703058990033382, guid: 46bb60dcdfb1c6d4f8872e7f8869ddb2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4898503197555760, guid: 46bb60dcdfb1c6d4f8872e7f8869ddb2, type: 2}
       propertyPath: m_RootOrder

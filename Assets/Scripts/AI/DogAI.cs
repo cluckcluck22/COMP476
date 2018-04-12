@@ -74,7 +74,7 @@ public class DogAI : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         startLookAtTime = float.MaxValue;
         sniffTimeEnd = float.MinValue;
-        shouldFollow = false;
+        shouldFollow = true;
     }
 
     void Start () {

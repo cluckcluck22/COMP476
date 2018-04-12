@@ -2,34 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FarmerAIDogs : MonoBehaviour {
+public class FarmerAIDogs : MonoBehaviour
+{
 
     public GameObject Dog;
-    public GameObject[] DogArr;
 
-	void Start () 
+    void Start()
     {
-		
-	}
-	
-	void FixedUpdate ()
+
+    }
+
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.E))
         {
             //Patrol
-            foreach(GameObject dog in DogArr)
-            { 
-                Dog.GetComponent<DogAI>().TellDogToPatrol();
-            }
+            Debug.Log("PATROL DOGGO!");
+            Dog.GetComponent<DogAI>().TellDogToPatrol();
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
             //Follow
-            foreach (GameObject dog in DogArr)
-            {
-                Dog.GetComponent<DogAI>().TellDogToFollow();
-            }
+            Debug.Log("FOLLOW DOGGO!");
+            Dog.GetComponent<DogAI>().TellDogToFollow();
         }
     }
 }
