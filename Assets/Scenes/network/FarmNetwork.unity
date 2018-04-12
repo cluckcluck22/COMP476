@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.510727, g: 0.42400008, b: 0.40056357, a: 1}
+  m_IndirectSpecularColor: {r: 0.5108935, g: 0.4240186, b: 0.40105042, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -579,6 +579,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &58104390 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 58104389}
+--- !u!114 &58104391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 58104390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 61
+  instantiationId: 61
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &61421439
 Prefab:
   m_ObjectHideFlags: 0
@@ -684,6 +714,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &61421440 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 61421439}
+--- !u!114 &61421441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 61421440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 73
+  instantiationId: 73
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &70642625 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1396598332199588, guid: 18ffe447f0d552a4ab8d6949b9894419,
@@ -1546,6 +1606,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &166494475 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 166494474}
+--- !u!114 &166494476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166494475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 55
+  instantiationId: 55
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &167012655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1857,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &195941050 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 195941049}
+--- !u!114 &195941051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195941050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 46
+  instantiationId: 46
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &196624832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,6 +2196,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &237045803 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 237045802}
+--- !u!114 &237045804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237045803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 44
+  instantiationId: 44
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &255418785
 Prefab:
   m_ObjectHideFlags: 0
@@ -2181,6 +2331,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &255418786 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 255418785}
+--- !u!114 &255418787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255418786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 65
+  instantiationId: 65
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &255748127
 Prefab:
   m_ObjectHideFlags: 0
@@ -2985,6 +3165,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3558258055c5cf94ebc9509a6b221a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &280290237 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1162681593254010, guid: 692bae59dfea70541ae3f143b23b802b,
+    type: 2}
+  m_PrefabInternal: {fileID: 280290234}
+--- !u!114 &280290238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280290237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 77
+  instantiationId: 77
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &287690834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,6 +3530,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &295749480 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 295749479}
+--- !u!114 &295749481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295749480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 76
+  instantiationId: 76
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &296242508
 GameObject:
   m_ObjectHideFlags: 0
@@ -5316,6 +5556,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &427336414 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 427336413}
+--- !u!114 &427336415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427336414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 45
+  instantiationId: 45
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &442871348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5615,6 +5885,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &462168377 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 462168376}
+--- !u!114 &462168378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462168377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 58
+  instantiationId: 58
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &467941571
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,6 +6162,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &468039978 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 468039977}
+--- !u!114 &468039979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468039978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 57
+  instantiationId: 57
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &473124399
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,6 +7474,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &604417860 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 604417859}
+--- !u!114 &604417861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 604417860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 69
+  instantiationId: 69
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &608019962
 Prefab:
   m_ObjectHideFlags: 0
@@ -7320,6 +7680,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &611536245 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 611536244}
+--- !u!114 &611536246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 611536245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 70
+  instantiationId: 70
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &623124132
 Prefab:
   m_ObjectHideFlags: 0
@@ -7987,6 +8377,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &691390125 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 691390124}
+--- !u!114 &691390126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 691390125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 59
+  instantiationId: 59
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &709918382
 Prefab:
   m_ObjectHideFlags: 0
@@ -8451,6 +8871,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &749151484 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 749151483}
+--- !u!114 &749151485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749151484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 72
+  instantiationId: 72
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &749547144
 Prefab:
   m_ObjectHideFlags: 0
@@ -9058,6 +9508,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &787560537 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 787560536}
+--- !u!114 &787560538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787560537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 62
+  instantiationId: 62
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &790890046
 GameObject:
   m_ObjectHideFlags: 0
@@ -9528,6 +10008,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &867586262 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 867586261}
+--- !u!114 &867586263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867586262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 66
+  instantiationId: 66
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &869330242
 Prefab:
   m_ObjectHideFlags: 0
@@ -10652,6 +11162,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &949375128 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 949375127}
+--- !u!114 &949375129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 949375128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 52
+  instantiationId: 52
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!4 &964739816 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4799346296410044, guid: d087604a9e0b6154a86c944d7e3c1d23,
@@ -11061,6 +11601,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &972900639 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 972900638}
+--- !u!114 &972900640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972900639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 67
+  instantiationId: 67
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &986983926
 GameObject:
   m_ObjectHideFlags: 0
@@ -11440,6 +12010,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1010122578 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1010122577}
+--- !u!114 &1010122579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010122578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 68
+  instantiationId: 68
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1011022350
 Prefab:
   m_ObjectHideFlags: 0
@@ -11626,6 +12226,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1024751039 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1024751038}
+--- !u!114 &1024751040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024751039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 56
+  instantiationId: 56
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1025549699
 Prefab:
   m_ObjectHideFlags: 0
@@ -12373,6 +13003,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1074751964 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1074751963}
+--- !u!114 &1074751965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074751964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 75
+  instantiationId: 75
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &1079846053
 GameObject:
   m_ObjectHideFlags: 0
@@ -12523,6 +13183,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1110078219 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1110078218}
+--- !u!114 &1110078220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110078219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 74
+  instantiationId: 74
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1117477510
 Prefab:
   m_ObjectHideFlags: 0
@@ -13455,6 +14145,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1256029845 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256029844}
+--- !u!114 &1256029846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256029845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 53
+  instantiationId: 53
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &1264168141
 GameObject:
   m_ObjectHideFlags: 0
@@ -14341,6 +15061,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1330932836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1330932835}
+--- !u!114 &1330932837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330932836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 48
+  instantiationId: 48
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1347962991
 Prefab:
   m_ObjectHideFlags: 0
@@ -14461,6 +15211,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1347962992 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1347962991}
+--- !u!114 &1347962993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347962992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 47
+  instantiationId: 47
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &1348119686 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1069274806570214, guid: e3faae1255c721a47926043b0997b1ef,
@@ -15796,6 +16576,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1446930967 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1446930966}
+--- !u!114 &1446930968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446930967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 51
+  instantiationId: 51
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &1453024121
 GameObject:
   m_ObjectHideFlags: 0
@@ -16108,6 +16918,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1474290847 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1474290846}
+--- !u!114 &1474290848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474290847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 63
+  instantiationId: 63
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1477664547
 Prefab:
   m_ObjectHideFlags: 0
@@ -17535,6 +18375,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1564935498 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1564935497}
+--- !u!114 &1564935499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1564935498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 60
+  instantiationId: 60
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1565395215
 Prefab:
   m_ObjectHideFlags: 0
@@ -18365,6 +19235,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1649173699 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1649173698}
+--- !u!114 &1649173700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649173699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 54
+  instantiationId: 54
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1657489577
 Prefab:
   m_ObjectHideFlags: 0
@@ -18470,6 +19370,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1657489578 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1657489577}
+--- !u!114 &1657489579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657489578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 50
+  instantiationId: 50
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1664605646
 Prefab:
   m_ObjectHideFlags: 0
@@ -18784,6 +19714,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1670411590 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1670411589}
+--- !u!114 &1670411591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1670411590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 49
+  instantiationId: 49
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1679927597
 Prefab:
   m_ObjectHideFlags: 0
@@ -21427,6 +22387,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1856576689 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1856576688}
+--- !u!114 &1856576690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856576689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 64
+  instantiationId: 64
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &1861478427
 Prefab:
   m_ObjectHideFlags: 0
@@ -22252,6 +23242,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1902121750 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1902121749}
+--- !u!114 &1902121751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902121750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 42
+  instantiationId: 42
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &1912412440
 GameObject:
   m_ObjectHideFlags: 0
@@ -22462,6 +23482,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1951742129 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 1951742128}
+--- !u!114 &1951742130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951742129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 43
+  instantiationId: 43
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &1958340924
 GameObject:
   m_ObjectHideFlags: 0
@@ -23280,6 +24330,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00de2215cd25dd4bac763866c529994, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2015956231 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1335235729783104, guid: c00de2215cd25dd4bac763866c529994,
+    type: 2}
+  m_PrefabInternal: {fileID: 2015956230}
+--- !u!114 &2015956232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2015956231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 71
+  instantiationId: 71
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1 &2018388433
 GameObject:
   m_ObjectHideFlags: 0
