@@ -52,4 +52,6 @@ MonoBehaviour:
   - KillAnimalNetwork
   - endGameFunctionNetwork
   - killAnimalNetwork
+  - swapAnimal
+  - syncOnValueChange
   DisableAutoOpenWizard: 1

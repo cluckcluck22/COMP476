@@ -8,8 +8,10 @@ public class DuplicateAnimals : MonoBehaviour {
     public Transform cloneSpawn;
     public Transform[] filteredAnimals;
     public GameObject TransformGUI;
+    public PhotonView mPhotonView;
 	// Use this for initialization
 	void Start () {
+        mPhotonView = GetComponent<PhotonView>();
         CorrectAI(duplicateAI);
         duplicateAI[0].transform.parent = this.transform;
         duplicateAI[0].transform.position = transform.position;
@@ -17,6 +19,7 @@ public class DuplicateAnimals : MonoBehaviour {
         GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
         Physics.IgnoreCollision(duplicateAI[0].GetComponent<Collider>(), transform.GetComponent<Collider>());
         Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
@@ -40,44 +43,60 @@ public class DuplicateAnimals : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
-            DetachCurrentChild();
-            Physics.IgnoreCollision(filteredAnimals[0].GetComponent<Collider>(), transform.GetComponent<Collider>());
-            filteredAnimals[0].transform.position = transform.position;
-            filteredAnimals[0].transform.rotation = transform.rotation;
-            filteredAnimals[0].transform.parent = this.transform;
-            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("swapAnimal", PhotonTargets.All, 0);
+            }
+            else
+            {
+                swapAnimal(0);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
-            DetachCurrentChild();
-            Physics.IgnoreCollision(filteredAnimals[1].GetComponent<Collider>(), transform.GetComponent<Collider>());
-            filteredAnimals[1].transform.position = transform.position;
-            filteredAnimals[1].transform.rotation = transform.rotation;
-            filteredAnimals[1].transform.parent = this.transform;
-            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("swapAnimal", PhotonTargets.All, 1);
+            }
+            else
+            {
+                swapAnimal(1);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
-            DetachCurrentChild();
-            Physics.IgnoreCollision(filteredAnimals[2].GetComponent<Collider>(), transform.GetComponent<Collider>());
-            filteredAnimals[2].transform.position = transform.position;
-            filteredAnimals[2].transform.rotation = transform.rotation;
-            filteredAnimals[2].transform.parent = this.transform;
-            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("swapAnimal", PhotonTargets.All, 2);
+            }
+            else
+            {
+                swapAnimal(2);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
-            DetachCurrentChild();
-            Physics.IgnoreCollision(filteredAnimals[3].GetComponent<Collider>(), transform.GetComponent<Collider>());
-            filteredAnimals[3].transform.position = transform.position;
-            filteredAnimals[3].transform.rotation = transform.rotation;
-            filteredAnimals[3].transform.parent = this.transform;
-            GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("swapAnimal", PhotonTargets.All, 3);
+            }
+            else
+            {
+                swapAnimal(3);
+            }
         }
+    }
+
+    [PunRPC]
+    public void swapAnimal(int animalIndex)
+    {
+        filteredAnimals = TransformGUI.GetComponent<TransformGUI>().m_transforms;
+        DetachCurrentChild();
+        Physics.IgnoreCollision(filteredAnimals[animalIndex].GetComponent<Collider>(), transform.GetComponent<Collider>());
+        filteredAnimals[animalIndex].transform.position = transform.position;
+        filteredAnimals[animalIndex].transform.rotation = transform.rotation;
+        filteredAnimals[animalIndex].transform.parent = this.transform;
+        GetComponent<MimicMovemenment>().m_AnimatorDriverAnimal = transform.GetChild(0).GetComponent<AnimatorDriverAnimal>();
     }
 
     public void CorrectAI(GameObject[] AI)
@@ -85,6 +104,10 @@ public class DuplicateAnimals : MonoBehaviour {
         foreach(GameObject animal in AI)
         {
             animal.GetComponent<AnimatorDriverAnimal>().enabled = false;
+            if (PhotonNetwork.connected && !PhotonNetwork.isMasterClient)
+            {
+                animal.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
+            }
         }
     }
 

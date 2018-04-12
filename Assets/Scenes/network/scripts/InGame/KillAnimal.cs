@@ -4,9 +4,31 @@ using UnityEngine;
 
 public class KillAnimal : MonoBehaviour {
 
-	public KillAnimal()
+	public void KillAnimals()
     {
-        GetComponent<PhotonView>().RPC("KillAnimalNetwork", PhotonTargets.All);
+        if(transform.parent != null)
+        {
+            //TODO end game
+            if (gameObject.GetComponent<FadeOut>() == null)
+            {
+                GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkManager>().endGameFunction();
+            }
+        }
+        else
+        {
+            if (gameObject.GetComponent<FadeOut>() == null)
+            {
+                GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkManager>().killAnimal();
+            }
+        }
+        if (!PhotonNetwork.connected)
+        {
+            KillAnimalNetwork();
+        }
+        else
+        {
+            GetComponent<PhotonView>().RPC("KillAnimalNetwork", PhotonTargets.All);
+        }
     }
 
     [PunRPC]
