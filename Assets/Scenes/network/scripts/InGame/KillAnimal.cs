@@ -35,5 +35,11 @@ public class KillAnimal : MonoBehaviour {
     public void KillAnimalNetwork()
     {
         gameObject.AddComponent<FadeOut>();
+
+        AnimalAI aiScript = GetComponent<AnimalAI>();
+        if (aiScript != null)
+        {
+            aiScript.kill();
+        }
     }
 }

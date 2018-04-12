@@ -27,7 +27,7 @@ public class BTConditionLeaf : BTNode
     {
         if (!float.TryParse(cooldown, out evalCooldown))
         {
-            evalCooldown = 0.0f;
+            evalCooldown = 2.0f;
         }
 
         lastFailedEvaluation = float.MinValue;
@@ -43,10 +43,9 @@ public class BTConditionLeaf : BTNode
         if (Time.time < lastFailedEvaluation + evalCooldown)
         {
             yield return BTNodeResult.Failure;
-            yield break;
         }
 
-        if (conditionLeafCallback(scorer))
+        else if (conditionLeafCallback(scorer))
         {
             yield return BTNodeResult.Success;
         }
@@ -57,11 +56,16 @@ public class BTConditionLeaf : BTNode
 
         }
 
-        // yield break;
+        yield break;
     }
 
     public Scorer GetScorer()
     {
         return scorer;
+    }
+
+    public void TriggerCooldown()
+    {
+        lastFailedEvaluation = Time.time;
     }
 }

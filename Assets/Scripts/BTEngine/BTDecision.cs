@@ -112,6 +112,7 @@ public class BTDecision : BTNode
             }
             else if (result == BTNodeResult.Failure)
             {
+                conditions[currentRunningNode].TriggerCooldown();
                 currentRunningNode = -1;
                 frameTicker = evalFrequency;
             }
@@ -128,6 +129,8 @@ public class BTDecision : BTNode
         float currentScore = 0;
         float tempCurrentNodeScore = -1f;
 
+        List<float> debugScores = new List<float>();
+
         if (currentRunningNode != -1)
         {
             BTCoroutine routine = conditions[currentRunningNode].Procedure();
@@ -137,13 +140,21 @@ public class BTDecision : BTNode
             if (result == BTNodeResult.Success)
             {
                 tempCurrentNodeScore = conditions[currentRunningNode].GetScorer().score;
+                debugScores.Add(conditions[currentRunningNode].GetScorer().score);
+            }
+            else
+            {
+                debugScores.Add(-1f);
             }
         }
 
         for (int i = 0; i < conditions.Length; i++)
         {
             if (i == currentRunningNode)
+            {
+                debugScores.Add(-2f);
                 continue;
+            }
 
             BTCoroutine routine = conditions[i].Procedure();
             routine.MoveNext();
@@ -152,11 +163,16 @@ public class BTDecision : BTNode
             if (result == BTNodeResult.Success)
             {
                 currentScore = conditions[i].GetScorer().score;
+                debugScores.Add(currentScore);
                 if (currentScore > bestScore)
                 {
                     bestScoreIndex = i;
                     bestScore = currentScore;
                 }
+            }
+            else
+            {
+                debugScores.Add(-1f);
             }
         }
 

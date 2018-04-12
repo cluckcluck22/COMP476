@@ -34,6 +34,10 @@ public class ZoneManager : MonoBehaviour {
         InteractableZone candidate = null;
         int highestCount = 0;
         int currentCount = 0;
+
+        float closestDistance = float.MaxValue;
+        InteractableZone closestZone = needsZones[0];
+
         foreach (InteractableZone zone in needsZones)
         {
             if (zone.hasNeedsInteractable(type))
@@ -48,15 +52,22 @@ public class ZoneManager : MonoBehaviour {
                     candidate = zone;
                 }
             }
+
+            float currentDistance = (zone.transform.position - animal.transform.position).magnitude;
+            if (currentDistance <= closestDistance)
+            {
+                closestDistance = currentDistance;
+                closestZone = zone;
+            }
         }
         if (candidate == null)
         {
-            // Pick a random one
-            int random = Random.Range(0, needsZones.Count - 1);
-            candidate = interactableZones[random];
+            return closestZone.transform;
         }
-
-        return candidate.transform;
+        else
+        {
+            return candidate.transform;
+        }
     }
 
     public Transform findRallyZone(AnimalAI animal)
@@ -64,8 +75,8 @@ public class ZoneManager : MonoBehaviour {
         InteractableZone candidate = null;
         int bestCount = 0;
         int currentCount = 0;
-        float closestDistance = float.MaxValue;
-        InteractableZone closestZone = null;
+        int leastOccupiedZone = int.MaxValue;
+        InteractableZone clearestZone = null;
 
         foreach (InteractableZone zone in rallyZones)
         {
@@ -79,17 +90,17 @@ public class ZoneManager : MonoBehaviour {
                 candidate = zone;
             }
 
-            float distance = (zone.transform.position - animal.transform.position).magnitude;
-            if ( distance <= closestDistance )
+            int animalCount = zone.getAllAnimalCount();
+            if (animalCount <= leastOccupiedZone)
             {
-                closestDistance = distance;
-                closestZone = zone;
+                leastOccupiedZone = animalCount;
+                clearestZone = zone;
             }
         }
 
         if (candidate == null)
         {
-            return closestZone.transform;
+            return clearestZone.transform;
         }
         else
         {
