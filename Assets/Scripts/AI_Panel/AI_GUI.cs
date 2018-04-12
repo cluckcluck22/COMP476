@@ -55,7 +55,6 @@ public class AI_GUI : MonoBehaviour
             {
                 if (gameObject.tag == "Dog") //Tagged on the AI canvas only for dogs
                 {
-                    Debug.Log("I am dog. I dont have stats");
                     return;
                 }
 
