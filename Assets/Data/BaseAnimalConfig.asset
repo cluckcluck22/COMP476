@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xmlTree: {fileID: 4900000, guid: 22f680d74608e414d84b0d1c764c646f, type: 3}
   idleTree: {fileID: 4900000, guid: 193f517744c1123428bb882c42dc71a8, type: 3}
-  m_randomMinRatio: 0.3
+  m_randomMinRatio: 0.5
   m_randomMaxRatio: 1
   m_hungerNeedCurve:
     serializedVersion: 2
@@ -25,23 +25,29 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.25
-      value: 1
+      time: 0.15185547
+      value: 0.9984741
       inSlope: 0.000034641143
       outSlope: 0.000034641143
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.28799438
-      value: 0.50305176
-      inSlope: 0
-      outSlope: 0
+      time: 0.20892334
+      value: 0.50457764
+      inSlope: -0.046583872
+      outSlope: -0.046583872
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.7375488
-      value: 0.50305176
-      inSlope: 0
-      outSlope: 0
+      time: 0.5449219
+      value: 0.5
+      inSlope: -0.046776872
+      outSlope: -0.046776872
       tangentMode: 136
+    - serializedVersion: 2
+      time: 0.6003678
+      value: 0.0015731305
+      inSlope: -0.01594653
+      outSlope: -0.01594653
+      tangentMode: 0
     - serializedVersion: 2
       time: 0.80047023
       value: 0.00025177468
@@ -61,23 +67,29 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.25
-      value: 1
+      time: 0.15185547
+      value: 0.9984741
       inSlope: 0.000034641143
       outSlope: 0.000034641143
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.28799438
-      value: 0.50305176
-      inSlope: 0
-      outSlope: 0
+      time: 0.20892334
+      value: 0.50457764
+      inSlope: -0.046583872
+      outSlope: -0.046583872
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.7375488
-      value: 0.50305176
-      inSlope: 0
-      outSlope: 0
+      time: 0.5449219
+      value: 0.5
+      inSlope: -0.046776872
+      outSlope: -0.046776872
       tangentMode: 136
+    - serializedVersion: 2
+      time: 0.6003678
+      value: 0.0015731305
+      inSlope: -0.01594653
+      outSlope: -0.01594653
+      tangentMode: 0
     - serializedVersion: 2
       time: 0.80047023
       value: 0.00025177468
@@ -97,13 +109,13 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 19.960815
+      time: 34.052185
       value: 0.0018615723
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 30.113197
+      time: 44.204567
       value: 0.3220333
       inSlope: 0
       outSlope: 0
