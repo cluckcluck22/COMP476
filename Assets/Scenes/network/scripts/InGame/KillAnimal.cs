@@ -4,8 +4,23 @@ using UnityEngine;
 
 public class KillAnimal : MonoBehaviour {
 
-	public void KillAnimalFunction()
+	public void KillAnimals()
     {
+        if(transform.parent != null)
+        {
+            //TODO end game
+            if (gameObject.GetComponent<FadeOut>() == null)
+            {
+                GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkManager>().endGameFunction();
+            }
+        }
+        else
+        {
+            if (gameObject.GetComponent<FadeOut>() == null)
+            {
+                GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkManager>().killAnimal();
+            }
+        }
         if (!PhotonNetwork.connected)
         {
             KillAnimalNetwork();

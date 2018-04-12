@@ -22,22 +22,13 @@ public class FadeOut : MonoBehaviour {
         {
             if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
             {
-                //Check if object is the mimic
-                if (false)
-                {
-                    //TODO destroy mimic and end the game
-                }
-                else
-                {
-                    //TODO check that this call works
+                GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
                     PhotonNetwork.Destroy(gameObject);
-                }
             }
             else
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
-            //TODO good place to trigger done
         }
         else
         {
