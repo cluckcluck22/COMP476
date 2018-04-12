@@ -251,8 +251,17 @@ public class DogAI : MonoBehaviour {
         }
         else
         {
-            OnPatrolExit();
-            OnLeadEnter();
+            if (shouldFollow)
+            {
+                OnFollowEnter();
+                OnLeadExit();
+            }
+            else
+            {
+                OnLeadEnter();
+                OnPatrolExit();
+            }
+
         }
     }
 
