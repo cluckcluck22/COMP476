@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.510727, g: 0.42400008, b: 0.40056357, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2338,6 +2338,19 @@ MonoBehaviour:
   makeHungry: 0
   makeSleepy: 0
   isMimic: 1
+--- !u!114 &255748133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255748129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1f7ca8e214d404a841642ea592909c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mPhotonView: {fileID: 0}
+  mAnimalAI: {fileID: 0}
 --- !u!54 &255748136
 Rigidbody:
   m_ObjectHideFlags: 0

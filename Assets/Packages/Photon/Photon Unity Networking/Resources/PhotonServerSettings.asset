@@ -54,4 +54,5 @@ MonoBehaviour:
   - killAnimalNetwork
   - swapAnimal
   - syncOnValueChange
+  - syncNeeds
   DisableAutoOpenWizard: 1

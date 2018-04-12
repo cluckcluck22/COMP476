@@ -25,8 +25,8 @@ public class AnimalAI : MonoBehaviour {
 
     private BehaviorTree bt { get; set; }
 
-    public float hunger { get; private set; }
-    public float fatigue { get; private set; }
+    public float hunger { get;  set; }
+    public float fatigue { get;  set; }
     public float health { get; private set; }
 
     private IEnumerator perceptionRoutine;
