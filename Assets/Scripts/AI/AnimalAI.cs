@@ -50,22 +50,29 @@ public class AnimalAI : MonoBehaviour {
 
     void Start ()
     {
-        float randomRatio;
+        if (PhotonNetwork.isMasterClient || !PhotonNetwork.connected)
+        {
+            float randomRatio;
 
-        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
-        hunger = animalConfig.maxHunger * randomRatio;
+            randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+            hunger = animalConfig.maxHunger * randomRatio;
 
-        randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
-        fatigue = animalConfig.maxFatigue * randomRatio;
+            randomRatio = Random.Range(animalConfig.randomMinRatio, animalConfig.randomMaxRatio);
+            fatigue = animalConfig.maxFatigue * randomRatio;
 
-        health = animalConfig.maxHealth;
-        perception = new PerceptionModule(this);
-        animatorDriver = GetComponent<AnimatorDriverAnimal>();
-        navAgent = GetComponent<NavMeshAgent>();
-        perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
-        StartCoroutine(perceptionRoutine);
-        bt.Start();
-        blackboard = new Dictionary<string, object>();
+            health = animalConfig.maxHealth;
+            perception = new PerceptionModule(this);
+            animatorDriver = GetComponent<AnimatorDriverAnimal>();
+            navAgent = GetComponent<NavMeshAgent>();
+            perceptionRoutine = PerceptionUpdater(0.3f, 0.6f);
+            StartCoroutine(perceptionRoutine);
+            bt.Start();
+            blackboard = new Dictionary<string, object>();
+        }
+        else
+        {
+            Destroy(this);
+        }
 	}
 	
 	void Update ()
