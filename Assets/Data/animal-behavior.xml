@@ -2,7 +2,12 @@
   <decision frequency="5">
     <!-- IsDead -->
     <condition name="isDead" />
-    <simple name="do-nothing" />
+    <sequence>
+      <simple name="play-dead-anim" />
+      <repeat_forever>
+        <simple name="do-nothing" />
+      </repeat_forever>
+    </sequence>
     <!-- IsHungry -->
     <condition name="isHungry" />
     <sequence>

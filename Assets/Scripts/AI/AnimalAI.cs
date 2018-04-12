@@ -38,6 +38,11 @@ public class AnimalAI : MonoBehaviour {
     public bool makeHungry = false;
     public bool makeSleepy = false;
 
+    public void kill()
+    {
+        health = 0f;
+    }
+
     private void Awake()
     {
         bt = new BehaviorTree(animalConfig.xmlTree, this);
@@ -144,6 +149,14 @@ public class AnimalAI : MonoBehaviour {
         scorer.score = 2.0f;
         return isDead();
     }
+
+    [BTLeaf("play-dead-anim")]
+    public bool playDeadAnim()
+    {
+        animatorDriver.PlayFullBodyState(States.AnimalFullBody.Dead);
+        return true;
+    }
+
     [BTLeaf("isFar")]
     public bool isFar(Scorer scorer)
     {
@@ -286,7 +299,7 @@ public class AnimalAI : MonoBehaviour {
 
         if (interactable == null)
         {
-            print("nullInteractable !");
+ 
         }
 
         idleBehavior.setContext(interactable);
