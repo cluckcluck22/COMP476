@@ -28,7 +28,7 @@ public class Shoot_Attack_Interact : MonoBehaviour {
 
     void InteractWithWorld()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1)|| Input.GetMouseButtonDown(0))
         {
             Collider[] interactbleObjects = Physics.OverlapSphere(transform.position, 5f, interactables);
             foreach(Collider interactable in interactbleObjects)
@@ -39,6 +39,8 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                 {
                     //call interact script
                     Debug.Log("interactable Object " + hit.collider.gameObject.name);
+                        Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag);
+                        hit.collider.gameObject.GetComponent<Interactable>().fill(hit.collider.gameObject.GetComponent<Interactable>().maxCount);
                 }
             }
         }
