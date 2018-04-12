@@ -93,4 +93,14 @@ public class InteractableZone : MonoBehaviour {
     {
         return animals.Contains(animal);
     }
+
+    public Interactable getAvailableRallySpot()
+    {
+        foreach (Interactable interactable in rallyInteractables)
+        {
+            if (interactable.isAvailable())
+                return interactable;
+        }
+        return null;
+    }
 }

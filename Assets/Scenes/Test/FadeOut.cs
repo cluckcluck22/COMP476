@@ -20,8 +20,15 @@ public class FadeOut : MonoBehaviour {
         timeSinceStart += Time.deltaTime;
         if (timeSinceStart >= fadeTime)
         {
-            Destroy(this);
-            //TODO good place to trigger done
+            if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
+            {
+                GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
+                    PhotonNetwork.Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         else
         {

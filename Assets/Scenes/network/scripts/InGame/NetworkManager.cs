@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NetworkManager : MonoBehaviour {
     public GameObject Mimic;
@@ -9,7 +10,12 @@ public class NetworkManager : MonoBehaviour {
     public GameObject Camera;
     public GameObject canvas;
 
+
+    public GameObject endCanvas;
+
     private bool endGame = false;
+
+    public int numOfKilledAnimals = 0;
 
     public bool useDogOffline;
 
@@ -158,5 +164,49 @@ public class NetworkManager : MonoBehaviour {
         farmer.GetComponent<AimBehaviourBasic>().enabled = true;
         farmer.GetComponent<BasicBehaviour>().enabled = true;
         farmer.GetComponent<MoveBehaviour>().enabled = true;
+    }
+    public void endGameFunction()
+    {
+        if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
+        {
+            mPhotonView.RPC("endGameFunctionNetwork", PhotonTargets.All);
+        }
+        else
+        {
+            endGameFunctionNetwork();
+        }
+    }
+    [PunRPC]
+    public void endGameFunctionNetwork()
+    {
+        endCanvas.active = true;
+        endCanvas.GetComponentInChildren<Text>().text = "Game Over\n Number of Animals Killed:\n" + numOfKilledAnimals.ToString();
+        Invoke("goBackToMenu",5f);
+
+    }
+
+    void goBackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+
+    public void killAnimal()
+    {
+        if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
+        {
+            mPhotonView.RPC("killAnimalNetwork", PhotonTargets.All);
+        }
+        else
+        {
+            killAnimalNetwork();
+
+        }
+    }
+
+    [PunRPC]
+    void killAnimalNetwork()
+    {
+        numOfKilledAnimals++;
     }
 }

@@ -49,4 +49,9 @@ MonoBehaviour:
   - PlayFullBodyStateNetworked
   - PlayFullBodyStateNetwork
   - SyncLayeredState
+  - KillAnimalNetwork
+  - endGameFunctionNetwork
+  - killAnimalNetwork
+  - swapAnimal
+  - syncOnValueChange
   DisableAutoOpenWizard: 1

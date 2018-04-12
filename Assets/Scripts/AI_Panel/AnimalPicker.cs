@@ -31,6 +31,8 @@ public class AnimalPicker : MonoBehaviour
     public Transform[] rams;
     bool haveClones = false;
 
+    public PhotonView mPhotonView;
+
 
     void Start()
     {
@@ -39,6 +41,10 @@ public class AnimalPicker : MonoBehaviour
         mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[0];
         mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[0];
         mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[0];
+
+        animal_arr = new GameObject[4];
+
+        mPhotonView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -67,28 +73,28 @@ public class AnimalPicker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1) && !F2 && !F3 && !F4)
         {
             currentChoice = CowChoices;
-            animal_arr = new GameObject[currentChoice.transform.childCount];
+            //animal_arr = new GameObject[currentChoice.transform.childCount];
             SelectionEnabled = !SelectionEnabled;
             F1 = !F1;
         }
         else if (Input.GetKeyDown(KeyCode.F2) && !F1 && !F3 && !F4)
         {
             currentChoice = PigChoices;
-            animal_arr = new GameObject[currentChoice.transform.childCount];
+            //animal_arr = new GameObject[currentChoice.transform.childCount];
             SelectionEnabled = !SelectionEnabled;
             F2 = !F2;
         }
         else if (Input.GetKeyDown(KeyCode.F3) && !F1 && !F2 && !F4)
         {
             currentChoice = SheepChoices;
-            animal_arr = new GameObject[currentChoice.transform.childCount];
+            //animal_arr = new GameObject[currentChoice.transform.childCount];
             SelectionEnabled = !SelectionEnabled;
             F3 = !F3;
         }
         else if (Input.GetKeyDown(KeyCode.F4) && !F1 && !F2 && !F3)
         {
             currentChoice = RamChoices;
-            animal_arr = new GameObject[currentChoice.transform.childCount];
+            //animal_arr = new GameObject[currentChoice.transform.childCount];
             SelectionEnabled = !SelectionEnabled;
             F4 = !F4;
         }
@@ -128,35 +134,74 @@ public class AnimalPicker : MonoBehaviour
         if(currentChoice.name == "Cows")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[currentIndex];
+            if(PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Cows", currentIndex);
+            }
         }
 
         if (currentChoice.name == "Pigs")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[currentIndex];
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Pigs", currentIndex);
+            }
         }
 
         if (currentChoice.name == "Sheep")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[currentIndex];
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Sheep", currentIndex);
+            }
         }
 
         if (currentChoice.name == "Rams")
         {
             mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[currentIndex];
+            if (PhotonNetwork.connected)
+            {
+                mPhotonView.RPC("syncOnValueChange", PhotonTargets.Others, "Rams", currentIndex);
+            }
         }
     }
 
+    [PunRPC]
+    public void syncOnValueChange(string choice, int index)
+    {
+        if ("Cows"== choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[0] = cows[index];
+        }
+
+        if ("Pigs" == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[1] = pigs[index];
+        }
+
+        if ("Sheep" == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[2] = sheep[index];
+        }
+
+        if ("Rams" == choice)
+        {
+            mTransformGUI.GetComponent<TransformGUI>().m_transforms[3] = rams[index];
+        }
+    }
+    
+
     void ChooseSelectionForward(GameObject currentChoice)
     {
-        //NOTE: Might not be the best place to call this function...
         PopulateTheAnimalArr(currentChoice);
 
-        //Move through the array and when on the selected choice highlight the selection:
-        animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().isOn = true;
-
-        //Call the Listner of the Toggers to transform of the clone set to a certain number....1, 2, 3, 4
         currentIndex = counter % animal_arr.Length;
-        animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
+        //Move through the array and when on the selected choice highlight the selection:
+        animal_arr[currentIndex].GetComponent<Toggle>().isOn = true;
+        //Call the Listner of the Toggers to transform of the clone set to a certain number....1, 2, 3, 4        
+        animal_arr[currentIndex].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
 
         counter++;
     }
@@ -167,15 +212,14 @@ public class AnimalPicker : MonoBehaviour
         if (counter == 0)
             counter = animal_arr.Length;
 
-        //NOTE: Might not be the best place to call this function...
         PopulateTheAnimalArr(currentChoice);
 
-        //Move through the array and when on the selected choice highlight the selection:
-        animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().isOn = true;
-
-        //Call the Listner of the Toggers to transform of the clone set to a certain number....1, 2, 3, 4
         currentIndex = counter % animal_arr.Length;
-        animal_arr[counter % animal_arr.Length].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
+        //Move through the array and when on the selected choice highlight the selection:
+        animal_arr[currentIndex].GetComponent<Toggle>().isOn = true;
+        //Call the Listner of the Toggers to transform of the clone set to a certain number....1, 2, 3, 4
+        
+        animal_arr[currentIndex].GetComponent<Toggle>().onValueChanged.AddListener((value) => { OnValueChange(value); });
 
         counter--;
     }
@@ -186,10 +230,6 @@ public class AnimalPicker : MonoBehaviour
         for (int i = 0; i < animal_arr.Length; i++)
         {
             animal_arr[i] = currentChoice.transform.GetChild(i).gameObject;
-            if (i == 0)
-            {
-                animal_arr[i].GetComponent<Toggle>().isOn = true;
-            }
         }
     }
 

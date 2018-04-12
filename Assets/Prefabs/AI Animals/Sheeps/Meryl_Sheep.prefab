@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 114403879283967374}
   - component: {fileID: 114796977323008278}
   - component: {fileID: 114104478140548488}
+  - component: {fileID: 114460808898880238}
   m_Layer: 0
   m_Name: Meryl_Sheep
   m_TagString: AI_Animal
@@ -1074,7 +1075,7 @@ Transform:
   m_GameObject: {fileID: 1375093505522402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.11, y: 0.504, z: -22.019997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4983463534735518}
   - {fileID: 4506614882536976}
@@ -1648,10 +1649,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalConfig: {fileID: 11400000, guid: 610e213a1a1294741a8bb8fd6fc8d1b1, type: 2}
-  areaConfig: {fileID: 11400000, guid: 132bca332efa0ff49a0ef449010447c2, type: 2}
+  animalName: 
   debugNav: 0
   debugPerception: 0
   debugBT: 0
+  makeHungry: 0
+  makeSleepy: 0
+--- !u!114 &114460808898880238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375093505522402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411aec5576cc4d9467b4f78333799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114520347285462054
 MonoBehaviour:
   m_ObjectHideFlags: 1

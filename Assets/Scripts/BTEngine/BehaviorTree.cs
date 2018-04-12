@@ -12,7 +12,7 @@ using BTCoroutine = System.Collections.Generic.IEnumerator<BTNodeResult>;
 
 public sealed class BehaviorTree
 {
-    private BTNode rootNode;
+    public BTNode rootNode { get; private set; }
     private MonoBehaviour parent;
     private UnityEngine.Coroutine coroutineHandle;
 

@@ -47,6 +47,12 @@
         </sequence>
       </selector>
     </sequence>
+    <!-- IsFar -->
+    <condition name="isFar" />
+    <complex name="goto-flock-center" />
+    <!-- GotoRally -->
+    <condition name="should-goto-rally" />
+    <complex name="goto-nearest-rally" />
     <!-- Idle -->
     <condition name="should-idle" />
     <complex name="idle-wander" />
