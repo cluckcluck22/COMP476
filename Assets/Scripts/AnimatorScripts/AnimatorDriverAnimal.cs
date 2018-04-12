@@ -149,7 +149,7 @@ public class AnimatorDriverAnimal : MonoBehaviour {
         m_blendMove = CycleBlendTreeValue(m_blendMove, MoveVariations);
     }
 
-    private void CycleWalk()
+    public void CycleWalk()
     {
         m_blendWalk = CycleBlendTreeValue(m_blendWalk, WalkVariations);
     }
