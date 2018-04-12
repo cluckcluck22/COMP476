@@ -4173,6 +4173,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114796977323008278, guid: b44356f8ee69dc440976ddcb6f1c8e9b,
+        type: 2}
+      propertyPath: synchronization
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44356f8ee69dc440976ddcb6f1c8e9b, type: 2}
   m_IsPrefabParent: 0
@@ -4983,6 +4988,7 @@ GameObject:
   - component: {fileID: 467941572}
   - component: {fileID: 467941575}
   - component: {fileID: 467941574}
+  - component: {fileID: 467941576}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: NetworkManager
@@ -5083,6 +5089,29 @@ MonoBehaviour:
   endCanvas: {fileID: 1389420195}
   numOfKilledAnimals: 0
   useDogOffline: 1
+--- !u!114 &467941576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467941571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06466c03d263624786afa88b52928b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsWindowOn: 1
+  statsOn: 1
+  healthStatsVisible: 1
+  trafficStatsOn: 1
+  buttonsOn: 1
+  statsRect:
+    serializedVersion: 2
+    x: 0
+    y: 100
+    width: 200
+    height: 50
+  WindowId: 100
 --- !u!1001 &468039977
 Prefab:
   m_ObjectHideFlags: 0
@@ -12533,9 +12562,25 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114840490447862484, guid: c079a21206ff2904792baa124320bd0b,
+        type: 2}
+      propertyPath: synchronization
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114840490447862484, guid: c079a21206ff2904792baa124320bd0b,
+        type: 2}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 1296592343}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c079a21206ff2904792baa124320bd0b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1296592343 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114925407989943832, guid: c079a21206ff2904792baa124320bd0b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1296592342}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
 --- !u!1 &1302097650
 GameObject:
   m_ObjectHideFlags: 0

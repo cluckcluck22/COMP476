@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviour {
             if(PhotonNetwork.playerList.Length != 2 && !endGame)
             {
                 endGame = true;
-                endGameLocal();
+                //endGameLocal();
             }
         }
     }

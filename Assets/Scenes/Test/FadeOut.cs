@@ -23,7 +23,7 @@ public class FadeOut : MonoBehaviour {
             if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
             {
                 GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
-                    PhotonNetwork.Destroy(gameObject);
+                PhotonNetwork.Destroy(gameObject);
             }
             else
             {
