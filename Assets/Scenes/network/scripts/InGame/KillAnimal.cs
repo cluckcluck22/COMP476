@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KillAnimal : MonoBehaviour {
 
-	public KillAnimal()
+	public void KillAnimals()
     {
         GetComponent<PhotonView>().RPC("KillAnimalNetwork", PhotonTargets.All);
     }

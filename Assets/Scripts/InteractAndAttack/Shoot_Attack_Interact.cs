@@ -59,6 +59,7 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                     {
                         //call kill script
                         Debug.Log("killed " + hit.collider.gameObject.name);
+                        hit.collider.gameObject.GetComponent<KillAnimal>().KillAnimals();
                     }
                 }
             }
@@ -73,6 +74,7 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                         if(Physics.Raycast(transform.position, shotDirection, out hit, 50f, layerOfCreatures))
                         {
                             Debug.Log("killed " + hit.collider.gameObject.name);
+                            hit.collider.gameObject.GetComponent<KillAnimal>().KillAnimals();
                         }
                     }
                 }
