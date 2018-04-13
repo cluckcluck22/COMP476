@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* Class: JoinLobby.cs
+ * Programmer: Eric Davies
+ * Date: 12/4/2018
+ * Description: A class that handles the start of the conncting function to a lobby. 
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* Class: PHotonCorrecting.cs
+ * Programmer: Eric Davies
+ * Date: 12/4/2018
+ * Descriotion: A class that sets some photon network settings. Used when photon was crashing with an unknown error.
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

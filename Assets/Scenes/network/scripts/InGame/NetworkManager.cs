@@ -251,7 +251,9 @@ public class NetworkManager : MonoBehaviour {
 
         }
     }
-
+    /* Function: killAnimalNetwork
+     * Description: a function that is called on all clients when an animal is killed to sync the animal death count
+     * */
     [PunRPC]
     void killAnimalNetwork()
     {

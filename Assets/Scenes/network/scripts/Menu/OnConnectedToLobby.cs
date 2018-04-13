@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* Class: OnConnectedToLobby.cs
+ * Programmer: Eric Davies
+ * Date: 12/4/2018
+ * Description: A class is to be attached to the loading canvas, will load the target canvas when the onjoinedroom function is called.
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
