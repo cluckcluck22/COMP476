@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿/* Class: NetworkManager.cs
+ * Programmer: Eric Davies
+ * Date: 12/4/2018
+ * Description: A class that manages most of the overhead network needs of the FarmNetwork scene. Used to set up the game and to handle the end of the game.
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NetworkManager : MonoBehaviour {
+
     public GameObject Mimic;
     public GameObject Farmer;
     public GameObject Camera;
@@ -17,6 +23,7 @@ public class NetworkManager : MonoBehaviour {
 
     public int numOfKilledAnimals = 0;
 
+    //Allows the testers to specify which player object to turn on for testing.
     public bool useDogOffline;
 
     private int ReadyClients = 0;
@@ -25,11 +32,14 @@ public class NetworkManager : MonoBehaviour {
 
     void Update()
     {
+        //Open up the escape menu
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.active = !canvas.active;
             Cursor.visible = !Cursor.visible;
         }
+
+        //Host check for instable game and end it if needed
         if(PhotonNetwork.isMasterClient)
         {
             if(PhotonNetwork.playerList.Length != 2 && !endGame)
@@ -56,6 +66,7 @@ public class NetworkManager : MonoBehaviour {
 
                 //Take over the farmer
                 Farmer.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
+
                 //Stop simulation of Dog
                 Destroy(Mimic.GetComponent<Rigidbody>());
             }
@@ -69,6 +80,7 @@ public class NetworkManager : MonoBehaviour {
 
                 //Take over the Dog
                 Mimic.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player);
+
                 //Stop simulation of Farmer
                 Destroy(Farmer.GetComponent<Rigidbody>());
             }
@@ -100,6 +112,9 @@ public class NetworkManager : MonoBehaviour {
 
     }
 
+    /* Function: tellReady
+     * Description: A function that is called by clients for the host when a player is loaded into the scene. Calls the startgame rpc when 2 players ready.
+     * */
     [PunRPC]
     void tellReady()
     {
@@ -110,6 +125,9 @@ public class NetworkManager : MonoBehaviour {
         }
     }
 
+    /* Function: endGameLocal
+     * Description: A function that can be called to end the game from any client. Can handle online and offline games.
+     * */
     public void endGameLocal()
     {
         if (PhotonNetwork.connected)
@@ -122,13 +140,18 @@ public class NetworkManager : MonoBehaviour {
         }
     }
 
+    /* Function: endGameNetwork
+     * Description: A function called by a network client to end the game in all instances, or at least in the target machine.
+     * */
     [PunRPC]
     void endGameNetwork()
     {
         SceneManager.LoadScene("Menu");
     }
 
-
+    /* Function: startGame
+     * Description: A function called by the host to all clients to start the game. Enables each players respective player objects.
+     * */
     [PunRPC]
     void startGame()
     {
@@ -141,24 +164,35 @@ public class NetworkManager : MonoBehaviour {
         {
             dogEnable(Mimic);
         }
-        //Unlock all movement controls
     }
 
+    /* Function: dogDisable
+     * Description: A function that turns off the dogs ability to move.
+     * */
     private void dogDisable(GameObject dog)
     {
         dog.GetComponent<MimicMovemenment>().enabled = false;
     }
+    /*Function: dogEnable
+     * Description: A function that lets the dog move again, or nothing if already enabled.
+     * */
     private void dogEnable(GameObject dog)
     {
         dog.GetComponent<MimicMovemenment>().enabled = true;
     }
-
+    /* Function: farmerDisable
+     * Description: A function that stops all visible behavior of the farmer player object
+     * */
     private void farmerDisable(GameObject farmer)
     {
         farmer.GetComponent<MoveBehaviour>().enabled = false;
         farmer.GetComponent<AimBehaviourBasic>().enabled = false;
         farmer.GetComponent<BasicBehaviour>().enabled = false;
     }
+
+    /* Function: farmerEnable
+     * Description: A function that starts all visible behavior on the farmer player object
+     * */
     private void farmerEnable(GameObject farmer)
     {
         
@@ -166,6 +200,10 @@ public class NetworkManager : MonoBehaviour {
         farmer.GetComponent<BasicBehaviour>().enabled = true;
         farmer.GetComponent<MoveBehaviour>().enabled = true;
     }
+    /* Function endGameFunction
+     * Description: A function called by the host to formally end the game when an end game condition is met. Tells all network object to do something.
+     *  will do the same on the local level if not connected.
+     * */
     public void endGameFunction()
     {
         if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
@@ -177,6 +215,10 @@ public class NetworkManager : MonoBehaviour {
             endGameFunctionNetwork();
         }
     }
+    /* Function: endGameFunctionNetwork
+     * Descriotion: a function that sets up the formal end of a game. Sets the number of killed animals to be visible to the players and will swap the game
+     *  back to the lobby in 5 seconds.
+     * */
     [PunRPC]
     public void endGameFunctionNetwork()
     {
@@ -186,12 +228,17 @@ public class NetworkManager : MonoBehaviour {
 
     }
 
+    /* Function: goBackToMenu
+     * Description: A function called in the endGameFunctionNetwork Invoke() method to return both players back to the lobby in x seconds.
+     * */
     void goBackToMenu()
     {
         SceneManager.LoadScene("Menu");
     }
 
-
+    /* Function killAnimal
+     * Description: A function that kills
+     * */
     public void killAnimal()
     {
         if (PhotonNetwork.connected && PhotonNetwork.isMasterClient)
