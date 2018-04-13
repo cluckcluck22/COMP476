@@ -28,6 +28,7 @@ public class DogAI : MonoBehaviour {
     private ZoneManager zoneManager;
 
     private Interactable[] needsObjects;
+    private int needsObjectCount;
 
     private AnimatorDriverAnimal animator;
     private NavMeshAgent navAgent;
@@ -80,6 +81,7 @@ public class DogAI : MonoBehaviour {
     void Start () {
         zoneManager = FindObjectOfType<ZoneManager>();
         needsObjects = zoneManager.getAllNeedsInteractables().ToArray();
+        needsObjectCount = needsObjects.Length;
 
         OnFollowEnter();
     }
@@ -236,6 +238,7 @@ public class DogAI : MonoBehaviour {
                             else
                             {
                                 currentNeedsObjectIndex++;
+                                currentNeedsObjectIndex = currentNeedsObjectIndex % needsObjectCount;
                                 Vector3 targetPos = needsObjects[currentNeedsObjectIndex].transform.position;
                                 navAgent.SetDestination(targetPos);
                                 subState = DogSubState.PatrolGotoInteractable; //dog will go to next object                            
@@ -310,14 +313,14 @@ public class DogAI : MonoBehaviour {
                     }
                 case DogSubState.LeadLookat:
                     {
+                        Bark();
                         if ((transform.position - ownerPosition).magnitude > repathDistance)
                         {
                             subState = DogSubState.GoToOwner;
                             
                             Vector3 direction = (needsFilling.transform.position - owner.position).normalized;
                             direction *= goToFarmerDistance;
-                            Repath(direction);
-                            
+                            Repath(direction);                            
                         }
                         else if ((transform.position - ownerPosition).magnitude <= leadDistance)
                         {
@@ -328,15 +331,14 @@ public class DogAI : MonoBehaviour {
                         {
                             Vector3 targetDir = owner.transform.position - transform.position;
                             LookAtTarget(targetDir);
-                            Bark();
                         }
 
                         break;
                     }
 
                 case DogSubState.LeadPath:
-                    {
-                        if ((transform.position - needsFilling.transform.position).magnitude < sniffDistance)
+                    {   
+                        if((ownerPosition - needsFilling.transform.position).magnitude < goToFarmerDistance)
                         {
                             subState = DogSubState.LeadFillUp;
                         }
