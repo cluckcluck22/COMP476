@@ -1110,6 +1110,16 @@ Prefab:
       propertyPath: useOnlyFront
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114402125621292476, guid: d83d177681d38e04f9992b96624cba64,
+        type: 2}
+      propertyPath: maxCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114413499149947926, guid: d83d177681d38e04f9992b96624cba64,
+        type: 2}
+      propertyPath: maxCount
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 208265673456004924, guid: d83d177681d38e04f9992b96624cba64, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d83d177681d38e04f9992b96624cba64, type: 2}
@@ -8208,7 +8218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e1283d9ae34fe4aa7fb60cf4c2e844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCount: 10000
+  maxCount: 2000
   type: 0
   interactionSpots:
   - {fileID: 393554691}
@@ -12588,7 +12598,7 @@ Prefab:
     - target: {fileID: 114413499149947926, guid: d83d177681d38e04f9992b96624cba64,
         type: 2}
       propertyPath: maxCount
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 208265673456004924, guid: d83d177681d38e04f9992b96624cba64, type: 2}
@@ -15187,7 +15197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e1283d9ae34fe4aa7fb60cf4c2e844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCount: 10000
+  maxCount: 5000
   type: 1
   interactionSpots:
   - {fileID: 1493273490}
@@ -20239,6 +20249,11 @@ Prefab:
       propertyPath: m_WalkableMask
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 195328288981617570, guid: e2ab43a4a76b2224cb929368b07e942e,
+        type: 2}
+      propertyPath: m_Speed
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114270472544676180, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
     - {fileID: 114821394194054890, guid: e2ab43a4a76b2224cb929368b07e942e, type: 2}
@@ -20353,18 +20368,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 1806608781}
   audioSource: {fileID: 1689869146}
-  followOffset: {x: 1, y: 0, z: -5}
-  repathDistance: 5
+  followOffset: {x: 1, y: 0, z: 2}
+  repathDistance: 8
   repathAngle: 0
   followDistanceReached: 2
   lookAtExitDistance: 1
   lookAtExitAngle: 45
   lookAtDelay: 1
-  sniffDistance: 1
+  sniffDistance: 3
   sniffTime: 1
-  goToFarmerDistance: 3
-  leadDistance: 2
-  barkFrequency: 5
+  goToFarmerDistance: 6
+  leadDistance: 4
+  barkFrequency: 2
 --- !u!82 &1689869146
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22175,7 +22190,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1806608779
 MonoBehaviour:
@@ -22368,7 +22383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e1283d9ae34fe4aa7fb60cf4c2e844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCount: 10000
+  maxCount: 2000
   type: 0
   interactionSpots:
   - {fileID: 986983927}
