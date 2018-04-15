@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.510727, g: 0.42400008, b: 0.40056357, a: 1}
+  m_IndirectSpecularColor: {r: 0.5108935, g: 0.4240186, b: 0.40105042, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1015,6 +1015,7 @@ MonoBehaviour:
   interactionSpots:
   - {fileID: 1747786967}
   useOnlyFront: 0
+  spawnEmpty: 0
 --- !u!65 &124423354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1119,6 +1120,19 @@ Prefab:
         type: 2}
       propertyPath: maxCount
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822079353370608, guid: d83d177681d38e04f9992b96624cba64, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428683146239762, guid: d83d177681d38e04f9992b96624cba64, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114402125621292476, guid: d83d177681d38e04f9992b96624cba64,
+        type: 2}
+      propertyPath: spawnEmpty
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 208265673456004924, guid: d83d177681d38e04f9992b96624cba64, type: 2}
@@ -4681,6 +4695,7 @@ MonoBehaviour:
   interactionSpots:
   - {fileID: 220623652}
   useOnlyFront: 0
+  spawnEmpty: 0
 --- !u!65 &363427282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8227,6 +8242,7 @@ MonoBehaviour:
   - {fileID: 1439369923}
   - {fileID: 50191990}
   useOnlyFront: 1
+  spawnEmpty: 0
 --- !u!65 &660537245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12593,12 +12609,21 @@ Prefab:
     - target: {fileID: 114402125621292476, guid: d83d177681d38e04f9992b96624cba64,
         type: 2}
       propertyPath: maxCount
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 114413499149947926, guid: d83d177681d38e04f9992b96624cba64,
         type: 2}
       propertyPath: maxCount
-      value: 1000
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822079353370608, guid: d83d177681d38e04f9992b96624cba64, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114413499149947926, guid: d83d177681d38e04f9992b96624cba64,
+        type: 2}
+      propertyPath: spawnEmpty
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 208265673456004924, guid: d83d177681d38e04f9992b96624cba64, type: 2}
@@ -14542,6 +14567,7 @@ MonoBehaviour:
   - {fileID: 456910864}
   - {fileID: 508161464}
   useOnlyFront: 0
+  spawnEmpty: 0
 --- !u!1 &1274350677
 GameObject:
   m_ObjectHideFlags: 0
@@ -14999,6 +15025,7 @@ MonoBehaviour:
   interactionSpots:
   - {fileID: 1593532817}
   useOnlyFront: 0
+  spawnEmpty: 0
 --- !u!65 &1306435914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15206,6 +15233,7 @@ MonoBehaviour:
   - {fileID: 790890047}
   - {fileID: 287690835}
   useOnlyFront: 0
+  spawnEmpty: 0
 --- !u!1001 &1330932835
 Prefab:
   m_ObjectHideFlags: 0
@@ -22392,6 +22420,7 @@ MonoBehaviour:
   - {fileID: 1571444373}
   - {fileID: 388122365}
   useOnlyFront: 1
+  spawnEmpty: 0
 --- !u!65 &1815201506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24538,6 +24567,7 @@ MonoBehaviour:
   interactionSpots:
   - {fileID: 1264168142}
   useOnlyFront: 0
+  spawnEmpty: 0
 --- !u!65 &2013182269
 BoxCollider:
   m_ObjectHideFlags: 0

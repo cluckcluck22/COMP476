@@ -40,6 +40,14 @@ public class AnimalAI : MonoBehaviour {
 
     public bool isMimic = false;
 
+    public void setStatsFromOther(AnimalAI other)
+    {
+        this.health = other.health;
+        this.hunger = other.hunger;
+        this.fatigue = other.fatigue;
+    }
+
+
     public void kill()
     {
         health = 0f;

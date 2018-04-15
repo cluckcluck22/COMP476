@@ -29,6 +29,10 @@ public class Interactable : MonoBehaviour {
 
     private List<AnimalAI> clients;
 
+    private GameObject removable;
+
+    public bool spawnEmpty;
+
     // Use this for initialization
     void Start ()
     {
@@ -54,6 +58,21 @@ public class Interactable : MonoBehaviour {
         }
 
         reservedCount = 0;
+
+        Transform[] childrens = GetComponentsInChildren<Transform>();
+        int layerIndex = LayerMask.NameToLayer("Removable");
+
+        foreach (Transform child in childrens)
+        {
+            if (child.gameObject.layer == layerIndex)
+            {
+                removable = child.gameObject;
+                break;
+            }
+        }
+
+        if (spawnEmpty)
+            count = 0f;
     }
 
     void Update()
@@ -72,6 +91,15 @@ public class Interactable : MonoBehaviour {
                     animal.giveRest(consume(animal.getConsumption(Type.Rest)));
                     break;
             }
+        }
+
+        if (removable != null && Mathf.Approximately(count, 0f))
+        {
+            removable.SetActive(false);
+        }
+        if (removable != null && !Mathf.Approximately(count, 0f))
+        {
+            removable.SetActive(true);
         }
     }
 

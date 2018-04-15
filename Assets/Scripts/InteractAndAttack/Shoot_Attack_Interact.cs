@@ -48,8 +48,14 @@ public class Shoot_Attack_Interact : MonoBehaviour {
             {
                 Interactable interactObject;
                 interactObject = interactable.GetComponent<Interactable>();
+
                 if (interactObject != null)
                 {
+                    if (interactObject.type != Interactable.Type.Food || !interactObject.isEmpty() || interactObject.maxCount == 0)
+                    {
+                        continue;
+                    }
+
                     if (gameObject.tag == "Player")
                     {
                         Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + "FILL!");
@@ -86,9 +92,11 @@ public class Shoot_Attack_Interact : MonoBehaviour {
                 {
                     if (Physics.Raycast(transform.position, transform.forward, out hit, 5f, layerOfCreatures))
                     {
-                        //call kill script
                         Debug.Log("killed " + hit.collider.gameObject.name);
                         hit.collider.gameObject.GetComponent<KillAnimal>().KillAnimals();
+                        GetComponent<AnimalAI>().setStatsFromOther(
+                            hit.collider.gameObject.GetComponent<AnimalAI>());
+
                     }
                 }
             }
