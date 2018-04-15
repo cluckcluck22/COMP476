@@ -96,6 +96,12 @@ public class AnimalAI : MonoBehaviour {
             makeSleepy = false;
         }
 
+        if (Mathf.Approximately(hunger, 0f))
+            health -= 1 * Time.deltaTime;
+
+        if (Mathf.Approximately(fatigue, 0f))
+            fatigue -= 1 * Time.deltaTime;
+
         if (health != 0)
         {
             hunger -= animalConfig.hungerLossRate * Time.deltaTime;
@@ -103,6 +109,9 @@ public class AnimalAI : MonoBehaviour {
             fatigue -= animalConfig.fatigueLossRate * Time.deltaTime;
             fatigue = Mathf.Max(fatigue, 0.0f);
         }
+
+        if (Mathf.Approximately(health, 0f))
+            GetComponent<KillAnimal>().KillAnimals();
 	}
 
     private void OnDrawGizmosSelected()
