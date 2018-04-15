@@ -51,13 +51,12 @@ public class Shoot_Attack_Interact : MonoBehaviour {
 
                 if (interactObject != null)
                 {
-                    if (interactObject.type != Interactable.Type.Food || !interactObject.isEmpty() || interactObject.maxCount == 0)
-                    {
-                        continue;
-                    }
-
                     if (gameObject.tag == "Player")
                     {
+                        if (interactObject.type != Interactable.Type.Food || !interactObject.isEmpty() || interactObject.maxCount == 0)
+                        {
+                            continue;
+                        }
                         Debug.Log("HEY THE: " + gameObject.name + " TAG: " + gameObject.tag + "FILL!");
                         interactObject.fill(interactObject.maxCount);
                     }
