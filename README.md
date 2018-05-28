@@ -30,3 +30,12 @@ Being a group project, different members of the group worked on different compon
 ->Jennifer Sunahara: Needs System implementation, special interaction system for dog AI with player input.
 
 ->Eric Davies: Photon implementation along with Main menu development.
+
+
+Example Videos of the Project
+----------------------------------
+The following video's were recorded in order to demo some of the functionality of the project and should give an idea of how it works:
+
+https://www.youtube.com/watch?v=WUmk3ik35Yc
+
+https://www.youtube.com/watch?v=blKQ3opIejE
